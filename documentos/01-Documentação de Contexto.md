@@ -17,7 +17,7 @@
 
 ## Objetivos
 
- O projeto tem como objetivo principal ajudar pessoas que estão procurando emprego, garantindo que seus currículos sejam lidos e revisados de forma apropriada por Sistemas de Rastreamento de Candidatos (ATS), aumentando a probabilidade de seus currículos serem selecionados por recrutadores  
+ O projeto tem como objetivo principal ajudar pessoas que estão procurando emprego, garantindo que seus currículos sejam lidos e revisados de forma apropriada por Sistemas de Rastreamento de Candidatos (ATS), aumentando a probabilidade de seus currículos serem selecionados por recrutadores. 
 
 Objetivos Específicos: 
 
