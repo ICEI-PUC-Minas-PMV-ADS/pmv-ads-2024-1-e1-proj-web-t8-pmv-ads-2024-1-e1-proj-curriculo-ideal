@@ -17,21 +17,19 @@
 
 ## Objetivos
 
- O projeto tem como objetivo principal melhorar a probabilidade de o usuário ter o seu currículo selecionado por um recrutador, garantindo que ele seja lido e revisado por um Sistemas de Rastreamento de Candidatos (ATS) de forma apropriada. Para alcançar esse objetivo, serão implementadas soluções que otimizem a interpretação dos currículos pelos ATSs, garantindo uma análise mais precisa e eficiente dos perfis dos candidatos. 
-
- Com isso, o projeto visa ajudar as pessoas a encontrarem emprego e aumentar suas chances de contratação. Isso será alcançado por meio da facilitação de partes do processo de candidatura, proporcionando aos candidatos uma apresentação eficaz de suas habilidades e experiências em um template facilmente lido por um ATS. 
+ O projeto tem como objetivo principal ajudar pessoas que estão procurando emprego, garantindo que seus currículos sejam lidos e revisados de forma apropriada por Sistemas de Rastreamento de Candidatos (ATS), aumentando a probabilidade de seus currículos serem selecionados por recrutadores  
 
 Objetivos Específicos: 
 
-1. Desenvolver um gerador de currículos que formate automaticamente os currículos dos candidatos para serem lidos por ATSs. 
+• Desenvolver um gerador de currículos que formate automaticamente os currículos dos candidatos para serem lidos por ATSs. 
 
-2. Oferecer orientações e dicas aos candidatos sobre como criar currículos mais eficazes, destacando suas habilidades e experiências de maneira adequada para cada vaga. 
+• Oferecer orientações e dicas aos candidatos sobre como criar currículos mais eficazes, destacando suas habilidades e experiências de maneira adequada para cada vaga. 
 
-3. Implementar um sistema de registro de candidaturas que permita aos usuários inserirem informações detalhadas sobre as vagas para as quais se candidataram, incluindo nome da empresa, cargo e status da candidatura. 
+• Implementar um sistema de registro de candidaturas que permita aos usuários inserirem informações detalhadas sobre as vagas para as quais se candidataram, incluindo nome da empresa, cargo e status da candidatura. 
 
-4. Desenvolver uma interface intuitiva e de fácil navegação para que os candidatos possam acessar e utilizar a página de rastreamento de candidaturas sem dificuldades. 
+• Desenvolver uma interface intuitiva e de fácil navegação para que os candidatos possam acessar e utilizar a página de rastreamento de candidaturas sem dificuldades. 
 
-5. Garantir a acessibilidade do sistema em diversas plataformas, como telefones, tablets e computadores, permitindo que os usuários o acessem de forma conveniente, independentemente de sua localização ou dos recursos disponíveis.
+• Garantir a acessibilidade do sistema em diversas plataformas, como telefones, tablets e computadores, permitindo que os usuários o acessem de forma conveniente, independentemente de sua localização ou dos recursos disponíveis.
  
 
 ## Justificativa
