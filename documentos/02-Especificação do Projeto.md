@@ -15,7 +15,9 @@
 </tr> 
 <td/> 
 <a><b>Necessidades</b></td>
-<td> 1. Criar um currículo com seções para experiência profissional, habilidades, formação acadêmica e projetos. 
+<td> 
+ 
+1. Criar um currículo com seções para experiência profissional, habilidades, formação acadêmica e projetos. 
 
  
 
@@ -46,11 +48,13 @@
 </tr>
 <tr>
 <td width="150px"><b>Descrição</b></td> 
-<td width="600px"> Estudantes que estão buscando criar um currículo para estágios ou para ingressar no mercado de trabalho. Buscando ferramentas e orientações necessárias para que eles possam destacar suas habilidades, experiências acadêmicas e extracurriculares de forma eficaz. Permitindo-lhes competir por oportunidades profissionais relevantes para seu campo de estudo e aspirações de carreira</td>
+<td width="600px"> Estudantes que estão buscando criar um currículo para estágios ou para ingressar no mercado de trabalho. Buscando ferramentas e orientações necessárias para que eles possam destacar suas habilidades, experiências acadêmicas e extracurriculares de forma eficaz. Permitindo-lhes competir por oportunidades profissionais relevantes para seu campo de estudo e aspirações de carreira.</td>
 </tr> 
 <td/> 
 <a><b>Necessidades</b></td>
-<td> 1. Destacar a formação acadêmica, projetos acadêmicos e experiências relevantes. 
+<td> 
+ 
+1. Destacar a formação acadêmica, projetos acadêmicos e experiências relevantes. 
 
  
 
@@ -77,11 +81,13 @@
 </tr>
 <tr>
 <td width="150px"><b>Descrição</b></td> 
-<td width="600px"> Profissionais em cargos executivos que buscam destacar experiências de liderança e realizações significativas. Procurando por uma plataforma que permita a esses executivos criarem currículos que transmitam sua expertise, capacidade de liderança e resultados alcançados ao longo de suas carreiras. Esses profissionais poderão destacar de forma eficaz sua trajetória profissional e se posicionar de maneira competitiva no mercado de trabalho</td>
+<td width="600px"> Profissionais em cargos executivos que buscam destacar experiências de liderança e realizações significativas. Procurando por uma plataforma que permita a esses executivos criarem currículos que transmitam sua expertise, capacidade de liderança e resultados alcançados ao longo de suas carreiras. Esses profissionais poderão destacar de forma eficaz sua trajetória profissional e se posicionar de maneira competitiva no mercado de trabalho.</td>
 </tr> 
 <td/> 
 <a><b>Necessidades</b></td>
-<td> 1. Criar um currículo executivo que enfatize experiências anteriores de liderança. 
+<td> 
+ 
+1. Criar um currículo executivo que enfatize experiências anteriores de liderança. 
 
  
 
@@ -97,7 +103,7 @@
 
  
 
-5. Dispor de meios para acompanhar o status das candidaturas submetidas. 
+5. Dispor de meios para acompanhar o status das candidaturas submetidas.
  
 6. Poder adicionar links para portfólios profissionais online, fornecendo uma visão mais abrangente das realizações profissionais. 
 
