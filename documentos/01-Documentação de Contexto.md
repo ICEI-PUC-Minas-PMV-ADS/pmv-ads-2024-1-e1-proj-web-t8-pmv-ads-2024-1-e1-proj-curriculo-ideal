@@ -21,15 +21,15 @@
 
 Objetivos Específicos: 
 
-• Desenvolver um gerador de currículos que formate automaticamente os currículos dos candidatos para serem lidos por ATSs. 
+ • Desenvolver um gerador de currículos que formate automaticamente os currículos dos candidatos para serem lidos por ATSs. 
 
-• Oferecer orientações e dicas aos candidatos sobre como criar currículos mais eficazes, destacando suas habilidades e experiências de maneira adequada para cada vaga. 
+ • Oferecer orientações e dicas aos candidatos sobre como criar currículos mais eficazes, destacando suas habilidades e experiências de maneira adequada para cada vaga. 
 
-• Implementar um sistema de registro de candidaturas que permita aos usuários inserirem informações detalhadas sobre as vagas para as quais se candidataram, incluindo nome da empresa, cargo e status da candidatura. 
+ • Implementar um sistema de registro de candidaturas que permita aos usuários inserirem informações detalhadas sobre as vagas para as quais se candidataram, incluindo nome da empresa, cargo e status da candidatura. 
 
-• Desenvolver uma interface intuitiva e de fácil navegação para que os candidatos possam acessar e utilizar a página de rastreamento de candidaturas sem dificuldades. 
+ • Desenvolver uma interface intuitiva e de fácil navegação para que os candidatos possam acessar e utilizar a página de rastreamento de candidaturas sem dificuldades. 
 
-• Garantir a acessibilidade do sistema em diversas plataformas, como telefones, tablets e computadores, permitindo que os usuários o acessem de forma conveniente, independentemente de sua localização ou dos recursos disponíveis.
+ • Garantir a acessibilidade do sistema em diversas plataformas, como telefones, tablets e computadores, permitindo que os usuários o acessem de forma conveniente, independentemente de sua localização ou dos recursos disponíveis.
  
 
 ## Justificativa
@@ -51,26 +51,26 @@ Objetivos Específicos:
 
 Essa ferramenta é útil para indivíduos que desejam: 
 
-Destacar habilidades e experiências relevantes nos currículos. 
+ • Destacar habilidades e experiências relevantes nos currículos. 
 
-Acompanhar a evolução das candidaturas a diferentes vagas. 
+ • Acompanhar a evolução das candidaturas a diferentes vagas. 
 
-Ajustar e melhorar os currículos para melhor aceitação por ATSs. 
+ • Ajustar e melhorar os currículos para melhor aceitação por ATSs. 
 
-Personalizar o currículo de acordo com diferentes contextos profissionais. 
+ • Personalizar o currículo de acordo com diferentes contextos profissionais. 
 
-Simplificar o processo de criação de currículos. 
+ • Simplificar o processo de criação de currículos. 
 
-Adaptar o currículo para profissionais em processo de recolocação ou mudança de carreira. 
+ • Adaptar o currículo para profissionais em processo de recolocação ou mudança de carreira. 
 
-Buscar melhores oportunidades de trabalho. 
+ • Buscar melhores oportunidades de trabalho. 
 
-Criar currículos que se destaquem em meio a uma ampla gama de perfis profissionais. 
+ • Criar currículos que se destaquem em meio a uma ampla gama de perfis profissionais. 
 
 Para aqueles em processo de recolocação ou mudança de carreira, bem como aqueles em busca de melhores oportunidades de trabalho, a plataforma oferece ferramentas para: 
 
-Adaptar o currículo para suas necessidades específicas. 
+ • Adaptar o currículo para suas necessidades específicas. 
 
-Buscar melhores oportunidades de trabalho. 
+ • Buscar melhores oportunidades de trabalho. 
 
  Essa abordagem multifacetada visa a adaptabilidade da plataforma para diferentes contextos profissionais, oferecendo uma solução abrangente e personalizada para a criação de currículos. O gerador de currículos é especialmente útil para aqueles que não estão familiarizados com ATSs ou desejam simplificar o processo de criação de currículos.
