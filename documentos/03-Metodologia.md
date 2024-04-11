@@ -57,7 +57,6 @@ Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a 
 | Documentos do projeto               | GitHub                             | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal/tree/main/documentos |
 | Projeto de Interface                | Figma                              | https://www.figma.com/file/2wHdKe3FOU4ZBOcVbIHbDx/Curriculo-Ideal?type=design&node-id=0%3A1&mode=design&t=khAjayOujB8tdDPN-1 |
 | Gerenciamento do Projeto            | GitHub Projects                    | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/989 |
-| Hospedagem                          | GitHub Pages                       | EM ANDAMENTO  |
 
 
 ### Estratégia de Organização de Codificação 
