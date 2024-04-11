@@ -1,25 +1,25 @@
 # Título do Projeto
 
-`CURSO`
+`Análise e Desenvolvimento de Sistemas`
 
-`DISCIPLINA`
+`Desenvolvimento de Aplicação Web Front-End`
 
-`SEMESTRE`
+`Eixo 1 (Primeiro Semestre)`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto desenvolvido.
+Um site gerador de currículos é uma ferramenta online que ajuda a criar currículos profissionais de forma rápida e fácil, fornecendo modelos pré-formatados e opções personalizáveis para os usuários.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
-* Nome completo do aluno 6
+* Alexsander Gomes Custodio
+* Alycia Silva Oliveira
+* Andrea Mariana Alves da Silva
+* Enrique Alves da Cruz Lira Barbosa
+* Guilherme Holanda
+* Pedro Maia
 
 ## Orientador
 
-* Nome completo do professor
+* Amália Soares Vieira de Vasconcelos
 
 # Documentação
 
