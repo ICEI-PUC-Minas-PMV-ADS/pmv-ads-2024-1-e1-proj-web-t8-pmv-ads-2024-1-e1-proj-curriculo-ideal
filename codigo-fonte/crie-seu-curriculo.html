@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculo Ideal</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <!--
+            <object data="navbar.html"
+                type="text/html"
+                style="height: 60px; width: 100%;"
+            </object>
+            -->
+        </nav>
+    </header>
+    <main>
+        <article>
+            <div class="barra-de-progresso">
+
+            </div>
+        </article>
+        <section>
+            <div class="formulario">
+                <h1 class="titulo">Dados de Contato</h1>
+                <form name="dados-contato" method="POST">
+                    Nome Completo: <input type="text" name="nome" value="" placeholder="Seu Nome"><br>
+                    Cidade: <input type="text" name="cidade" value="" placeholder="Sua Cidade"><br>
+                    Estado: <input type="text" name="estado" value="" placeholder="Seu Estado"><br>
+                    País: <input type="text" name="pais" value="" placeholder="Seu País"><br>
+                    Telefone: <input type="tel" name="telefone" value="" pattern="[0-9]{2}-[0-9]{2}-[0-9]{5}-[0-9]{4}" placeholder="55-99-99999-9999"><br>
+                    Email: <input type="email" name="email" value="" pattern=".+@example\.com" size="30" placeholder="seuemail@exemplo.com"><br>
+                    Linkedin: <input type="url" name="linkedin" value="" pattern="https://.*" placeholder="https://linkedin/in/seu-usuario"><br>
+                    Github: <input type="url" name="github" value="" pattern="https://.*" placeholder="https://github.com/seu-usuario"><br>
+                    Website: <input type="url" name="website" value="" pattern="https://.*" placeholder="https://www.seusite.com"><br>
+                    <input type="submit" value="Avançar">
+                </form>
+            </div>
+        </section>
+        <section>
+            <div class="formulario">
+                <h1 class="titulo">Resumo</h1>
+                <form name="resumo" method="POST">
+                    Conte-nos um pouco mais sobre você: <input type="text" name="resumo" value="" placeholder="Faça um resumo sobre as suas experiencias"><br>
+                    Liste suas habilidades tecnicas: <input type="text" name="habilidades" value="" placeholder=""><br>
+                    <input type="button" value="Voltar" />
+                    <input type="submit" value="Avançar" />
+                </form>
+            </div>
+        </section>
+        <section>
+            <div class="formulario">
+                <h1 class="titulo">Experiencias</h1>
+                <form name="experiencias" method="POST">
+                    Cargo: <input type="text" name="cargo" value="" placeholder=""><br>
+                    Empresa: <input type="text" name="empresa" value="" placeholder=""><br>
+                    Local de trabalho: <input type="text" name="local" value="" placeholder=""><br>
+                    Data de Inicio: <input type="date" name="inicio" value="" max=""><br>
+                    Data de Termino: <input type="date" name="fim" value="" max=""><br>
+                    Meu trabalho atual: <input type="checkbox" name="atual"><br>
+                    Liste suas atividades: <input type="text" name="atividades" value="" placeholder=""><br>
+                    <input type="button" value="Adicionar Outra" />
+                    <input type="button" value="Voltar" />
+                    <input type="submit" value="Avançar" />
+                </form>
+            </div>
+        </section>
+        <section>
+            <div class="formulario">
+                <h1 class="titulo">Escolaridade</h1>
+                <form name="escolaridade" method="POST">
+                    Escola: <input type="text" name="escola" value="" placeholder=""><br>
+                    Grau de Instrução: <select name="estudo">
+                                        <option value="fundamental-incompleto">Ensino Fundamental Incompleto</option>
+                                        <option value="fundamental-cursando">Ensino Fundamental Cursando</option>
+                                        <option value="fundamental-completo">Ensino Fundamental Completo</option>
+                                        <option value="medio-incompleto">Ensino Medio Incompleto</option>
+                                        <option value="medio-cursando">Ensino Medio Cursando</option>
+                                        <option value="medio-completo">Ensino Medio Completo</option>
+                                        <option value="superior-incompleto">Ensino Superior Incompleto</option>
+                                        <option value="superior-cursando">Ensino Superior Cursando</option>
+                                        <option value="superior-completo">Ensino Superior Completo</option>
+                                        <option value="mestrado-cursando">Mestrado Cursando</option>
+                                        <option value="mestrado-completo">Mestrado Completo</option>
+                                        <option value="doutorado-cursando">Doutorado Cursando</option>
+                                        <option value="doutorado-completo">Doutorado Completo</option>
+                                        <option value="phd-cursando">PHD Cursando</option>
+                                        <option value="phd-completo">PHD Completo</option>
+                                    </select>
+                        <br>
+                    Curso: <input type="text" name="curso" value="" placeholder=""><br>
+                    Data de Inicio: <input type="date" name="inicio" value="" max=""><br>
+                    Data de Termino: <input type="date" name="fim" value="" max=""><br>
+                    Resumo: <input type="text" name="resumo" value="" placeholder=""><br>
+                    <input type="button" value="Adicionar Outra" />
+                    <input type="button" value="Voltar" />
+                    <input type="submit" value="Avançar" />
+                </form>
+            </div>
+        </section>
+        <section>
+            <h1 class="titulo">Escolha seu Template</h1>
+            <div class="opcao">Opcao 1</div>
+            <div class="opcao">Opcao 2</div>
+            <input type="button" value="Voltar" />
+            <input type="submit" value="Avançar" />
+        </section>
+            
+    </main>
+    <footer>
+        <!--
+        <object data="footer.html"
+            type="text/html"
+            style="height: 60px; width: 100%;"
+        </object>
+        -->
+    </footer>
+    
+</body>
+</html>
