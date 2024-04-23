@@ -3,17 +3,17 @@
 
 ## User Flow
 
-Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo fluxo de navegação do usuário na aplicação. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o usuário pode fazer junto com os membros de sua equipe.
+Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo o fluxo de navegação do usuário na aplicação. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o usuário pode fazer junto com os membros de sua equipe.
 
 ![User Flow](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal/blob/main/documentos/img/user-flow.png)
 
 ## Protótipo
 
-Desenvolver um protótipo emerge como uma das maneiras mais ágeis e econômicas de validar uma ideia, conceito ou funcionalidade. Isso permite a interação, avaliação, modificação e aprovação das principais características de uma interface antes de entrar na fase de desenvolvimento. Leia o artigo [Protótipos: baixa, média ou alta fidelidade?](https://medium.com/ladies-that-ux-br/prot%C3%B3tipos-baixa-m%C3%A9dia-ou-alta-fidelidade-71d897559135).
+Protótipo é o termo usado para se referir ao que foi criado pela primeira vez, servindo de modelo ou molde para futuras produções e também é uma das formas mais rápidas, e com menos custo, para validar uma ideia. Isso permite a interação, avaliação, modificação e aprovação das principais características de uma interface antes de entrar na fase de desenvolvimento. O nosso projeto apresenta um tipo de protótipo de alta fidelidade.
 
-### Protótipo de baixa fidelidade
+### Protótipo de alta fidelidade
 
-Protótipos de baixa fidelidade apresentam de forma simplificada o design da interface e o relacionamento entre suas páginas, permitindo evolução da proposta da solução. Neste projeto, os utilizaremos para apoiar a validação dos requisitos e efetuar mudanças dos mesmos, caso seja necessário, para menor impacto na codificação da aplicação.
+O nosso protótipo se encontra em uma fase de alta fidelidade por possuir uma interface mais avançada e próxima do estágio completo, com muitos aspectos visuais e funcionais que aumentam a interatividade e também o fluxo entre as páginas, causando uma maior fascinação e ainda possui a ajuda do software de interface Figma que ajuda no seu desenvolvimento. 
 
 ### Tela - Home
 Nessa tela encontramos o banner inicial, botões que levam para as telas de criação de currículo, instruções de como fazer um currículo e controle de candidaturas. 
@@ -25,7 +25,7 @@ Duas telas distintas para criação de conta e login.
 ![SignUp](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal/blob/main/documentos/img/Sign%20up.png)
 
 ### Tela - Aprenda
-Nesta tela, o usuário encontrara instruções de como fazer um currículo.
+Nesta tela, o usuário encontrará instruções de como fazer um currículo.
 ![Aprenda a fazer um currículo](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal/blob/main/documentos/img/Como-fazer-curriculo.png)
 
 ### Tela - Organize
@@ -33,7 +33,7 @@ Nesta tela, o usuário pode fazer um rastreamento de todas as candidaturas que r
 ![Suas Candidaturas](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal/blob/main/documentos/img/Gerencie-suas-candidaturas.png)
 ![Cadastre sua candidatura](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal/blob/main/documentos/img/Cadastre-sua-candidatura.png)
 
-### Tela - Crie seu curriculo
+### Tela - Crie seu currículo
 Nesse conjunto de telas, o usuário podera crir um currículo, escolher um template e fazer download do mesmo em PDF.
 ![Dados de Contato](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal/blob/main/documentos/img/Faca-seu-curriculo-dados.png)
 ![Resumo](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal/blob/main/documentos/img/Faca-seu-curriculo-resumo.png)
