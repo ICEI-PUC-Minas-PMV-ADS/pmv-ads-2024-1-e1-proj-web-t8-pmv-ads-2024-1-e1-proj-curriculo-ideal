@@ -2,7 +2,7 @@
 
 ## Perfis de Usuários
 
-[Enumere e faça o detalhamento dos perfis de usuários. Utilize o modelo de tabela abaixo para sintetizá-los.]
+O programa atende 3 perfis de usuários, que falamos mais abaixo:
 
 <tbody>
 <table> 
