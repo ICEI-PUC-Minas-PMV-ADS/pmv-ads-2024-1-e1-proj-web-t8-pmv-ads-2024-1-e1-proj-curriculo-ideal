@@ -38,3 +38,28 @@ nav {
     font-family: 'Encode Sans';
     padding: 5px;
 }
+
+footer {
+    display: flex;
+    background-color: var(--cor-de-fundo-nav);
+    justify-content: space-between;
+    font-family: 'Encode Sans';
+    color: var(--cor-texto);
+    font-weight: 400;
+    align-items: center;
+    font-size: 8pt;
+}
+
+footer .logo {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+footer .logo .marca {
+    padding: 10px;
+}
+
+footer .direitos {
+    padding: 10px;
+}
