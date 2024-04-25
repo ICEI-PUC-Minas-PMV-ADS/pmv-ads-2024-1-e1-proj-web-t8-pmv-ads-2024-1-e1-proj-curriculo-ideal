@@ -6,7 +6,8 @@ Esta seção descreve a organização da equipe para a execução das tarefas do
 
 ## Gerenciamento de Projeto
 
-A metodologia utilizada é a Scrum, que se define por um conjunto de boas práticas empregado no gerenciamento de projetos. Focado nos membros da equipe, o Scrum torna os processos mais simples e claros, pois mantém registros visíveis sobre o andamento de todas as etapas. De acordo com a citação de Amaral, Fleury e Isoni (2019, p.68) "visão clara dos resultados a entregar; ritmo e disciplina necessários à execução; definição de papéis e responsabilidades dos integrantes do projeto (Scrum Owner, Scrum Master e Team); empoderamento dos membros da equipe de projetos para atingir o desafio; conhecimento distribuído e compartilhado de forma colaborativa; ambiência favorável para crítica às ideias e não às pessoas.” são benefícios do uso da metodologia Scrum.
+A metodologia utilizada é a Scrum, que se define por um conjunto de boas práticas empregado no gerenciamento de projetos. Focado nos membros da equipe, o Scrum torna os processos mais simples e claros pois mantém registros visíveis sobre o andamento de todas as etapas. De acordo com a citação de Amaral, Fleury e Isoni (2019, p.68) "visão clara dos resultados a entregar; ritmo e disciplina necessários à execução; definição de papéis e responsabilidades dos integrantes do projeto (Product Owner, Scrum Master e Team); empoderamento dos membros da equipe de projetos para atingir o desafio; conhecimento distribuído e compartilhado de forma colaborativa; ambiência favorável para crítica às ideias e não às pessoas.” são benefícios do uso da metodologia Scrum.
+
 
 ### Divisão de Papéis
 
