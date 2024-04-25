@@ -34,9 +34,8 @@
             </div>
         </article>
 
-
         <div class="container-fluid">
-        <form name="dados-contato" method="POST">
+        <form name="criar-curriculo" method="POST">
             <section id="1">
                 <div class="container text-center">
                     <h1 class="titulo">Dados de Contato</h1>
@@ -90,75 +89,169 @@
                     </div>        
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">Avançar</button>
-                    </div>       
+                    </div>
+                </div>         
             </section>
-            <section id="2" style="display: none;">
+            <section id="2">
+                <div class="container text-center">
                     <h1 class="titulo">Resumo</h1>
-                    <form name="resumo" method="POST">
-                        Conte-nos um pouco mais sobre você: <input type="text" name="resumo" value="" placeholder="Faça um resumo sobre as suas experiencias"><br>
-                        Liste suas habilidades tecnicas: <input type="text" name="habilidades" value="" placeholder=""><br>
-                        <input type="button" value="Voltar" />
-                        <input type="submit" value="Avançar" />
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="resumo" class="form-label">Conte-nos um pouco mais sobre você:</label>
+                            <textarea class="form-control" name="resumo" row="12" placeholder="Faça um resumo sobre as suas experiencias"></textarea> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="habilidades" class="form-label">Liste suas habilidades:</label>
+                            <textarea class="form-control" name="habilidades" row="12" placeholder="Ex: Javascript, Atento a detalhes, etc"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Voltar</button>
+                        <button type="submit" class="btn btn-primary">Avançar</button>
+                    </div>
                 </div>
             </section>
-            <section id="3" style="display: none;">
-                <div class="formulario">
+            <section id="3">
+                <div class="container text-center">
                     <h1 class="titulo">Experiencias</h1>
-                        Cargo: <input type="text" name="cargo" value="" placeholder=""><br>
-                        Empresa: <input type="text" name="empresa" value="" placeholder=""><br>
-                        Local de trabalho: <input type="text" name="local" value="" placeholder=""><br>
-                        Data de Inicio: <input type="date" name="inicio" value="" max=""><br>
-                        Data de Termino: <input type="date" name="fim" value="" max=""><br>
-                        Meu trabalho atual: <input type="checkbox" name="atual"><br>
-                        Liste suas atividades: <input type="text" name="atividades" value="" placeholder=""><br>
-                        <input type="button" value="Adicionar Outra" />
-                        <input type="button" value="Voltar" />
-                        <input type="submit" value="Avançar" />
-                    </form>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-2">
+                            <label for="cargo" class="form-label">Cargo:</label>
+                            <input type="text" class="form-control" name="cargo" value="" placeholder="">
+                        </div>
+                        <div class="col-2">
+                            <label for="empresa" class="form-label">Empresa:</label>
+                            <input type="text" class="form-control" name="empresa" value="" placeholder="">
+                        </div>
+                        <div class="col-2">
+                            <label for="local" class="form-label">Local de trabalho:</label>
+                            <input type="text" class="form-control" name="local" value="" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <label for="inicio" class="form-label">Data de Inicio:</label>
+                            <input type="date" class="form-control" name="inicio" value="" max=""><br>
+                        </div>
+                        <div class="col-2">
+                            <label for="termino" class="form-label">Data de Termino:</label>
+                            <input type="date" class="form-control" name="fim" value="" max=""><br>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" value="" id="atual">
+                                <label for="flexCheckDefault" class="form-check-label">Trabalho Atual</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="atividades" class="form-label">Liste suas atividades:</label>
+                            <textarea class="form-control" name="atividades" row="12" placeholder="Ex: Fiquei responsavel por..."></textarea>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Adicionar Outra</button>
+                        <button type="submit" class="btn btn-primary">Voltar</button>
+                        <button type="submit" class="btn btn-primary">Avançar</button>
+                    </div>   
                 </div>
             </section>
-            <section id="4" style="display: none;">
-                <div class="formulario">
+            <section id="4">
+                <div class="container text-center">
                     <h1 class="titulo">Escolaridade</h1>
-                        Escola: <input type="text" name="escola" value="" placeholder=""><br>
-                        Grau de Instrução: <select name="estudo">
-                                            <option value="fundamental-incompleto">Ensino Fundamental Incompleto</option>
-                                            <option value="fundamental-cursando">Ensino Fundamental Cursando</option>
-                                            <option value="fundamental-completo">Ensino Fundamental Completo</option>
-                                            <option value="medio-incompleto">Ensino Medio Incompleto</option>
-                                            <option value="medio-cursando">Ensino Medio Cursando</option>
-                                            <option value="medio-completo">Ensino Medio Completo</option>
-                                            <option value="superior-incompleto">Ensino Superior Incompleto</option>
-                                            <option value="superior-cursando">Ensino Superior Cursando</option>
-                                            <option value="superior-completo">Ensino Superior Completo</option>
-                                            <option value="mestrado-cursando">Mestrado Cursando</option>
-                                            <option value="mestrado-completo">Mestrado Completo</option>
-                                            <option value="doutorado-cursando">Doutorado Cursando</option>
-                                            <option value="doutorado-completo">Doutorado Completo</option>
-                                            <option value="phd-cursando">PHD Cursando</option>
-                                            <option value="phd-completo">PHD Completo</option>
-                                        </select>
-                            <br>
-                        Curso: <input type="text" name="curso" value="" placeholder=""><br>
-                        Data de Inicio: <input type="date" name="inicio" value="" max=""><br>
-                        Data de Termino: <input type="date" name="fim" value="" max=""><br>
-                        Resumo: <input type="text" name="resumo" value="" placeholder=""><br>
-                        <input type="button" value="Adicionar Outra" />
-                        <input type="button" value="Voltar" />
-                        <input type="submit" value="Avançar" />
-                    </form>
+                </div>  
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="instituicao" class="form-label">Instituição:</label>
+                            <input type="text" class="form-control" name="instituicao" value="" placeholder="">
+                        </div>
+                        <div class="col-3">
+                            <label for="curso" class="form-label">Curso:</label>
+                            <input type="text" class="form-control" name="curso" value="" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="grau" class="form-label">Grau de Instrução:</label>
+                            <select name="grau-instrucao" id="grau-instrucao" class="form-select form-select-lg mb-3">
+                                <option slected>Escolha seu Grau de Escolaridade</option>
+                                <option value="fundamental-incompleto">Ensino Fundamental Incompleto</option>
+                                <option value="fundamental-cursando">Ensino Fundamental Cursando</option>
+                                <option value="fundamental-completo">Ensino Fundamental Completo</option>
+                                <option value="medio-incompleto">Ensino Medio Incompleto</option>
+                                <option value="medio-cursando">Ensino Medio Cursando</option>
+                                <option value="medio-completo">Ensino Medio Completo</option>
+                                <option value="superior-incompleto">Ensino Superior Incompleto</option>
+                                <option value="superior-cursando">Ensino Superior Cursando</option>
+                                <option value="superior-completo">Ensino Superior Completo</option>
+                                <option value="mestrado-cursando">Mestrado Cursando</option>
+                                <option value="mestrado-completo">Mestrado Completo</option>
+                                <option value="doutorado-cursando">Doutorado Cursando</option>
+                                <option value="doutorado-completo">Doutorado Completo</option>
+                                <option value="phd-cursando">PHD Cursando</option>
+                                <option value="phd-completo">PHD Completo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <label for="inicio" class="form-label">Data de Inicio:</label>
+                            <input type="date" class="form-control" name="inicio" value="" max=""><br>
+                        </div>
+                        <div class="col-2">
+                            <label for="termino" class="form-label">Data de Termino:</label>
+                            <input type="date" class="form-control" name="fim" value="" max=""><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="resumo-atividades" class="form-label">Resumo:</label>
+                            <textarea class="form-control" name="resumo-atividades" row="12" placeholder=""></textarea>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Adicionar Outra</button>
+                        <button type="submit" class="btn btn-primary">Voltar</button>
+                        <button type="submit" class="btn btn-primary">Avançar</button>
+                    </div>
                 </div>
             </section>
-        </div>
-    </div>
-        <section id="5" style="display: none;">
-            <h1 class="titulo">Escolha seu Template</h1>
-            <div class="opcao">Opcao 1</div>
-            <div class="opcao">Opcao 2</div>
-            <input type="button" value="Voltar" />
-            <input type="submit" value="Avançar" />
-        </section>
-            
+            </div>
+            <section id="5">
+                <div class="container text-center">
+                    <h1 class="titulo">Escolha seu Template</h1>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="template-1">
+                                <label for="template-1" class="form-check-label">Template 1</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="template-2">
+                                <label for="template-2" class="form-check-label">Template 2</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Voltar</button>
+                        <button type="submit" class="btn btn-primary">Avançar</button>
+                    </div>
+                </div>
+            </section>
+        </form>  
     </main>
     <footer>
         <div class="logo">
