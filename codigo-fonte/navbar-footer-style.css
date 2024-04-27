@@ -1,0 +1,65 @@
+:root {
+    --cor-de-fundo-nav: rgba(182, 182, 182, 0.15);
+    --cor-texto: #374375;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: var(--cor-de-fundo-nav);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    margin: 10px;
+}
+
+#menu {
+    margin: 10px;
+}
+
+#menu ul {
+    list-style: none;
+}
+
+#menu li {
+    display: inline;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 700;
+    font-family: 'Encode Sans';
+    padding: 5px;
+}
+
+footer {
+    display: flex;
+    background-color: var(--cor-de-fundo-nav);
+    justify-content: space-between;
+    font-family: 'Encode Sans';
+    color: var(--cor-texto);
+    font-weight: 400;
+    align-items: center;
+    font-size: 8pt;
+}
+
+footer .logo {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+footer .logo .marca {
+    padding: 10px;
+}
+
+footer .direitos {
+    padding: 10px;
+}
