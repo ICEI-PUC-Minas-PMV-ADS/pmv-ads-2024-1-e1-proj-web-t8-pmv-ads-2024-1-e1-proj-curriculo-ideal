@@ -26,6 +26,7 @@ h1 {
     font-weight: var(--fonte-principal-titulo);
     font-size: 16pt;
     padding: 20px;
+    text-transform: uppercase;
 } 
     
 label {
