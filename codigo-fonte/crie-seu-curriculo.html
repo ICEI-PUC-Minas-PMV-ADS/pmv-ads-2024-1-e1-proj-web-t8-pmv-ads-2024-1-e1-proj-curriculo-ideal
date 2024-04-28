@@ -13,15 +13,15 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav style="height: 5vh;">
             <figure id="logo">
-                <img class="logo" src="img\128x128.png" alt="logo" height="55" width="55" />
+                <img class="logo" src="img\128x128.png" alt="logo" height="35" width="35" />
             </figure>
             <div id="menu">
                 <ul>
                     <li><a href="como-fazer.html">APRENDA</a></li>
                     <li><a href="crie-seu-curriculo.html">CRIE</a></li>
-                    <li><a href="gerenciar-vagas.html">ORGANIZE</a></li>
+                    <li><a href="suascandidaturas.html">ORGANIZE</a></li>
                     <li><a href="login.html">LOGIN</a></li>
                     <li><a href="signup.html">SIGN UP</a></li>
                 </ul>
@@ -44,7 +44,7 @@
                         <div class="container text-center">
                             <h1 class="titulo">Dados de Contato</h1>
                         </div>
-                        <div class="container-fluid">
+                        <div class="container" id="perguntas">
                             <div class="row justify-content-center">
                                 <div class="col-6">    
                                     <label for="nome" class="form-label">Nome Completo:</label>
@@ -91,9 +91,11 @@
                                     <input type="url" class="form-control" id="website" value="" pattern="https://.*" placeholder="https://www.seusite.com"><br>
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <button type="button" class="btn btn-primary avancar-btn">Avançar</button>
-                            </div>      
+                            <div class="row justify-content-center">
+                                <div class="col-6 d-flex justify-content-end">
+                                    <button type="button" class="btn btn-primary avancar-btn">Avançar</button>
+                                </div>      
+                            </div>
                         </div>         
                     </section>
                     
@@ -114,9 +116,11 @@
                                     <textarea class="form-control" name="habilidades" row="12" placeholder="Ex: Javascript, Atento a detalhes, etc"></textarea>
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <button type="button" class="btn btn-primary retroceder-btn">Voltar</button>
-                                <button type="button" class="btn btn-primary avancar-btn">Avançar</button>
+                            <div class="row justify-content-center">
+                                <div class="col-6 d-flex justify-content-end">
+                                    <button type="button" class="btn btn-primary retroceder-btn">Voltar</button>
+                                    <button type="button" class="btn btn-primary avancar-btn">Avançar</button>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -162,10 +166,12 @@
                                     <textarea class="form-control" name="atividades" row="12" placeholder="Ex: Fiquei responsavel por..."></textarea>
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <button type="button" class="btn btn-primary">Adicionar Outra</button>
-                                <button type="button" class="btn btn-primary retroceder-btn">Voltar</button>
-                                <button type="button" class="btn btn-primary avancar-btn">Avançar</button>
+                            <div class="row justify-content-center">
+                                <div class="col-6 d-flex justify-content-end">
+                                    <button type="button" class="btn btn-primary">Adicionar Outra</button>
+                                    <button type="button" class="btn btn-primary retroceder-btn">Voltar</button>
+                                    <button type="button" class="btn btn-primary avancar-btn">Avançar</button>
+                                </div>
                             </div>   
                         </div>
                     </section>
@@ -225,10 +231,12 @@
                                     <textarea class="form-control" name="resumo-atividades" row="12" placeholder=""></textarea>
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <button type="button" class="btn btn-primary">Adicionar Outra</button>
-                                <button type="button" class="btn btn-primary retroceder-btn">Voltar</button>
-                                <button type="button" class="btn btn-primary avancar-btn">Avançar</button>
+                            <div class="row justify-content-center">
+                                <div class="col-6 d-flex justify-content-end">
+                                    <button type="button" class="btn btn-primary">Adicionar Outra</button>
+                                    <button type="button" class="btn btn-primary retroceder-btn">Voltar</button>
+                                    <button type="button" class="btn btn-primary avancar-btn">Avançar</button>
+                                </div>  
                             </div>
                         </div>
                     </section>
@@ -252,9 +260,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <button type="button" class="btn btn-primary">Voltar</button>
-                                <button type="submit" class="btn btn-primary">Avançar</button>
+                            <div class="row justify-content-center">
+                                <div class="col-6 d-flex justify-content-end">
+                                    <button type="button" class="btn btn-primary retroceder-btn">Voltar</button>
+                                    <button type="submit" class="btn btn-primary">Avançar</button>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -262,7 +272,7 @@
             </div>
         </div>  
     </main>
-    <footer>
+    <footer style="height: 5vh;">
         <div class="logo">
             <figure id="logo-footer">
                 <img class="logo-footer" src="img\128x128.png" alt="logo" height="35" width="35" />
