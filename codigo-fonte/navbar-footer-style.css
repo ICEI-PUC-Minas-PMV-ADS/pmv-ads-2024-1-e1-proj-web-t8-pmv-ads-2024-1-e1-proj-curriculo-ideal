@@ -2,21 +2,23 @@
     --cor-de-fundo-nav: rgba(182, 182, 182, 0.15);
     --cor-texto: #374375;
 }
+
 * {
     margin: 0;
     padding: 0;
 }
 
-nav {
+.navbar {
     background-color: var(--cor-de-fundo-nav);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    font-size: xx-small;
 }
 
 .logo {
-    margin: 10px;
+    margin-left: 5px;
 }
 
 #menu {
@@ -31,12 +33,14 @@ nav {
     display: inline;
 }
 
-#menu li a {
+a {
     text-decoration: none;
     color: var(--cor-texto);
     font-weight: 700;
     font-family: 'Encode Sans';
     padding: 5px;
+    text-transform: uppercase;
+    gap: 5px;
 }
 
 footer {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="navbar-style.css">
+    <link rel="stylesheet" href="navbar-footer-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap" rel="stylesheet">
@@ -11,17 +11,28 @@
 </head>
 <body>
     <header>
-        <nav>
-            <figure id="logo">
-                <img class="logo" src="img\128x128.png" alt="logo" height="55" width="55" />
-            </figure>
-            <div id="menu">
-                <ul>
-                    <li><a href="como-fazer.html">APRENDA</a></li>
-                    <li><a href="crie-seu-curriculo.html">CRIE</a></li>
-                    <li><a href="gerenciar-vagas.html">ORGANIZE</a></li>
-                    <li><a href="login.html">LOGIN</a></li>
-                    <li><a href="#">SIGN UP</a></li>
+        <nav class="navbar fixed-top">
+            <a href="#" class="navbar-brand"> <!-- Trocar # por link da home, quando tiver hospedado -->
+                <img class="logo" src="img\128x128.png" alt="logo" height="30" width="30" class="d-inline-block align-center">
+                Currículo Ideal
+            </a>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="como-fazer.html">APRENDA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="crie-seu-curriculo.html">CRIE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gerenciar-vagas.html">ORGANIZE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">LOGIN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.html">SIGN UP</a>
+                    </li>
                 </ul>
             </div>
         </nav>
