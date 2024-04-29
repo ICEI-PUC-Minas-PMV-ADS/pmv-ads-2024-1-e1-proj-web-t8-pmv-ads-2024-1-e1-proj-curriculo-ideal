@@ -43,4 +43,14 @@ label {
 .btn {
     background-color: var(--cor-primaria);
     border: var(--cor-primaria);
+    margin-left: 10px;
+}
+
+#adicionar {
+    background-color: var(--cor-titulo);
+    border: var(--cor-titulo);
+}
+
+.row {
+    padding-bottom: 10px;
 }
