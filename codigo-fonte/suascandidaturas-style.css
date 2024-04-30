@@ -9,3 +9,23 @@ body{
     font-family: 'Encode sans';
     
 }
+
+h4{
+  color: #374375
+
+}
+
+label{
+  color: #235784
+
+}
+.btn#avancar{
+  background-color: #FFC805;
+  border-color:#FFC805
+
+}
+input{
+
+  border-color: #235784
+
+}
