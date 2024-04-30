@@ -5,6 +5,7 @@
     box-sizing: 'border-box';
 
 }
+
 body{
     font-family: 'Encode sans';
     
@@ -22,10 +23,54 @@ label{
 .btn#avancar{
   background-color: #FFC805;
   border-color:#FFC805
+}
+
+input#Cargo.form-control{
+  color: #235784
 
 }
-input{
-
+input#Cargo.form-control{
   border-color: #235784
 
 }
+
+input#Empresa.form-control{
+  border-color:#235784 
+  
+
+}
+input#Empresa.form-control{
+  color:#235784 
+  
+
+}
+
+textarea#Descrição.form-control{
+  color:#235784 
+
+}
+textarea#Descrição.form-control{
+  border-color:#235784 
+
+}
+
+input#Localidade.form-control{
+  color:#235784
+
+}
+
+input#Localidade.form-control{
+  border-color:#235784
+
+}
+
+select#Status.form-control{
+  color:#235784
+
+}
+
+select#Status.form-control{
+  border-color:#235784
+
+}
+
