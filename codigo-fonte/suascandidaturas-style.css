@@ -33,15 +33,25 @@ input#Cargo.form-control{
   border-color: #235784
 
 }
+input#Cargo::placeholder{
+  color: #235784
+
+}
 
 input#Empresa.form-control{
   border-color:#235784 
   
 
 }
+
 input#Empresa.form-control{
   color:#235784 
   
+
+}
+
+input#Empresa::placeholder{
+  color: #235784
 
 }
 
@@ -51,6 +61,11 @@ textarea#Descrição.form-control{
 }
 textarea#Descrição.form-control{
   border-color:#235784 
+
+}
+
+textarea#Descrição::placeholder{
+  color:#235784
 
 }
 
@@ -61,6 +76,11 @@ input#Localidade.form-control{
 
 input#Localidade.form-control{
   border-color:#235784
+
+}
+
+input#Localidade::placeholder{
+  color: #235784
 
 }
 
