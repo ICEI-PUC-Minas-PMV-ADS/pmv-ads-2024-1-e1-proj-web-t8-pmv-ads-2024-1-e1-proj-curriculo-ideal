@@ -6,67 +6,136 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="navbar-footer-style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Currículo Ideal</title>
 </head>
 <body>
-        <header>
-            <nav>
-                <figure id="logo">
-                    <img class="logo" src="img\128x128.png" alt="logo" height="55" width="55" />
-                </figure>
-                <div id="menu">
-                    <ul>
-                        <li><a href="como-fazer.html">APRENDA</a></li>
-                        <li><a href="crie-seu-curriculo.html">CRIE</a></li>
-                        <li><a href="suascandidaturas.html">ORGANIZE</a></li>
-                        <li><a href="login.html">LOGIN</a></li>
-                        <li><a href="signup.html">SIGN UP</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+    <header>
+        <nav>
+            <figure id="logo">
+                <img class="logo" src="img\128x128.png" alt="logo" height="55" width="55" />
+            </figure>
+            <div id="menu">
+                <ul>
+                    <li><a href="como-fazer.html">APRENDA</a></li>
+                    <li><a href="crie-seu-curriculo.html">CRIE</a></li>
+                    <li><a href="gerenciar-vagas.html">ORGANIZE</a></li>
+                    <li><a href="login.html">LOGIN</a></li>
+                    <li><a href="#">SIGN UP</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     
-        <main>
+    <main>
+            
         <section id="destaque">
             <div id="destaque-container" class="container">
-                <h1> Curriculo ideal, <br> <span>On-line</span> </h1>
-                <div id="destaque-menu">
-                    <ul>
-                        <li><a href="#">APRENDA</a></li>
-                        <li><a href="#">CRIE</a></li>
-                        <li><a href="#">ORGANIZE</a></li>
-                    </ul>
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center">   
+                            <h1> Curriculo ideal, <br> <span>On-line</span> </h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-
-        <section id="circulos">
-            <div id="circulos-container">
-                <div class="circulo">
-                    <p><b>98%</b> das grandes empresas usam ATS.</p>
-                </div>
-                <div class="circulo">
-                    <p>Indicados para <b>todas</b> as pessoas</p>
-                </div>
-                <div class="circulo">
-                    <p>Facilite a <b>aceitação</b> e <b>leitura</b> dos seus currículos</p>
-                </div>
-                <div class="circulo">
-                    <p><b>Aumente</b> a sua chance de <b>sair</b> do desemprego</p>
+        <section>
+            <div id="destaque-menu">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="d-flex justify-content-center">
+                                <ul class="list-unstyled">
+                                    <div class="row">
+                                        <div class="col-4"> 
+                                            <li><a href="#">APRENDA</a></li>
+                                        </div>
+                                        <div class="col-2">
+                                            <li><a href="#">CRIE</a></li> 
+                                        </div>
+                                        <div class="col-5">
+                                            <li><a href="#">ORGANIZE</a></li>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-            
-            <section id="texto-imagens-crie">
-                <div id="texto" class="texto-container">
-                   <p>Um site gerador de currículos é uma ferramenta online que ajuda a criar currículos profissionais de forma rápida e fácil, fornecendo modelos pré-formatados e opções personalizáveis para os usuários.</p>
-                   <a href="#">CRIE</a> 
-                <img src="img/contrato.png" alt="maos">
-                <img src="img/menina.svg" alt="menina">
+
+        <section id="circulos" class="my-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="circulo">
+                            <p><b>98%</b> das grandes empresas usam ATS.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="circulo">
+                            <p>Indicados para <b>todas</b> as pessoas</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="circulo">
+                            <p>Facilite a <b>aceitação</b> e <b>leitura</b> dos seus currículos</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="circulo">
+                            <p><b>Aumente</b> a sua chance de <b>sair</b> do desemprego</p>
+                        </div>
+                    </div>
                 </div>
-            </section>
+            </div>
+        </section>
+        
+        <section id="texto-imagens-crie" class="my-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <div id="texto" class="texto-container">
+                            <p class="text-start"> 
+                                Um site gerador de currículos é uma ferramenta online que ajuda a criar currículos profissionais de forma rápida e fácil, fornecendo modelos pré-formatados e opções personalizáveis para os usuários.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-0">
+                                <div class="d-flex justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <div class="row">
+                                            <div class="col-4"> 
+                                <a href="#" class="btn btn-primary">CRIE</a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>  
+            <div class="container">
+                <div class="row justify-content-end"> 
+                    <div class="col-md-2">
+                        <img src="img/contrato.png" alt="maos" class="img-fluid">
+                    </div>
+                </div>
+                <div class="row justify-content-end"> 
+                    <div class="col-md-7">
+                        <img src="img/menina.svg" alt="menina" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
