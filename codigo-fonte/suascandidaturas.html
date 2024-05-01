@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="navbar-footer-style.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/scripts.js"defer></script>
+    <link rel="stylesheet" href="suascandidaturas-style.css">
     <title>Curriculo Ideal</title>
 </head>
 
@@ -30,81 +29,104 @@
         </nav>
     </header>
     <main>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
-    Adicionar vaga
-  </button>
-  <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
-  <div class="modal-dialog" role="document">
-  <div class="modal-content">
-  <div class="modal-header"></div>
-  <h5 class="modal-title" id="exampleModalLabel">CADASTRE SUA CANDIDATURA</h5>
-  <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-  <span aria-hidden="true">&times;</span>
-  </button>
-  </div>
-  <div class="modal-body">
-    <form>
-        Cargo
-        <input type="text" name="cargo"><br>  
-        Empresa
-        <input type="text" name="empresa"><br>
-        Descrição de vaga
-        <input type="text" name="descricao-de-vaga"><br>
-        Localidade
-        <input type="text" name="localidade"><br>
-        Status
         
-        <select>
-           <option value="aplicado">Aplicado</option>
-           <option value="em-processo">Em processo</option>
-           <option value="recusado">Recusado</option>
-           <option value="aprovado">Aprovado</option>
-        </select>
-        <br>
-        <input type="button" value="avançar">
-       </form>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-    <button type="button" class="btn btn-primary">Salvar mudanças</button>
-  </div>
-</div>
-</div>
-</div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
+                Adicionar vaga
+            </button>
+            <dialog class="modal">
+                <div class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>  
+                                 <h4 class="text-center">CADASTRE SUA CANDIDATURA</h4> 
+                                </div>   
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                    <span aria-hidden="true">&times;</span>
+
+                                </button>
+                            </div>
+                            <div class="modal-body"> 
+                               <div>     
+                                 <form>    
+                                     <label for="Cargo">Cargo</label>
+                                     <input type="text" class="form-control" id="Cargo" placeholder="Seu Cargo">
+                                     <label for="Empresa">Empresa</label>
+                                     <input type="text" class="form-control" id="Empresa" placeholder="Sua Empresa">
+                                     <label for="Descrição de vaga">Descrição de vaga</label>
+                                     <textarea type="text" class="form-control" id="Descrição de vaga" row="12" placeholder="Sua descrição"></textarea>               
+                                     <label for="Localidade">Localidade</label>
+                                      <input type="text" class="form-control" id="Localidade" placeholder="Sua localidade">
+                                        <div class="form-group">
+                                            <label for="Status">Status</label>
+                                            <select class="form-control" id="Status">
+                                                <option>Aplicado</option>
+                                                <option>Em processo</option>
+                                                <option>Recusado</option>
+                                                <option>Aprovado</option>
+                                            </select> 
+                                        </div>                                                  
+                                    </form> 
+                                </div>    
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"data-dismiss="modal">Fechar</button>
+                                    <button type="button" class="btn btn-primary">Avançar</button> 
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </dialog>
+
 
         <h1>SUAS CANDIDATURAS</h1>
 
         <h2>Aplicado</h2>
-        <div>
-            <h3>Analista de sistemas JR</h3>
-            <p>Empresa puc minas</p>
-            <p>Local de trabalho: Remoto</p>
-            <p>Candidatei através do site vagas.com porque tem ótimo salário. </p>
-        </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Analista de sistemas JR</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Puc Minas</h6>
+                    <h7 class=" card-subtitle">Local de trabalho remoto</h7>
+                    <p class="card-text">Candidatei através do site vagas.com porque tem ótimo salário.</p>
+                    <a href="#" class="card-link">Editar</a>
+                    <a href="#" class="card-link">Excluir</a>
+                </div>
+            </div>
         
         <h2>Em processo</h2>
-        <div>
-            <h3>Analista de sistemas JR</h3>
-            <p>Empresa puc minas</p>
-            <p>Local de trabalho: Remoto</p>
-            <p>Candidatei através do site vagas.com porque tem ótimo salário. </p>
-        </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Analista de sistemas JR</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Puc Minas</h6>
+                    <h7 class=" card-subtitle">Local de trabalho remoto</h7>
+                    <p class="card-text">Candidatei através do site vagas.com porque tem ótimo salário.</p>
+                    <a href="#" class="card-link">Editar</a>
+                    <a href="#" class="card-link">Excluir</a>
+                </div>
+            </div>
             
-            <h2>Aceito</h2>
-        <div>
-            <h3>Analista de sistemas JR</h3>
-            <p>Empresa puc minas</p>
-            <p>Local de trabalho: Remoto</p>
-            <p>Candidatei através do site vagas.com porque tem ótimo salário. </p>
-        </div>
-            
-            <h2>Rejeitado</h2>
-        <div>
-            <h3>Analista de sistemas JR</h3>
-            <p>Empresa puc minas</p>
-            <p>Local de trabalho: Remoto</p>
-            <p>Candidatei através do site vagas.com porque tem ótimo salário. </p>
-        </div>
+        <h2>Aceito</h2>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Analista de sistemas JR</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Puc Minas</h6>
+                    <h7 class=" card-subtitle">Local de trabalho remoto</h7>
+                    <p class="card-text">Candidatei através do site vagas.com porque tem ótimo salário.</p>
+                    <a href="#" class="card-link">Editar</a>
+                    <a href="#" class="card-link">Excluir</a>
+                </div>
+            </div>
+        <h2>Rejeitado</h2>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Analista de sistemas JR</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Puc Minas</h6>
+                    <h7 class=" card-subtitle">Local de trabalho remoto</h7>
+                    <p class="card-text">Candidatei através do site vagas.com porque tem ótimo salário.</p>
+                    <a href="#" class="card-link">Editar</a>
+                    <a href="#" class="card-link">Excluir</a>
+                </div>
+            </div>
     </main>
     <footer>
         <div class="logo">
@@ -119,5 +141,5 @@
     </footer>
 
 </body>
-
+<script type="text/javascript" src="js/suascandidaturas-script.js"></script>
 </html>
