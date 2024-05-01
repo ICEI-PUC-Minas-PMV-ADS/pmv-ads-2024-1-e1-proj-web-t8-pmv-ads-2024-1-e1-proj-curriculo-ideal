@@ -1,0 +1,56 @@
+:root {
+    --cor-de-fundo: rgba(182, 182, 182, 0.15);
+    --cor-texto: #235784;
+    --cor-titulo: #374375;
+    --cor-primaria: #FFC805;
+    --fonte-principal: 'Encode Sans';
+    --fonte-principal-titulo: 700;
+    --fonte-principal-texto: 500;
+}
+
+body {
+    height: 100vh;
+}
+
+.background {
+    background-color: var(--cor-de-fundo);
+    border-radius: 39px;
+    margin: 20px;
+    height: 90vh;
+}
+
+#geral {
+    background-color: white;
+    border-radius: 39px;
+    margin-top: 40px;
+    height: 80vh;
+    width: 100%;
+}
+
+h1 {
+    color: var(--cor-titulo);
+    font-weight: var(--fonte-principal-titulo);
+    font-size: 16pt;
+    padding: 20px;
+    text-transform: uppercase;
+} 
+    
+label {
+    color: var(--cor-texto);
+    font-size: 12pt;
+}
+
+.btn {
+    background-color: var(--cor-primaria);
+    border: var(--cor-primaria);
+    margin-left: 10px;
+}
+
+#adicionar {
+    background-color: var(--cor-titulo);
+    border: var(--cor-titulo);
+}
+
+.row {
+    padding-bottom: 10px;
+}
