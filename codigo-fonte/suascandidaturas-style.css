@@ -22,7 +22,7 @@ label{
 }
 .btn#avancar{
   background-color: #FFC805;
-  border-color:#FFC805
+  border-color:
 }
 
 input#Cargo.form-control{
@@ -94,3 +94,211 @@ select#Status.form-control{
 
 }
 
+
+
+
+.suascandidaturas{
+  font-size: 40px;
+}
+.background{
+    
+    margin: 4% 2%;
+    border-radius: 50px;
+    padding: 15px;
+    height: 90%;
+    background: rgba(182, 182, 182, 0.15);
+    font-family: 'Encode Sans';
+}
+
+
+
+
+.row{
+  display: flex;
+  
+}
+
+.card{
+  border-radius: 5px;
+  box-shadow: 7px 7px 13px 0 rgba(50, 50, 50, 0.22) ;
+  padding: 20px;
+  margin: 20px;
+  width: 22%;
+  transition: all 0.3s ease-out;
+}
+ .card:hover{
+  cursor: pointer;
+ }
+
+ .aplicado-1{
+  border-bottom: 3px solid #235784;
+ }
+
+ .aprovado-1{
+  border-bottom: 3px solid #3bb54a;
+ }
+
+.emprocesso-1{
+  border-bottom: 3px solid #FFC805;
+}
+
+.rejeitado-1{
+  border-bottom: 3px solid #b3404a;
+}
+
+.aplicadas{
+ 
+  margin: 4% 2%;
+  border-radius: 50px;
+  padding: 15px;
+  height: 90%;
+  width: 20%;
+  background: rgba(182, 182, 182, 0.15);
+  font-family: 'Encode Sans';
+  flex-direction: column;
+  float: left;  
+}
+
+.vagasaplicadas1{
+
+
+flex-wrap: wrap;
+width: 90%;
+margin: 20px;
+border-radius: 25px;
+border: 1px solid #235784;
+margin-bottom: 20px;
+}
+
+.vagasaplicadas2{
+
+justify-content: space-around;
+flex-wrap: wrap;
+width: 90%;
+margin: 20px;
+border-radius: 25px;
+border: 1px solid #235784;
+margin-bottom: 20px;
+}
+
+
+
+.emprocesso{
+  background-position-x: 30%;
+  margin: 4% 2%;
+  border-radius: 50px;
+  padding: 15px;
+  height: 90%;
+  width: 20%;
+  background: rgba(182, 182, 182, 0.15);
+  font-family: 'Encode Sans';
+  flex-direction: column;
+  float: left;
+}
+
+.vagasaplicadas3{
+
+flex-direction: row;
+justify-content: space-around;
+flex-wrap: wrap;
+width: 90%;
+margin: 20px;
+border-radius: 25px;
+border: 1px solid #FFC805;
+margin-bottom: 20px;
+}
+
+
+.vagasaplicadas4{
+
+flex-direction: row;
+justify-content: space-around;
+flex-wrap: wrap;
+width: 90%;
+margin: 20px;
+border-radius: 25px;
+border: 1px solid #FFC805;
+margin-bottom: 20px;
+}
+
+.aprovadas{
+  background-position-x: 30%;
+  margin: 4% 2%;
+  border-radius: 50px;
+  padding: 15px;
+  height: 90%;
+  width: 20%;
+  background: rgba(182, 182, 182, 0.15);
+  font-family: 'Encode Sans';
+  flex-direction: column;
+  float: left;
+}
+
+.vagasaplicadas5{
+
+flex-direction: row;
+justify-content: space-around;
+flex-wrap: wrap;
+width: 90%;
+margin: 20px;
+border-radius: 25px;
+border: 1px solid #3bb54a;
+margin-bottom: 20px;
+}
+
+
+.vagasaplicadas6{
+
+flex-direction: row;
+justify-content: space-around;
+flex-wrap: wrap;
+width: 90%;
+margin: 20px;
+border-radius: 25px;
+border: 1px solid #3bb54a;
+margin-bottom: 20px;
+}
+
+.rejeitado{
+  background-position-x: 30%;
+  margin: 4% 2%;
+  border-radius: 50px;
+  padding: 15px;
+  height: 90%;
+  width: 20%;
+  background: rgba(182, 182, 182, 0.15);
+  font-family: 'Encode Sans';
+  flex-direction: column;
+  float: left;
+}
+
+.vagasaplicadas7{
+
+flex-direction: row;
+justify-content: space-around;
+flex-wrap: wrap;
+width: 90%;
+margin: 20px;
+border-radius: 25px;
+border: 1px solid #b3404a;
+margin-bottom: 20px;
+}
+
+
+.vagasaplicadas8{
+
+flex-direction: row;
+justify-content: space-around;
+flex-wrap: wrap;
+width: 90%;
+margin: 20px;
+border-radius: 25px;
+border: 1px solid #b3404a;
+margin-bottom: 20px;
+}
+
+
+footer{
+  display: block;
+  float: inline-start;
+}
