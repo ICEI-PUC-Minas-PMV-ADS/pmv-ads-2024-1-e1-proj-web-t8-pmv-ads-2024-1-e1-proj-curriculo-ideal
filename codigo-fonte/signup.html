@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="signup-style.css">
     <link rel="stylesheet" href="navbar-footer-style.css">
     <title>Currículo Ideal</title>
 </head>
@@ -16,21 +19,33 @@
             <img class="logo" src="img\128x128.png" alt="logo" height="55" width="55" />
         </figure>
         <div id="menu">
-            <ul>
-                <li><a href="como-fazer.html">APRENDA</a></li>
-                <li><a href="crie-seu-curriculo.html">CRIE</a></li>
-                <li><a href="gerenciar-vagas.html">ORGANIZE</a></li>
-                <li><a href="login.html">LOGIN</a></li>
-                <li><a href="#">SIGN UP</a></li>
+            <ul class="nav justify-content-end">
+                <li class="nav-item"><a class="nav-link active" href="como-fazer.html">APRENDA</a></li>
+                <li class="nav-item"><a class="nav-link" href="crie-seu-curriculo.html">CRIE</a></li>
+                <li class="nav-item"><a class="nav-link" href="suascandidaturas.html">ORGANIZE</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">LOGIN</a></li>
+                <li class="nav-item"><a class="nav-link" href="signup.html">SIGNUP</a></li>
             </ul>
         </div>
     </nav>
     <main>
-    <h1>CRIE SUA CONTA</h1>
-    <form action="">
-        <label for="nome">Nome</label>
+        <div class="container">
+            <div class="titulo">
+                <h1>CRIE SUA CONTA</h1>
+            </div>
+    <div class="container-fluid">
+    
+        <form action="signup" id="signup">
+            <div class="row">
+                <label for="nome">Nome</label>
+            </div>
+            <div class="col-6">
+              <div class="row">
             <input type="text" id="nome" nome="nome">
-            <br>
+            </div>
+        </div>
+        <br>
+            </div>
         <label for="sobrenome">Sobrenome</label>
         <input type="text" id="sobrenome" nome="sobrenome">
             <br>
@@ -41,7 +56,8 @@
             <input type="password" id="senha" nome="senha">
         <input type="submit" value="CRIE SUA CONTA">
     </form>
-
+    </div>
+    </div>
     <img src="img/signup.svg" alt="mulher segurando placa de impressão digital">
     </main>
     <footer>   
@@ -56,5 +72,8 @@
         </div>
         </object>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
