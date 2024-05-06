@@ -27,3 +27,17 @@ var botoesRetroceder = document.querySelectorAll('.retroceder-btn');
 botoesRetroceder.forEach(function(botao) {
     botao.addEventListener('click', retroceder);
 });
+
+
+function mostraCurriculo() {
+    let dados = readInformacao();
+
+    let conteudo = "";
+    dados.forEach((item) => {
+        conteudo += `
+            <h1 id="titulo">${nome.id}</h1>
+        `
+
+    });
+    curriculo.innerHTML = conteudo;
+}
