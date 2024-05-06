@@ -1,5 +1,5 @@
 * {
-    
+
     padding: 0;
     margin: 0;
     box-sizing: 'border-box';
@@ -11,6 +11,19 @@ body{
     
 }
 
+#cabecalho{
+  display:flex;
+  justify-content: space-between;
+
+}
+
+#interacoes{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
 h4{
   color: #374375
 
@@ -20,32 +33,31 @@ label{
   color: #235784
 
 }
-.btn#avancar{
-  background-color: #FFC805;
-  border-color:#FFC805
-}
+
 
 input#Cargo.form-control{
   color: #235784
 
 }
+
 input#Cargo.form-control{
   border-color: #235784
 
 }
+
 input#Cargo::placeholder{
   color: #235784
 
 }
 
 input#Empresa.form-control{
-  border-color:#235784 
+  color:#235784 
   
 
 }
 
 input#Empresa.form-control{
-  color:#235784 
+  border-color:#235784 
   
 
 }
@@ -91,6 +103,12 @@ select#Status.form-control{
 
 select#Status.form-control{
   border-color:#235784
+
+}
+
+.btn#avancar{
+  background-color: #FFC805;
+  border-color:#FFC805
 
 }
 
