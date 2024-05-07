@@ -27,3 +27,19 @@ var botoesRetroceder = document.querySelectorAll('.retroceder-btn');
 botoesRetroceder.forEach(function(botao) {
     botao.addEventListener('click', retroceder);
 });
+
+
+// funcao pra atualizar a barra de progresso
+
+function atualizarBarraDeProgresso(passoAtual) {
+    var progressBars = document.querySelectorAll('.progress-bar');
+    progressBars.forEach(function(progressBar, index) {
+        if (index + 1 === passoAtual) {
+            progressBar.style.width = '100%';
+        } else if (index + 1 < passoAtual) {
+            progressBar.style.width = '100%';
+        } else {
+            progressBar.style.width = '0%';
+        }
+    });
+}
