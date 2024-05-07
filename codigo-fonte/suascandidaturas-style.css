@@ -126,9 +126,7 @@ select#Status.form-control{
   width: 22%;
   transition: all 0.3s ease-out;
 }
- .card:hover{
-  cursor: pointer;
- }
+ 
 
  .aplicado-1{
   border-bottom: 3px solid #235784;
@@ -298,7 +296,3 @@ margin-bottom: 20px;
 }
 
 
-footer{
-  display: block;
-  float: inline-start;
-}
