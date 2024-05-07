@@ -1,0 +1,131 @@
+:root {
+    --cor-de-fundo: rgba(182, 182, 182, 0.15);
+    --cor-texto: #235784;
+    --cor-titulo: #374375;
+    --cor-primaria: #FFC805;
+    --fonte-principal: 'Encode Sans';
+    --fonte-principal-titulo: 700;
+    --fonte-principal-texto: 500;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.signup, 
+.login {
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--fonte-principal);
+}
+
+.signup .imagem,
+.login .imagem {
+    width: 30%;
+}
+
+.signup .imagem img {
+    width: 631px;
+    height: 525px;
+    margin-top: 160px;
+    margin-right: 200px;
+}
+
+.login .imagem img {
+    width: 613px;
+    height: 522px;
+    margin-top: 160px;
+    margin-left: 200px;
+}
+
+.signup .titulo,
+.login .titulo {
+    color: var(--cor-titulo);
+    font-weight: var(--fonte-principal-titulo);
+    font-size: 16pt;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.formulario .background {
+    background-color: var(--cor-de-fundo-nav);
+    width: 492px;
+    height: 535px;
+    border-radius: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    width: 60%;
+}
+
+form .row {
+    width: 100%;
+    margin: 30px 0;
+    position: relative;
+}
+
+form .row label {
+    font-size: 16px;
+    position: absolute;
+    left: 0;
+    color: var(--cor-texto);
+    font-weight: 600;
+}
+
+form .row input {
+    background-color: transparent;
+    font-weight: 400;
+    width: 100%;
+    padding: 5px;
+    color: var(--cor-titulo);
+    border: 0;
+    border-bottom: 1px solid #374375;
+    outline: 0;
+}
+
+form .row input:focus {
+    border-bottom: 2px solid #FFC805;
+}
+
+form .row input:focus ~ label,
+form .row input:valid ~ label {
+    transform: translateY(-24px);
+    font-size: 16px;
+    color: #374375;
+}
+
+.btn {
+    background-color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+    text-transform: uppercase;
+    color: white;
+    width: 161px;
+    height: 43px;
+    border-radius: 63px;
+    border-style: none;
+    font-weight: 600;
+}
+
+.background p {
+    margin-top: 70px;
+    color: var(--cor-texto);
+}
+
+.background p a {
+    text-decoration: none;
+    background-color: #FFC805;
+}

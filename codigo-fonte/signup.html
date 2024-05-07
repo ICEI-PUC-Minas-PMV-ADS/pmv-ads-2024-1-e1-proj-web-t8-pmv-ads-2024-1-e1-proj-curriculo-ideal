@@ -7,10 +7,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="navbar-footer-style.css">
+    <link rel="stylesheet" href="login-signup-style.css">
     <title>Currículo Ideal</title>
 </head>
 <body>
-
     <nav>
         <figure id="logo">
             <img class="logo" src="img\128x128.png" alt="logo" height="55" width="55" />
@@ -19,31 +19,55 @@
             <ul>
                 <li><a href="como-fazer.html">APRENDA</a></li>
                 <li><a href="crie-seu-curriculo.html">CRIE</a></li>
-                <li><a href="gerenciar-vagas.html">ORGANIZE</a></li>
+                <li><a href="suascandidaturas.html">ORGANIZE</a></li>
                 <li><a href="login.html">LOGIN</a></li>
-                <li><a href="#">SIGN UP</a></li>
+                <li><a href="signup.html">SIGN UP</a></li>
             </ul>
         </div>
     </nav>
     <main>
-    <h1>CRIE SUA CONTA</h1>
-    <form action="">
-        <label for="nome">Nome</label>
-            <input type="text" id="nome" nome="nome">
-            <br>
-        <label for="sobrenome">Sobrenome</label>
-        <input type="text" id="sobrenome" nome="sobrenome">
-            <br>
-        <label for="email">E-mail </label>
-        <input type="email" id="email" nome="email">
-            <br>
-        <label for="senha">Senha</label>
-            <input type="password" id="senha" nome="senha">
-        <input type="submit" value="CRIE SUA CONTA">
-    </form>
+        <div class="signup">
+            <div class="imagem">
+                <img src="img/signup.svg" alt="mulher segurando placa de impressão digital">
+            </div>
 
-    <img src="img/signup.svg" alt="mulher segurando placa de impressão digital">
+            <div class="formulario">
+                <div class="titulo">
+                    <h1>CRIE SUA CONTA!</h1>
+                </div>
+                
+                <div class="background">
+                    <form action="">
+                        <div class="row">
+                            <input required type="text" id="nome" name="nome">
+                            <label for="nome">Nome</label>
+                        </div>
+
+                        <div class="row">
+                            <input required type="text" id="sobrenome" name="sobrenome">
+                            <label for="sobrenome">Sobrenome</label>
+                        </div>
+
+                        <div class="row">
+                            <input required type="email" id="email" name="email">
+                            <label for="email">E-mail</label>
+                        </div>
+
+                        <div class="row">
+                            <input required type="password" id="senha" name="senha">
+                            <label for="senha">Senha</label>
+                        </div>
+
+                    </form>
+
+                    <input class="btn" type="submit" value="crie sua conta">
+
+                    <p>Já tem conta? <a href="login.html"> Fazer login. </a></p>
+                </div>
+            </div>
+        </div>
     </main>
+
     <footer>   
         <div class="logo">
             <figure id="logo-footer">
@@ -54,7 +78,6 @@
         <div class="direitos">
             <p>Copyright © 2024 Curriculo Ideal | All Rights Reserved</p>
         </div>
-        </object>
     </footer>
 </body>
 </html>
