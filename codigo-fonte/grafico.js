@@ -19,22 +19,45 @@ document.addEventListener('DOMContentLoaded', function () {
                 label: 'CURRICULOS',
                 data: valores,
                 backgroundColor: backgroundColors,
-                borderWidth: 3 
+                borderWidth: 3
             }]
         },
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    ticks: {
+                        font: {
+                            family: 'Encode Sans', 
+                            size: 10,
+                        }
+                    }
+                },
+                x: {
+                    ticks: {
+                        font: {
+                            family: 'Encode Sans', 
+                            size: 9, 
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        font: {
+                            family: 'Encode Sans', 
+                            size: 16, 
+                        }
+                    }
                 }
             },
             layout: {
                 padding: {
-                    left: 50, 
-                    right: 50, 
+                    left: 50,
+                    right: 50,
                 }
             }
         }
     });
 });
-
