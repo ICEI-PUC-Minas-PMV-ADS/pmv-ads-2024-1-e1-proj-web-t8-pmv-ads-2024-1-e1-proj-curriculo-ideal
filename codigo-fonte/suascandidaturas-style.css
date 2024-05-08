@@ -23,6 +23,17 @@ body{
   justify-content: flex-end;
 }
 
+#adicionarvaga{
+  background-color:#235784;
+}
+
+ #grafico {
+  background-color:#235784;
+  color: white;
+  border: none;
+  margin: 0 15px
+}
+
 
 h4{
   color: #374375

@@ -1,8 +1,7 @@
-var modal = document.getElementById("modal");
+modal = document.getElementById('modalCandidatura');
 
-function abrirModal(){
-    modal.style.display = "block";
+function abrirModal () {
+
+    var modalCandidatura = new bootstrap.Modal(modal);
+    modalCandidatura.show();
 }
-$('#meuModal').on('shown.bs.modal', function () {
-    $('#meuInput').trigger('focus')
-  })
