@@ -10,15 +10,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Barra de progresso -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
     <title>Curriculo Ideal</title>
 </head>
 <body>
     <header>
 
         <!-- Navbar e footer com tamanhos alterados pra melhor enquadramento -->
-        <nav style="height: 5vh;">
+        <nav>
             <figure id="logo">
-                <img class="logo" src="img\128x128.png" alt="logo" height="35" width="35" />
+                <img class="logo" src="img\128x128.png" alt="logo" />
             </figure>
             <div id="menu">
                 <ul>
@@ -33,14 +40,43 @@
     </header>
     <main>
         <div class="background"> <!-- Background cinza com barra de progresso e formulario -->
-            <article>
-                <!-- Barra de progresso servindo apenas como indicacao de que existira uma. Nao tera esse formato e ainda nao apresenta funcionalidade -->
-                <div class="barra-de-progresso">
-                    <div class="progress" style="width: 20%;">
-                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+            <div class="barra">
+                <div class="container" id="barraProgresso">
+                    <div class="row bs-wizard" style="border-bottom: 0;">
+                        <div class="col-md-3 bs-wizard-step complete" id="25">
+                            <div class="text-center bs-wizard-stepnum">1</div>
+                            <div class="progress"><div id="progress1" class="progress-bar"></div></div>
+                            <div class="bs-wizard-dot"></div>
+                            <div class="bs-wizard-info"></div>
+                        </div>
+
+                        <div class="col-md-3 bs-wizard-step disabled" id="50">
+                            <div class="text-center bs-wizard-stepnum">2</div>
+                            <div class="progress"><div id="progress2" class="progress-bar"></div></div>
+                            <div class="bs-wizard-dot"></div>
+                            <div class="bs-wizard-info"></div>
+                        </div>
+
+
+                        <div class="col-md-3 bs-wizard-step disabled" id="75">
+                            <div class="text-center bs-wizard-stepnum">3</div>
+                            <div class="progress"><div id="progress3" class="progress-bar"></div></div>
+                            <div class="bs-wizard-dot"></div>
+                            <div class="bs-wizard-info"></div>
+                        </div>
+
+
+                        <div class="col-md-3 bs-wizard-step disabled" id="100">
+                            <div class="text-center bs-wizard-stepnum">4</div>
+                            <div class="progress"><div id="progress4" class="progress-bar"></div></div>
+                            <div class="bs-wizard-dot"></div>
+                            <div class="bs-wizard-info"></div>
+                        </div>
                     </div>
+
                 </div>
-            </article>
+            </div>
+
 
             <div class="container" id="geral"> <!-- Background branco com formulario -->
                 <form id="criar-curriculo">
@@ -111,13 +147,13 @@
                             <div class="row justify-content-center">
                                 <div class="col-6">
                                     <label for="resumo" class="form-label">Conte-nos um pouco mais sobre você:</label>
-                                    <textarea class="form-control" name="resumo" row="12" placeholder="Faça um resumo sobre as suas experiencias"></textarea> 
+                                    <textarea class="form-control" name="resumo" row="4" placeholder="Faça um resumo sobre as suas experiencias"></textarea> 
                                 </div>
                             </div>
                             <div class="row justify-content-center">
                                 <div class="col-6">
                                     <label for="habilidades" class="form-label">Liste suas habilidades:</label>
-                                    <textarea class="form-control" name="habilidades" row="12" placeholder="Ex: Javascript, Atento a detalhes, etc"></textarea>
+                                    <textarea class="form-control" name="habilidades" row="4" placeholder="Ex: Javascript, Atento a detalhes, etc"></textarea>
                                 </div>
                             </div>
                             <br>
@@ -289,10 +325,10 @@
             </div>
         </div>  
     </main>
-    <footer style="height: 5vh;">
+    <footer>
         <div class="logo">
             <figure id="logo-footer">
-                <img class="logo-footer" src="img\128x128.png" alt="logo" height="35" width="35" />
+                <img class="logo-footer" src="img\128x128.png" alt="logo" />
             </figure>
             <p class="marca">Curriculo Ideal</p>
         </div>
@@ -300,6 +336,7 @@
             <p>Copyright © 2024 Curriculo Ideal | All Rights Reserved</p>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 <script type="text/javascript" src="crie-seu-curriculo.js"></script>
