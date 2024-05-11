@@ -1,7 +1,6 @@
 // Definindo as seções do formulário
 var secoes = ['1', '2', '3', '4', '5'];
 var indiceAtual = 0;
-var progressoID = ['25', '50', '75', '100'];
 var progresso = 25;
 var botoesAvancar = document.querySelectorAll('.avancar-btn');
 var botoesRetroceder = document.querySelectorAll('.retroceder-btn');
@@ -20,8 +19,7 @@ function retroceder() {
         document.getElementById(secoes[indiceAtual]).style.display = 'none';
         retrocederBarraDeProgresso();
         indiceAtual--;
-        document.getElementById(secoes[indiceAtual]).style.display = 'block';
-        
+        document.getElementById(secoes[indiceAtual]).style.display = 'block'; 
     }
 }
 
@@ -37,9 +35,9 @@ botoesRetroceder.forEach(function(botao) {
 
 function avancarBarraDeProgresso() {
     if (indiceAtual < 4) {
-    var progressoAtual = document.getElementById(progresso * secoes[indiceAtual]);
-    progressoAtual.classList.remove("disabled");
-    progressoAtual.classList.add("complete");
+        var progressoAtual = document.getElementById(progresso * secoes[indiceAtual]);
+        progressoAtual.classList.remove("disabled");
+        progressoAtual.classList.add("complete");
     }
 }
 
@@ -76,6 +74,8 @@ function cadastraCurriculo() {
     var dataInicioCurso = document.getElementById("data-inicio-curso");
     var dataFimCurso = document.getElementById("data-fim-curso");
     var atividadesEscolares = document.getElementById("resumo-atividades-escolares");
+    var template1 = document.getElementById("template-1");
+    var template2 = document.getElementById("template-2");
     
 
     var dados = JSON.parse(localStorage.getItem("dadosCurriculo"));
@@ -102,14 +102,16 @@ function cadastraCurriculo() {
         localUsuario: local.value,
         dataInicioEmpresa: dataInicioEmpresa.value,
         dataFimEmpresa: dataFimEmpresa.value,
-        trabalhoAtualUsuario: trabalhoAtual.value,
+        trabalhoAtualUsuario: trabalhoAtual.value, //se está check = on
         atividadesTrabalho: atividadesTrabalho.value,
         instituicaoUsuario: instituicao.value,
         cursoUsuario: curso.value,
         grauInstrucao: grauInstrucao.value,
         dataInicioCurso: dataInicioCurso.value,
         dataFimCurso: dataFimCurso.value,
-        atividadesEscolares: atividadesEscolares.value
+        atividadesEscolares: atividadesEscolares.value,
+        template1: template1.value,
+        template2: template2.value,
     }
 
     dados.push(registro);
