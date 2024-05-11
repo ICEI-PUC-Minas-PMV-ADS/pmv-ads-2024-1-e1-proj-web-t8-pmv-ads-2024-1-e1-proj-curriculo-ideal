@@ -1,0 +1,78 @@
+body {
+    font-family: 'Encode Sans';
+    color: #374375;
+}
+
+h1 {
+    font-family: 'Montserrat';
+    color:black;
+}
+
+span {
+    font-family: 'Montserrat';
+    font-weight: 350;
+    font-size: xx-large;
+}
+
+.curriculo1 {
+    margin-top: 75px;
+
+}
+
+.botoes1 {
+    margin-top: 120px;
+    margin-bottom: 110px;
+
+    }
+
+.botoes1 a {
+    background-color:#FFC805 ;
+    color: white;
+    border: none;
+    margin: 0 15px
+
+}    
+     
+
+.circulos {
+    .container {
+        text-align: center;
+      }
+      
+    margin-top: 100px;
+    margin-left: 60px;
+    margin-bottom: 50px;
+    
+}
+
+.imagem1 {
+    margin-top: 150px;
+    margin-left:500px;
+    margin-right: 225px;
+    width: 325px;
+    height: 125px;
+    
+}
+
+.p1 {
+    margin-left: 250px;
+
+}
+
+.botoes2 {
+    margin-left: 235px;
+    margin-bottom: 50px;
+    
+}
+
+.botoes2 a {
+    background-color:#FFC805 ;
+    color: white;
+    border: none;
+
+}
+
+
+
+
+
