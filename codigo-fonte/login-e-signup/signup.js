@@ -35,7 +35,7 @@ function inserirCadastro() {
     
     localStorage.setItem('db_cadastro', JSON.stringify(db));
 
-    window.location.href= "index.html";
+    window.location.href= "../home/index.html";
 }
 //READ
 //UPDATE
