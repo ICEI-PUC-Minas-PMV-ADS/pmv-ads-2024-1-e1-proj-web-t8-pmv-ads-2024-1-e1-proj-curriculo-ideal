@@ -8,7 +8,9 @@ var botoesRetroceder = document.querySelectorAll('.retroceder-btn');
 function avancar() {
     if(indiceAtual < secoes.length - 1) {
         document.getElementById(secoes[indiceAtual]).style.display = 'none';
+        console.log("secao atual avancar" + secoes[indiceAtual])
         indiceAtual++;
+        console.log("indice atual avancar" + indiceAtual)
         document.getElementById(secoes[indiceAtual]).style.display= 'block';
         avancarBarraDeProgresso();
     }
@@ -42,9 +44,12 @@ function avancarBarraDeProgresso() {
 }
 
 function retrocederBarraDeProgresso() {
-    var progressoAtual = document.getElementById((progresso * secoes[indiceAtual]));
-    progressoAtual.classList.remove("complete");
-    progressoAtual.classList.add("disabled");
+    if (indiceAtual > 5) {
+        var progressoAtual = document.getElementById((progresso * secoes[indiceAtual]));
+        progressoAtual.classList.remove("complete");
+        progressoAtual.classList.add("disabled");
+    }
+
 }
 
 // Chamando elementos do formulário
