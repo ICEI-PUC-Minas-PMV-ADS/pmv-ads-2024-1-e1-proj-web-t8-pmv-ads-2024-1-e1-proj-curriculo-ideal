@@ -80,16 +80,16 @@ input#Empresa::placeholder{
 
 }
 
-textarea#Descrição.form-control{
+textarea#Descricao.form-control{
   color:#235784 
 
 }
-textarea#Descrição.form-control{
+textarea#Descricao.form-control{
   border-color:#235784 
 
 }
 
-textarea#Descrição::placeholder{
+textarea#Descricao::placeholder{
   color:#235784
 
 }
