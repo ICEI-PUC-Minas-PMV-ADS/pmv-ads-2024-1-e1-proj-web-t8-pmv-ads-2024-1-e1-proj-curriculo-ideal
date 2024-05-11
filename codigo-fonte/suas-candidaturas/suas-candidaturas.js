@@ -7,52 +7,52 @@ var db_vaga_inicial = {
             "Empresa": "Belo Horizonte",
             "Descricao": "amigos",
             "Localidade": "Sincere@april.biz",
-            "Status": "1-770-736-8031",   
+            "Status": "1-770-736-8031",  
         }
     ]
 }
-
+ 
 function abrirModal () {
-
+ 
     var modalCandidatura = new bootstrap.Modal(modal);
     modalCandidatura.show();
 }
-
+ 
 // [CRUD] Estruturando e separando o CRUD em partes
-
+ 
 //CREATE
-var db = JSON.parse(localStorage.getItem('db_contato'));
+var db = JSON.parse(localStorage.getItem('db_vaga'));
 if (!db) {
-    db = db_contatos_inicial
+    db = db_vaga_inicial
 };
-function insertCadastro() {
+function inserirVaga() {
     var cargo = document.getElementById('Cargo');
     var empresa = document.getElementById('Empresa');
     var descricao = document.getElementById('Descricao');
     var localidade = document.getElementById('Localidade');
     var status = document.getElementById('Status');
-    var db = JSON.parse(localStorage.getItem('db_contato'));
-
+    var db = JSON.parse(localStorage.getItem('db_vaga'));
+ 
     if(db == null) {
-        localStorage.setItem('db_contato','[]');
+        localStorage.setItem('db_vaga','[]');
         db = [];
     }
     let novoId = 1;
-    if (db.length != 0) 
+    if (db.length != 0)
         novoId = db[db.length - 1].id + 1;
-
-    let novoCadastro = {
+ 
+    let novaVaga = {
         id: novoId,
         Cargo: cargo.value,
         Empresa : empresa.value,
         Descrição: descricao.value,
-        Localidade : localidade.value,
+        Localidade: localidade.value,
         Status: status.value,
     };
-
-    db.push(novoCadastro);
-    
-    localStorage.setItem('db_cadastro', JSON.stringify(db));
+ 
+    db.push(novaVaga);
+   
+    localStorage.setItem('db_vaga', JSON.stringify(db));
 }
 //READ
 //UPDATE
