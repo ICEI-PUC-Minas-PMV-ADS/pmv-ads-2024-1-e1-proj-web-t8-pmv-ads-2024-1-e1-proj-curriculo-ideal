@@ -6,11 +6,6 @@ var progresso = 25;
 var botoesAvancar = document.querySelectorAll('.avancar-btn');
 var botoesRetroceder = document.querySelectorAll('.retroceder-btn');
 
-// Chamando elementos do formulário
-
-
-
-
 function avancar() {
     if(indiceAtual < secoes.length - 1) {
         document.getElementById(secoes[indiceAtual]).style.display = 'none';
@@ -38,6 +33,8 @@ botoesRetroceder.forEach(function(botao) {
     botao.addEventListener('click', retroceder);
 });
 
+// funcao pra atualizar a barra de progresso
+
 function avancarBarraDeProgresso() {
     if (indiceAtual < 4) {
     var progressoAtual = document.getElementById(progresso * secoes[indiceAtual]);
@@ -52,6 +49,8 @@ function retrocederBarraDeProgresso() {
     progressoAtual.classList.add("disabled");
 }
 
+// Chamando elementos do formulário
+
 function cadastraCurriculo() {
     var nome = document.getElementById("nome");
     var cidade = document.getElementById("cidade");
@@ -64,6 +63,20 @@ function cadastraCurriculo() {
     var website = document.getElementById("website");
     var resumo = document.getElementById("resumo");
     var habilidades = document.getElementById("habilidades");
+    var cargo = document.getElementById("cargo");
+    var empresa = document.getElementById("empresa");
+    var local = document.getElementById("local");
+    var dataInicioEmpresa = document.getElementById("data-inicio-empresa");
+    var dataFimEmpresa = document.getElementById("data-fim-empresa");
+    var trabalhoAtual = document.getElementById("trabalho-atual");
+    var atividadesTrabalho = document.getElementById("atividades-trabalho");
+    var instituicao = document.getElementById("instituicao");
+    var curso = document.getElementById("curso");
+    var grauInstrucao = document.getElementById("grau-instrucao");
+    var dataInicioCurso = document.getElementById("data-inicio-curso");
+    var dataFimCurso = document.getElementById("data-fim-curso");
+    var atividadesEscolares = document.getElementById("resumo-atividades-escolares");
+    
 
     var dados = JSON.parse(localStorage.getItem("dadosCurriculo"));
 
@@ -83,7 +96,20 @@ function cadastraCurriculo() {
         githubUsuario: github.value,
         websiteUsuario: website.value,
         resumoUsuario: resumo.value,
-        habilidadesUsuario: habilidades.value
+        habilidadesUsuario: habilidades.value,
+        cargoUsuario: cargo.value,
+        empresaUsuario: empresa.value,
+        localUsuario: local.value,
+        dataInicioEmpresa: dataInicioEmpresa.value,
+        dataFimEmpresa: dataFimEmpresa.value,
+        trabalhoAtualUsuario: trabalhoAtual.value,
+        atividadesTrabalho: atividadesTrabalho.value,
+        instituicaoUsuario: instituicao.value,
+        cursoUsuario: curso.value,
+        grauInstrucao: grauInstrucao.value,
+        dataInicioCurso: dataInicioCurso.value,
+        dataFimCurso: dataFimCurso.value,
+        atividadesEscolares: atividadesEscolares.value
     }
 
     dados.push(registro);
@@ -91,7 +117,7 @@ function cadastraCurriculo() {
 }
 
 
-function mostraCurriculo() {
+/* function mostraCurriculo() {
     let dados = readInformacao();
 
     let conteudo = "";
@@ -103,6 +129,6 @@ function mostraCurriculo() {
     });
     curriculo.innerHTML = conteudo;
 
-}
-// funcao pra atualizar a barra de progresso
+} */
+
 

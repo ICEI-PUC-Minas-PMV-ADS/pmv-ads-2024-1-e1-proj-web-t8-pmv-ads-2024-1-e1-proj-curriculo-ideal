@@ -136,7 +136,7 @@
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-6 d-flex justify-content-end">
-                                        <button type="button" onclick="cadastraCurriculo()" class="btn btn-primary avancar-btn">Avançar</button>
+                                        <button type="button" class="btn btn-primary avancar-btn">Avançar</button>
                                     </div>      
                                 </div>
                             </div>         
@@ -163,7 +163,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-6 d-flex justify-content-end">
                                         <button type="button" class="btn btn-primary retroceder-btn">Voltar</button>
-                                        <button type="button" onclick="cadastraCurriculo()" class="btn btn-primary avancar-btn">Avançar</button>
+                                        <button type="button" class="btn btn-primary avancar-btn">Avançar</button>
                                     </div>
                                 </div>
                             </div>
@@ -177,29 +177,29 @@
                                 <div class="row justify-content-center">
                                     <div class="col-2">
                                         <label for="cargo" class="form-label">Cargo:</label>
-                                        <input type="text" class="form-control" name="cargo" value="" placeholder="">
+                                        <input type="text" class="form-control" name="cargo" id="cargo" placeholder="">
                                     </div>
                                     <div class="col-2">
                                         <label for="empresa" class="form-label">Empresa:</label>
-                                        <input type="text" class="form-control" name="empresa" value="" placeholder="">
+                                        <input type="text" class="form-control" name="empresa" id="empresa" placeholder="">
                                     </div>
                                     <div class="col-2">
                                         <label for="local" class="form-label">Local de trabalho:</label>
-                                        <input type="text" class="form-control" name="local" value="" placeholder="">
+                                        <input type="text" class="form-control" name="local" id="local" placeholder="">
                                     </div>
                                 </div>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-2">
                                         <label for="inicio" class="form-label">Data de Inicio:</label>
-                                        <input type="date" class="form-control" name="inicio" value="" max="">
+                                        <input type="date" class="form-control" name="inicio" id="data-inicio-empresa" max="">
                                     </div>
                                     <div class="col-2">
                                         <label for="termino" class="form-label">Data de Termino:</label>
-                                        <input type="date" class="form-control" name="fim" value="" max="">
+                                        <input type="date" class="form-control" name="fim" id="data-fim-empresa" max="">
                                     </div>
                                     <div class="col-2">
                                         <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" value="" id="atual">
+                                            <input type="checkbox" class="form-check-input" id="trabalho-atual">
                                             <label for="flexCheckDefault" class="form-check-label">Trabalho Atual</label>
                                         </div>
                                     </div>
@@ -207,13 +207,13 @@
                                 <div class="row justify-content-center">
                                     <div class="col-6">
                                         <label for="atividades" class="form-label">Liste suas atividades:</label>
-                                        <textarea class="form-control" name="atividades" row="12" placeholder="Ex: Fiquei responsavel por..."></textarea>
+                                        <textarea class="form-control" name="atividades" id="atividades-trabalho" row="4" placeholder="Ex: Fiquei responsavel por..."></textarea>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row justify-content-center">
                                     <div class="col-6 d-flex justify-content-start">
-                                        <button type="button" class="btn btn-primary" id="adicionar">Adicionar Outra</button>
+                                        <button type="button" class="btn btn-primary" id="adicionar">Adicionar Outra</button> <!-- funcionalidade a ser adicionada depois -->
                                     </div>
                                 </div>
     
@@ -234,11 +234,11 @@
                                 <div class="row justify-content-center">
                                     <div class="col-3">
                                         <label for="instituicao" class="form-label">Instituição:</label>
-                                        <input type="text" class="form-control" name="instituicao" value="" placeholder="">
+                                        <input type="text" class="form-control" name="instituicao" id="instituicao" placeholder="">
                                     </div>
                                     <div class="col-3">
                                         <label for="curso" class="form-label">Curso:</label>
-                                        <input type="text" class="form-control" name="curso" value="" placeholder="">
+                                        <input type="text" class="form-control" name="curso" id="curso" placeholder="">
                                     </div>
                                 </div>
     
@@ -268,17 +268,17 @@
                                 <div class="row justify-content-center">
                                     <div class="col-3">
                                         <label for="inicio" class="form-label">Data de Inicio:</label>
-                                        <input type="date" class="form-control" name="inicio" value="" max="">
+                                        <input type="date" class="form-control" name="inicio" id="data-inicio-curso" max="">
                                     </div>
                                     <div class="col-3">
                                         <label for="termino" class="form-label">Data de Termino:</label>
-                                        <input type="date" class="form-control" name="fim" value="" max="">
+                                        <input type="date" class="form-control" name="fim" id="data-fim-curso" max="">
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-6">
                                         <label for="resumo-atividades" class="form-label">Resumo:</label>
-                                        <textarea class="form-control" name="resumo-atividades" row="12" placeholder=""></textarea>
+                                        <textarea class="form-control" name="resumo-atividades" id="resumo-atividades-escolares" row="4" placeholder=""></textarea>
                                     </div>
                                 </div>
     
@@ -319,7 +319,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-6 d-flex justify-content-end">
                                         <button type="button" class="btn btn-primary retroceder-btn">Voltar</button>
-                                        <button type="submit" class="btn btn-primary">Avançar</button>
+                                        <button type="submit" onclick="cadastraCurriculo()" class="btn btn-primary">Avançar</button>
                                     </div>
                                 </div>
                             </div>
