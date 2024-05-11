@@ -1,6 +1,10 @@
 // Definindo as seções do formulário
 var secoes = ['1', '2', '3', '4', '5'];
 var indiceAtual = 0;
+var progressoID = ['25', '50', '75', '100'];
+var progresso = 25;
+var botoesAvancar = document.querySelectorAll('.avancar-btn');
+var botoesRetroceder = document.querySelectorAll('.retroceder-btn');
 
 // Chamando elementos do formulário
 
@@ -12,26 +16,41 @@ function avancar() {
         document.getElementById(secoes[indiceAtual]).style.display = 'none';
         indiceAtual++;
         document.getElementById(secoes[indiceAtual]).style.display= 'block';
+        avancarBarraDeProgresso();
     }
 }
 
 function retroceder() {
     if(indiceAtual > 0) {
         document.getElementById(secoes[indiceAtual]).style.display = 'none';
+        retrocederBarraDeProgresso();
         indiceAtual--;
         document.getElementById(secoes[indiceAtual]).style.display = 'block';
+        
     }
 }
 
-var botoesAvancar = document.querySelectorAll('.avancar-btn');
 botoesAvancar.forEach(function(botao) {
     botao.addEventListener('click', avancar);
 });
 
-var botoesRetroceder = document.querySelectorAll('.retroceder-btn');
 botoesRetroceder.forEach(function(botao) {
     botao.addEventListener('click', retroceder);
 });
+
+function avancarBarraDeProgresso() {
+    if (indiceAtual < 4) {
+    var progressoAtual = document.getElementById(progresso * secoes[indiceAtual]);
+    progressoAtual.classList.remove("disabled");
+    progressoAtual.classList.add("complete");
+    }
+}
+
+function retrocederBarraDeProgresso() {
+    var progressoAtual = document.getElementById((progresso * secoes[indiceAtual]));
+    progressoAtual.classList.remove("complete");
+    progressoAtual.classList.add("disabled");
+}
 
 function cadastraCurriculo() {
     var nome = document.getElementById("nome");
@@ -83,4 +102,7 @@ function mostraCurriculo() {
 
     });
     curriculo.innerHTML = conteudo;
+
 }
+// funcao pra atualizar a barra de progresso
+

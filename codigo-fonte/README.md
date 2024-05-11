@@ -2,14 +2,20 @@
 
 ## Estratégia de Organização de Codificação 
 
-Nesse primeiro eixo do curso, para simplificar a utilização do Git e a organização das pastas e artefatos de implementação no sistema de arquivos, sugerimos que o projeto seja estruturado de modo que cada aluno trabalhe com seus arquivos nas suas respectivas pastas, identificadas por nomes das suas respectivas telas. Por exemplo:
-- Pasta src (root do projeto): index.html, index.css, index.js - Desenvolvedora responsável: Aluna X.
-- Pasta src\clientes: clientes.html, clientes.css, clientes.js - Desenvolvedor responsável: Aluno Y.
-- Pasta src\funcionarios: funcionarios.html, funcionarios.css, funcionarios.js  - Desenvolvedora responsável: Aluna Z.
+Nesse projeto, para simplificar a utilização do Git e a organização das pastas e artefatos de implementação no sistema de arquivos, estruturamos o projeto por páginas e adicionamos comentários no HTML para identificar o aluno responsável pelo código. A divisão de responsabilidades ficou como a seguir:
+- Pasta como-fazer (HTML, CSS e JS) - Desenvolvedor responsável: Aluno Guilherme Holanda.
+- Pasta criar-curriculo (HTML e CSS de todos os arquivos, JS de criação de currículo) - Desenvolvedora responsável: Aluna Alycia Oliveira.
+- Pasta criar-curriculo (JS de download de currículo) - Desenvolvedor responsável: Aluno Guilherme Holanda.
+- Pasta erro (HTML, CSS e JS) - Desenvolvedor responsável: Aluno Guilherme Holanda.
+- Pasta grafico (HTML, CSS e JS) - Desenvolvedor responsável: Aluno Pedro Maia.
+- Pasta home (HTML, CSS e JS) - Desenvolvedor responsável: Aluno Pedro Maia.
+- Pasta login-e-signup (HTML, CSS e JS) - Desenvolvedora responsável: Aluna Andrea Silva.
+- Pasta suas-candidaturas (HTML, CSS e JS referentes ao modal e CRUD) - Desenvolvedor responsável: Aluno Enrique Alves.
+- Pasta suas-candidaturas (HTML, CSS e JS referentes a exibição de candidaturas e funcionalidade drag-and-drop) - Desenvolvedor responsável: Aluno Alexsander Custódio.
 
 ## Instalação do Site
 
-O site em HTML/CSS/JS é um projeto estático. É necessário implantá-lo em um servidor web de sua preferência. Existem diversos servidores web gratuitos que podem ser utilizados, tal como GitHub Pages (GitHub.IO), Vercel, Render, Netlify, Surge.sh, entre outros. Nesse primeiro eixo, recomenda-se inclusive a utilização do GitHub Pages. [Insira o endereço eletrônico público para acessá-lo.] 
+O site não precisou ser instalado. Será implantado no GitHub Pages.
 
 ## Histórico de versões
 
