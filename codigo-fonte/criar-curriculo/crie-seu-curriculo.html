@@ -15,10 +15,9 @@
 
 
         <!-- Barra de progresso -->
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
 
         <title>Curriculo Ideal</title>
     </head>
@@ -46,6 +45,8 @@
                 <div class="barra">
                     <div class="container" id="barraProgresso">
                         <div class="row bs-wizard" style="border-bottom: 0;">
+                            <!-- Barra de progresso adaptada de código disponível em bootsnipp
+                            https://bootsnipp.com/snippets/O4O8 -->
                             <div class="col-md-3 bs-wizard-step complete" id="25">
                                 <div class="text-center bs-wizard-stepnum">1</div>
                                 <div class="progress"><div id="progress1" class="progress-bar"></div></div>
@@ -111,11 +112,11 @@
                                 <div class="row justify-content-center">
                                     <div class="col-md-2">
                                         <label for="telefone" class="form-label">Telefone:</label>
-                                        <input type="tel" class="form-control" id="telefone"  pattern="[0-9]{2}-[0-9]{2}-[0-9]{5}-[0-9]{4}" placeholder="55-99-99999-9999">
+                                        <input type="tel" class="form-control" id="telefone"  placeholder="55-99-99999-9999">
                                     </div>
                                     <div class="col-4">
                                         <label for="email" class="form-label">Email:</label>
-                                        <input type="email" class="form-control" id="email"  pattern=".+@example\.com" size="30" placeholder="seuemail@exemplo.com">
+                                        <input type="email" class="form-control" id="email"  placeholder="seuemail@exemplo.com">
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
@@ -246,7 +247,7 @@
                                     <div class="col-6">
                                         <label for="grau" class="form-label">Grau de Instrução:</label>
                                         <select name="grau-instrucao" id="grau-instrucao" class="form-control form-select-lg mb-3">
-                                            <option selected>Escolha seu Grau de Escolaridade</option>
+                                            <option selected></option>
                                             <option value="fundamental-incompleto">Ensino Fundamental Incompleto</option>
                                             <option value="fundamental-cursando">Ensino Fundamental Cursando</option>
                                             <option value="fundamental-completo">Ensino Fundamental Completo</option>
@@ -319,12 +320,21 @@
                                 <div class="row justify-content-center">
                                     <div class="col-6 d-flex justify-content-end">
                                         <button type="button" class="btn retroceder-btn">Voltar</button>
-                                        <button type="submit" onclick="cadastraCurriculo()" class="btn"><a href="download-curriculo.html">Avançar</a></button>
+                                        <button type="button" onclick="cadastraCurriculo();" class="btn avancar-btn">Avançar</button>
                                     </div>
                                 </div>
                             </div>
                         </section>
-                    </form>
+                    
+                    <section id="6" style="display: none;">
+                        <div class="container text-center">
+                            <h1 class="title">Seu curriculo</h1>
+                        </div>
+                        <div class="curriculo" id="curriculo">A</div>
+                        <button type="button" class="btn retroceder-btn">Voltar</button>
+                        <button type="button" class="btn">Download</button>
+                    </section>
+                </form>
                 </div>
             </div>  
         </main>
