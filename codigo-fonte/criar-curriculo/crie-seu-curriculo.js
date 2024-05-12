@@ -90,7 +90,13 @@ function cadastraCurriculo() {
         dados = [];
     }
 
+    let novoId = 1;
+    if (dados.length != 0) {
+        novoId = dados[dados.length - 1].id + 1;
+    }
+
     var registro = {
+        id: novoId,
         nomeUsuario: nome.value,
         cidadeUsuario: cidade.value,
         estadoUsuario: estado.value,
@@ -107,7 +113,7 @@ function cadastraCurriculo() {
         localUsuario: local.value,
         dataInicioEmpresa: dataInicioEmpresa.value,
         dataFimEmpresa: dataFimEmpresa.value,
-        trabalhoAtualUsuario: trabalhoAtual.value, //se está check = on
+        trabalhoAtualUsuario: trabalhoAtual.value, //imprimindo como ON no "curriculo", será revisado posteriormente
         atividadesTrabalho: atividadesTrabalho.value,
         instituicaoUsuario: instituicao.value,
         cursoUsuario: curso.value,
@@ -115,60 +121,52 @@ function cadastraCurriculo() {
         dataInicioCurso: dataInicioCurso.value,
         dataFimCurso: dataFimCurso.value,
         atividadesEscolares: atividadesEscolares.value,
-        template1: template1.value,
-        template2: template2.value,
+        template1: template1.value, //imprimindo como ON no "curriculo", será revisado posteriormente
+        template2: template2.value, //imprimindo como ON no "curriculo", será revisado posteriormente
     }
 
     dados.push(registro);
     localStorage.setItem("dadosCurriculo", JSON.stringify(dados));
-    mostraCurriculo(dados);
+    mostraCurriculo(dados, novoId);
 }
 
      // função para listar na tabela os contatos que estão associados aos filtros 
-     function mostraCurriculo(dados) {
-        let curriculo =  dados;
-        
-        // Obtem os dados informados pelo usuário nos filtros
-        //let fc = document.getElementById('filtro_cidade').value;
-        //let fcg = document.getElementById('filtro_categoria').value;
-        //divCurriculo = document.getElementById("curriculo");
-        //console.log(divCurriculo);
-        // limpa a lista de contatos apresentados
-        //divCurriculo.empty();
-
-        // Popula a tabela com os registros do banco de dados
-        
-        for (let index = 0; index < curriculo.length; index++) {
-            const curriculoInfo = curriculo[index];
-
-            // Verifica se os dados do contato batem com os filtros
-            //if (((contato.cidade == fc) || (fc == '')) &&
-                //((contato.categoria == fcg) || (fcg == ''))) {
+     function mostraCurriculo(dados, novoId) {
+        let curriculo = dados.filter(curriculoInfo => curriculoInfo.id === novoId);
+    
+        if (curriculo.length > 0) {
             div = document.getElementById("curriculo");
-                // Inclui o contato na tabela    
-                div.append(`<tr><td scope="row">${curriculoInfo.id}</td>
-                                                <td>${curriculoInfo.nomeUsuario}</td>
-                                                <td>${curriculoInfo.telUsuario}</td>
-                                                <td>${curriculoInfo.emailUsuario}</td>
-                                                <td>${curriculoInfo.cidadeUsuario}</td>
-                                            </tr>`);
-            }
+            div.innerHTML = ""; 
+    
+            // Exibe apenas o currículo com o ID específico
+            const curriculoInfo = curriculo[0];
+            div.innerHTML = `
+                <div>${curriculoInfo.nomeUsuario}</div>
+                <div>${curriculoInfo.telUsuario}</div>
+                <div>${curriculoInfo.emailUsuario}</div>
+                <div>${curriculoInfo.cidadeUsuario}</div>
+                <div>${curriculoInfo.estadoUsuario}</div>
+                <div>${curriculoInfo.paisUsuario}</div>
+                <div>${curriculoInfo.linkedinUsuario}</div>
+                <div>${curriculoInfo.githubUsuario}</div>
+                <div>${curriculoInfo.websiteUsuario}</div>
+                <div>${curriculoInfo.resumoUsuario}</div>
+                <div>${curriculoInfo.habilidadesUsuario}</div>
+                <div>${curriculoInfo.cargoUsuario}</div>
+                <div>${curriculoInfo.empresaUsuario}</div>
+                <div>${curriculoInfo.localUsuario}</div>
+                <div>${curriculoInfo.dataInicioEmpresa}</div>
+                <div>${curriculoInfo.dataFimEmpresa}</div>
+                <div>${curriculoInfo.trabalhoAtualUsuario}</div>
+                <div>${curriculoInfo.atividadesTrabalho}</div>
+                <div>${curriculoInfo.instituicaoUsuario}</div>
+                <div>${curriculoInfo.cursoUsuario}</div>
+                <div>${curriculoInfo.grauInstrucao}</div>
+                <div>${curriculoInfo.dataInicioCurso}</div>
+                <div>${curriculoInfo.dataFimCurso}</div>
+                <div>${curriculoInfo.atividadesEscolares}</div>
+            `;
+        } else {
+            console.log("Nenhum currículo encontrado com o ID especificado.");
         }
-
-//    }
-
-  /* function mostraCurriculo() {
-    let dados = readInformacao();
-
-    let conteudo = "";
-    dados.forEach((item) => {
-        conteudo += `
-            <h1 id="titulo">${nome.id}</h1>
-        `
-
-    });
-    curriculo.innerHTML = conteudo;
-
-} */
-
-
+    }
