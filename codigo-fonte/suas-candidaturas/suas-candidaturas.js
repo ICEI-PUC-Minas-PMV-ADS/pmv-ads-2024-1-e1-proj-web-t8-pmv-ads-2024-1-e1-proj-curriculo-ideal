@@ -1,3 +1,7 @@
+/** app */
+const cards = document.querySelectorAll('.card')
+const dropzones = document.querySelectorAll('.dropzone')
+
 modal = document.getElementById('modalCandidatura');
 
 function abrirModal () {
@@ -13,9 +17,7 @@ function log(message) {
 }
 
 
-/** app */
-const cards = document.querySelectorAll('.card')
-const dropzones = document.querySelectorAll('.dropzone')
+
 
 /** os cards */
 cards.forEach(card => {
