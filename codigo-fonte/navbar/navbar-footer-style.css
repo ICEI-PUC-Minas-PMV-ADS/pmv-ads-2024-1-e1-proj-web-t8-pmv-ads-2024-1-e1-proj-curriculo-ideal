@@ -8,8 +8,9 @@
 }
 
 nav {
+    height: 5vh;
     background-color: var(--cor-de-fundo-nav);
-    display: flex;
+    display: flex !important;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -17,6 +18,8 @@ nav {
 
 .logo {
     margin: 10px;
+    height: 35px;
+    width: 35px;
 }
 
 #menu {
@@ -40,7 +43,8 @@ nav {
 }
 
 footer {
-    display: flex;
+    height: 5vh;
+    display: flex !important;
     background-color: var(--cor-de-fundo-nav);
     justify-content: space-between;
     font-family: 'Encode Sans';
@@ -54,6 +58,12 @@ footer .logo {
     display: flex;
     align-items: center;
     margin: 10px;
+
+}
+
+footer .logo-footer {
+    height: 35px;
+    width: 35px;
 }
 
 footer .logo .marca {

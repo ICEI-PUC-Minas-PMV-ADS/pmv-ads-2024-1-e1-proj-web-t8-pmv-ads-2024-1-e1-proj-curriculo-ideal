@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- fonte encode sans -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- arquivos CSS -->
+        <link rel="stylesheet" href="../navbar/navbar-footer-style.css">
+        <link rel="stylesheet" href="crie-seu-curriculo.css">
+
+
+        <!-- Barra de progresso -->
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <title>Curriculo Ideal</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <figure id="logo">
+                    <img class="logo" src="../img/128x128.png" alt="logo" />
+                </figure>
+                <div id="menu">
+                    <ul>
+                        <li><a href="../como-fazer/como-fazer.html">APRENDA</a></li>
+                        <li><a href="../criar-curriculo/crie-seu-curriculo.html">CRIE</a></li>
+                        <li><a href="../suas-candidaturas/suas-candidaturas.html">ORGANIZE</a>
+                        <li><a href="../login-e-signup/login.html">LOGIN</a></li>
+                        <li><a href="../login-e-signup/signup.html">SIGN UP</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Codigo feito por Alycia Oliveira -->
+        <main>
+            <div class="background"> <!-- Background cinza com barra de progresso e formulario -->
+                <div class="barra">
+                    <div class="container" id="barraProgresso">
+                        <div class="row bs-wizard" style="border-bottom: 0;">
+                            <!-- Barra de progresso adaptada de código disponível em bootsnipp
+                            https://bootsnipp.com/snippets/O4O8 -->
+                            <div class="col-md-3 bs-wizard-step complete" id="25">
+                                <div class="text-center bs-wizard-stepnum">1</div>
+                                <div class="progress"><div id="progress1" class="progress-bar"></div></div>
+                                <div class="bs-wizard-dot"></div>
+                                <div class="bs-wizard-info"></div>
+                            </div>
+
+                            <div class="col-md-3 bs-wizard-step disabled" id="50">
+                                <div class="text-center bs-wizard-stepnum">2</div>
+                                <div class="progress"><div id="progress2" class="progress-bar"></div></div>
+                                <div class="bs-wizard-dot"></div>
+                                <div class="bs-wizard-info"></div>
+                            </div>
+
+
+                            <div class="col-md-3 bs-wizard-step disabled" id="75">
+                                <div class="text-center bs-wizard-stepnum">3</div>
+                                <div class="progress"><div id="progress3" class="progress-bar"></div></div>
+                                <div class="bs-wizard-dot"></div>
+                                <div class="bs-wizard-info"></div>
+                            </div>
+
+
+                            <div class="col-md-3 bs-wizard-step disabled" id="100">
+                                <div class="text-center bs-wizard-stepnum">4</div>
+                                <div class="progress"><div id="progress4" class="progress-bar"></div></div>
+                                <div class="bs-wizard-dot"></div>
+                                <div class="bs-wizard-info"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="container" id="geral"> <!-- Background branco com formulario -->
+                    <form id="criar-curriculo">
+                        <section id="1">
+                            <div class="container text-center">
+                                <h1 class="titulo">Dados de Contato</h1>
+                            </div>
+                            <div class="container" id="perguntas">
+                                <div class="row justify-content-center">
+                                    <div class="col-6">    
+                                        <label for="nome" class="form-label">Nome Completo:</label>
+                                        <input type="text" class="form-control" id="nome" placeholder="Seu Nome">
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-md-2">
+                                        <label for="cidade" class="form-label">Cidade:</label>
+                                        <input type="text" class="form-control" id="cidade" placeholder="Sua Cidade">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="estado" class="form-label">Estado:</label>
+                                        <input type="text" class="form-control" id="estado"  placeholder="Seu Estado">
+                                    </div>         
+                                    <div class="col-md-2">
+                                        <label for="pais" class="form-label">País:</label>
+                                        <input type="text" class="form-control" id="pais"  placeholder="Seu País">
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-md-2">
+                                        <label for="telefone" class="form-label">Telefone:</label>
+                                        <input type="tel" class="form-control" id="telefone"  placeholder="55-99-99999-9999">
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="email" class="form-label">Email:</label>
+                                        <input type="email" class="form-control" id="email"  placeholder="seuemail@exemplo.com">
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-3">
+                                        <label for="linkedin" class="form-label">Linkedin:</label>
+                                        <input type="url" class="form-control" id="linkedin"  pattern="https://.*" placeholder="https://linkedin/in/seu-usuario">
+                                    </div>
+                                    <div class="col-3">
+                                        <label for="github" class="form-label">Github:</label>
+                                        <input type="url" class="form-control" id="github"  pattern="https://.*" placeholder="https://github.com/seu-usuario">
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-6">
+                                        <label for="website" class="form-label">Website:</label>
+                                        <input type="url" class="form-control" id="website"  pattern="https://.*" placeholder="https://www.seusite.com"><br>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <button type="button" class="btn avancar-btn">Avançar</button>
+                                    </div>      
+                                </div>
+                            </div>         
+                        </section>
+                        
+                        <section id="2" style="display: none;">
+                            <div class="container text-center">
+                                <h1 class="titulo">Resumo</h1>
+                            </div>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-6">
+                                        <label for="resumo" class="form-label">Conte-nos um pouco mais sobre você:</label>
+                                        <textarea class="form-control" name="resumo" id="resumo" row="12" placeholder="Faça um resumo sobre as suas experiencias"></textarea> 
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-6">
+                                        <label for="habilidades" class="form-label">Liste suas habilidades:</label>
+                                        <textarea class="form-control" name="habilidades" id="habilidades" row="12" placeholder="Ex: Javascript, Atento a detalhes, etc"></textarea>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row justify-content-center">
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <button type="button" class="btn retroceder-btn">Voltar</button>
+                                        <button type="button" class="btn avancar-btn">Avançar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <section id="3" style="display: none;">
+                            <div class="container text-center">
+                                <h1 class="titulo">Experiencias</h1>
+                            </div>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-2">
+                                        <label for="cargo" class="form-label">Cargo:</label>
+                                        <input type="text" class="form-control" name="cargo" id="cargo" placeholder="">
+                                    </div>
+                                    <div class="col-2">
+                                        <label for="empresa" class="form-label">Empresa:</label>
+                                        <input type="text" class="form-control" name="empresa" id="empresa" placeholder="">
+                                    </div>
+                                    <div class="col-2">
+                                        <label for="local" class="form-label">Local de trabalho:</label>
+                                        <input type="text" class="form-control" name="local" id="local" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-2">
+                                        <label for="inicio" class="form-label">Data de Inicio:</label>
+                                        <input type="date" class="form-control" name="inicio" id="data-inicio-empresa" max="">
+                                    </div>
+                                    <div class="col-2">
+                                        <label for="termino" class="form-label">Data de Termino:</label>
+                                        <input type="date" class="form-control" name="fim" id="data-fim-empresa" max="">
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="trabalho-atual">
+                                            <label for="flexCheckDefault" class="form-check-label">Trabalho Atual</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-6">
+                                        <label for="atividades" class="form-label">Liste suas atividades:</label>
+                                        <textarea class="form-control" name="atividades" id="atividades-trabalho" row="4" placeholder="Ex: Fiquei responsavel por..."></textarea>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row justify-content-center">
+                                    <div class="col-6 d-flex justify-content-start">
+                                        <button type="button" class="btn" id="adicionar">Adicionar Outra</button> <!-- funcionalidade a ser adicionada depois -->
+                                    </div>
+                                </div>
+    
+                                <div class="row justify-content-center">
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <button type="button" class="btn retroceder-btn">Voltar</button>
+                                        <button type="button" class="btn avancar-btn">Avançar</button>
+                                    </div>
+                                </div>   
+                            </div>
+                        </section>
+                        
+                        <section id="4" style="display: none;">
+                            <div class="container text-center">
+                                <h1 class="titulo">Escolaridade</h1>
+                            </div>  
+                            <div class="container-fluid">
+                                <div class="row justify-content-center">
+                                    <div class="col-3">
+                                        <label for="instituicao" class="form-label">Instituição:</label>
+                                        <input type="text" class="form-control" name="instituicao" id="instituicao" placeholder="">
+                                    </div>
+                                    <div class="col-3">
+                                        <label for="curso" class="form-label">Curso:</label>
+                                        <input type="text" class="form-control" name="curso" id="curso" placeholder="">
+                                    </div>
+                                </div>
+    
+                                <div class="row justify-content-center">
+                                    <div class="col-6">
+                                        <label for="grau" class="form-label">Grau de Instrução:</label>
+                                        <select name="grau-instrucao" id="grau-instrucao" class="form-control form-select-lg mb-3">
+                                            <option selected></option>
+                                            <option value="fundamental-incompleto">Ensino Fundamental Incompleto</option>
+                                            <option value="fundamental-cursando">Ensino Fundamental Cursando</option>
+                                            <option value="fundamental-completo">Ensino Fundamental Completo</option>
+                                            <option value="medio-incompleto">Ensino Medio Incompleto</option>
+                                            <option value="medio-cursando">Ensino Medio Cursando</option>
+                                            <option value="medio-completo">Ensino Medio Completo</option>
+                                            <option value="superior-incompleto">Ensino Superior Incompleto</option>
+                                            <option value="superior-cursando">Ensino Superior Cursando</option>
+                                            <option value="superior-completo">Ensino Superior Completo</option>
+                                            <option value="mestrado-cursando">Mestrado Cursando</option>
+                                            <option value="mestrado-completo">Mestrado Completo</option>
+                                            <option value="doutorado-cursando">Doutorado Cursando</option>
+                                            <option value="doutorado-completo">Doutorado Completo</option>
+                                            <option value="phd-cursando">PHD Cursando</option>
+                                            <option value="phd-completo">PHD Completo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-3">
+                                        <label for="inicio" class="form-label">Data de Inicio:</label>
+                                        <input type="date" class="form-control" name="inicio" id="data-inicio-curso" max="">
+                                    </div>
+                                    <div class="col-3">
+                                        <label for="termino" class="form-label">Data de Termino:</label>
+                                        <input type="date" class="form-control" name="fim" id="data-fim-curso" max="">
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-6">
+                                        <label for="resumo-atividades" class="form-label">Resumo:</label>
+                                        <textarea class="form-control" name="resumo-atividades" id="resumo-atividades-escolares" row="4" placeholder=""></textarea>
+                                    </div>
+                                </div>
+    
+                                <div class="row justify-content-center">
+                                    <div class="col-6 d-flex justify-content-start">
+                                        <button type="button" class="btn"  id="adicionar">Adicionar Outra</button> <!-- funcionalidade a ser adicionada depois -->
+                                    </div>
+                                </div>
+    
+                                <div class="row justify-content-center">
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <button type="button" class="btn retroceder-btn">Voltar</button>
+                                        <button type="button" class="btn avancar-btn">Avançar</button>
+                                    </div>  
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <section id="5" style="display: none;">
+                            <div class="container text-center">
+                                <h1 class="titulo">Escolha seu Template</h1>
+                            </div>
+                            <div class="container-fluid">
+                                <div class="row justify-content-center">
+                                    <div class="col-6">
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" id="template-1">
+                                            <label for="template-1" class="form-check-label"><img src="../img/curriculo-exemplo-1.png"></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" id="template-2">
+                                            <label for="template-2" class="form-check-label"><img src="../img/curriculo-exemplo-2.png"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <button type="button" class="btn retroceder-btn">Voltar</button>
+                                        <button type="button" onclick="cadastraCurriculo();" class="btn avancar-btn">Avançar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    
+                    <section id="6" style="display: none;">
+                        <div class="container text-center">
+                            <h1 class="title">Seu curriculo</h1>
+                        </div>
+                        <div class="curriculo" id="curriculo">A</div>
+                        <button type="button" class="btn retroceder-btn">Voltar</button>
+                        <button type="button" class="btn">Download</button>
+                    </section>
+                </form>
+                </div>
+            </div>  
+        </main>
+        <footer>
+            <div class="logo">
+                <figure id="logo-footer">
+                    <img class="logo-footer" src="../img/128x128.png" alt="logo" />
+                </figure>
+                <p class="marca">Curriculo Ideal</p>
+            </div>
+            <div class="direitos">
+                <p>Copyright © 2024 Curriculo Ideal | All Rights Reserved</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    </body>
+
+    <script type="text/javascript" src="crie-seu-curriculo.js"></script>
+
+</html>
