@@ -26,7 +26,7 @@ body {
     margin-left: 60px;
 }
 
-/* .bs-wizard {margin-top: 40px;} */
+/* Barra de progresso adaptada de código disponível em bootsnipp https://bootsnipp.com/snippets/O4O8 */
 
 /*Form Wizard*/
 .bs-wizard {border-bottom: solid 1px #e0e0e0; padding: 0 0 10px 0;}
@@ -85,6 +85,12 @@ label {
     background-color: var(--cor-primaria);
     border: var(--cor-primaria);
     margin-left: 10px;
+    color: white;
+}
+
+.btn a {
+    text-decoration: none;
+    color: white;
 }
 
 #adicionar {

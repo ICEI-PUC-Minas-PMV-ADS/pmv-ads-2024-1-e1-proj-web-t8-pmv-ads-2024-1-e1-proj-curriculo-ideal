@@ -65,7 +65,7 @@
                                     <label for="Empresa">Empresa</label>
                                     <input type="text" class="form-control" id="Empresa" placeholder="Sua Empresa"><br>
                                     <label for="Descrição de vaga">Descrição de vaga</label>
-                                    <textarea type="text" class="form-control" id="Descrição" row="12" placeholder="Sua Descrição"></textarea><br>               
+                                    <textarea type="text" class="form-control" id="Descricao" row="12" placeholder="Sua Descrição"></textarea><br>               
                                     <label for="Localidade">Localidade</label>
                                     <input type="text" class="form-control" id="Localidade" placeholder="Sua localidade"><br>
                                         <div class="form-group">
@@ -73,14 +73,14 @@
                                             <select class="form-control" id="Status">
                                                 <option>Aplicado</option>
                                                 <option>Em processo</option>
-                                                <option>Recusado</option>
+                                                <option>Rejeitado</option>
                                                 <option>Aprovado</option>
                                             </select> 
                                         </div>                                                  
                                     </form> 
                                 </div>    
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" id="avancar">Avançar</button> 
+                                    <button type="button" onclick="inserirVaga()" class="btn btn-primary" id="avancar">Avançar</button> 
                                 </div>  
                             </div>
                         </div>
@@ -144,7 +144,8 @@
                           </div>
                       </div>
                       </div>
-                </section>
+                </section>          
+
 
         </main>
         <footer>
