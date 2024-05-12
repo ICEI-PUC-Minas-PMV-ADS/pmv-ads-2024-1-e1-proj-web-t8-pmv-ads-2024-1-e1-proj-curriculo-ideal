@@ -1,30 +1,24 @@
 var modal = document.getElementById('modalCandidatura');
-var db_vaga_inicial = {
-    "vaga": [
-        {
-            "id": 1,
-            "Cargo": "Leanne Graham",
-            "Empresa": "Belo Horizonte",
-            "Descricao": "amigos",
-            "Localidade": "Sincere@april.biz",
-            "Status": "1-770-736-8031",  
-        }
-    ]
-}
+
  
 function abrirModal () {
  
     var modalCandidatura = new bootstrap.Modal(modal);
     modalCandidatura.show();
 }
+// Carregar os dados que já estao no local storage ao abrir
+window.onload = function() {
+    var db = JSON.parse(localStorage.getItem('db_vaga'));
+ 
+    if (db && db.length > 0) {
+        exibeVagas(db);
+    }
+};
  
 // [CRUD] Estruturando e separando o CRUD em partes
  
 //CREATE
-var db = JSON.parse(localStorage.getItem('db_vaga'));
-if (!db) {
-    db = db_vaga_inicial
-};
+
 function inserirVaga() {
     var cargo = document.getElementById('Cargo');
     var empresa = document.getElementById('Empresa');
@@ -53,24 +47,50 @@ function inserirVaga() {
     db.push(novaVaga);
    
     localStorage.setItem('db_vaga', JSON.stringify(db));
-    exibeVagas()
+    exibeVagas(db)
 }
 //READ
-function exibeVagas() {
-    let vagas =  db_vaga
-
-    
-    document.getElementById("card-rejeitado").html("")
-
-    
-    for (i = 0; i < db.length; i++) { 
-        let vaga = vagas[i]
-        document.getElementById("card-rejeitado").append(`
-            <h5 class="nome de vaga">${cargo.value}</h5>
-            <h6 class="empresa">${empresa.value}</h6>
-            <p class="descricao">${descricao.value}</p>
-        `)
-    }
+function exibeVagas(db) {
+    // Pra cada vaga cadastrada, gerar um card novo com a informacao do local storage
+    db.forEach(function(infoVaga) {
+        // cria o card
+        var card = document.createElement('div');
+        card.className = 'row';
+ 
+        // adiciona info
+        card.innerHTML = `
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">${infoVaga.Cargo}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">${infoVaga.Empresa}</h6>
+                    <p class="card-text">${infoVaga.Descricao}</p>
+                    <p class="card-text">${infoVaga.Localidade}</p>
+                    <p class="card-text">${infoVaga.Status}</p>
+                </div>
+            </div>`;
+ 
+        // lógica pra determinar o status
+        var sectionId;
+        switch(infoVaga.Status) {
+            case 'Aplicado':
+                sectionId = 'aplicadasCards';
+                break;
+            case 'Em processo':
+                sectionId = 'emProcessoCards';
+                break;
+            case 'Aprovado':
+                sectionId = 'aprovadoCards';
+                break;
+            case 'Rejeitado':
+                sectionId = 'rejeitadoCards';
+                break;
+            default:
+                sectionId = 'aplicadasCards'; 
+        }
+ 
+        // Sobe a info ao card
+        document.getElementById(sectionId).appendChild(card);
+    });
 }
 //UPDATE
 /* function updateVaga(id, vaga) {

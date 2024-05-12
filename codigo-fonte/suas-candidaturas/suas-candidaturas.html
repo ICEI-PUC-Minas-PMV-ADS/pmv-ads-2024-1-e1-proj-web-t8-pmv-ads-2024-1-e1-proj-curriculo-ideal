@@ -72,7 +72,7 @@
                                             <select class="form-control" id="Status">
                                                 <option>Aplicado</option>
                                                 <option>Em processo</option>
-                                                <option>Recusado</option>
+                                                <option>Rejeitado</option>
                                                 <option>Aprovado</option>
                                             </select> 
                                         </div>                                                  
@@ -87,68 +87,29 @@
                 </div>
 
                 <div class="background">
-                    <div class="row">
-                        <div class="aplicadas">
-                            <h1 class="titulo">Aplicadas</h1>
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-body">
-                                    <h5 class="nome da vaga">Analista de sistemas JR</h5>
-                                    <h6 class="empresa">PUC Minas</h6>
-                                    <p class="descricao">Achei a vaga atraves do site vagas.com, me candidatei pois é uma excelente empresa</p>
-                                    <!-- será alterado para um botao posteriormente -->
-                                    <a href="#" class="card-link">Editar</a> 
-                                    <!-- será alterado para um botao posteriormente -->
-                                    <a href="#" class="card-link">Excluir</a>
+                                    <div class="row">
+                                        <div class="aplicadas">
+                                            <h1 class="titulo">Aplicadas</h1>
+                                                <div id="aplicadasCards" class="row"></div>
+                                            </div>
+                                        </div>
+                 
+                                        <div class="em-processo">
+                                            <h1 class="titulo">Em processo</h1>
+                                            <div id="emProcessoCards" class="row"></div>
+                                        </div>
+                 
+                                        <div class="aceito">
+                                            <h1 class="titulo">Aprovado</h1>
+                                            <div id="aprovadoCards" class="row"></div>
+                                        </div>
+                 
+                                        <div class="rejeitado">
+                                            <h1 class="titulo">Rejeitado</h1>
+                                            <div id="rejeitadoCards" class="row"></div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="em-processo">
-                            <h1 class="titulo">Em processo</h1>
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-body">
-                                    <h5 class="nome da vaga">Analista de sistemas JR</h5>
-                                    <h6 class="empresa">PUC Minas</h6>
-                                    <p class="descricao">Achei a vaga atraves do site vagas.com, me candidatei pois é uma excelente empresa</p>
-                                    <!-- será alterado para um botao posteriormente -->
-                                    <a href="#" class="card-link">Editar</a> 
-                                    <!-- será alterado para um botao posteriormente -->
-                                    <a href="#" class="card-link">Excluir</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="aceito">
-                            <h1 class="titulo">Aprovado</h1>
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-body">
-                                    <h5 class="nome da vaga">Analista de sistemas JR</h5>
-                                    <h6 class="empresa">PUC Minas</h6>
-                                    <p class="descricao">Achei a vaga atraves do site vagas.com, me candidatei pois é uma excelente empresa</p>
-                                    <!-- será alterado para um botao posteriormente -->
-                                    <a href="#" class="card-link">Editar</a> 
-                                    <!-- será alterado para um botao posteriormente -->
-                                    <a href="#" class="card-link">Excluir</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="rejeitado">
-                            <h1 class="titulo">Rejeitado</h1>
-                            <div class="card" style="width: 18rem;">
-                                <div id="card-rejeitado" class="card-body">
-                                    <h5 class="nome da vaga">Analista de sistemas JR</h5>
-                                    <h6 class="empresa">PUC Minas</h6>
-                                    <p class="descricao">Achei a vaga atraves do site vagas.com, me candidatei pois é uma excelente empresa</p>
-                                    <!-- será alterado para um botao posteriormente -->
-                                    <a href="#" class="card-link">Editar</a> 
-                                    <!-- será alterado para um botao posteriormente -->
-                                    <a href="#" class="card-link">Excluir</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
         </main>
         <footer>
