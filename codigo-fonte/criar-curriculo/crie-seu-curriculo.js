@@ -1,12 +1,12 @@
 // Definindo as seções do formulário
-var secoes = ['1', '2', '3', '4', '5'];
+var secoes = ['1', '2', '3', '4', '5', '6'];
 var indiceAtual = 0;
 var progresso = 25;
 var botoesAvancar = document.querySelectorAll('.avancar-btn');
 var botoesRetroceder = document.querySelectorAll('.retroceder-btn');
 
 function avancar() {
-    if(indiceAtual < secoes.length - 1) {
+    if(indiceAtual < secoes.length) {
         document.getElementById(secoes[indiceAtual]).style.display = 'none';
         console.log("secao atual avancar" + secoes[indiceAtual])
         indiceAtual++;
@@ -31,7 +31,7 @@ botoesAvancar.forEach(function(botao) {
 
 botoesRetroceder.forEach(function(botao) {
     botao.addEventListener('click', retroceder);
-});
+    });
 
 // funcao pra atualizar a barra de progresso
 
@@ -90,7 +90,13 @@ function cadastraCurriculo() {
         dados = [];
     }
 
+    let novoId = 1;
+    if (dados.length != 0) {
+        novoId = dados[dados.length - 1].id + 1;
+    }
+
     var registro = {
+        id: novoId,
         nomeUsuario: nome.value,
         cidadeUsuario: cidade.value,
         estadoUsuario: estado.value,
@@ -107,7 +113,7 @@ function cadastraCurriculo() {
         localUsuario: local.value,
         dataInicioEmpresa: dataInicioEmpresa.value,
         dataFimEmpresa: dataFimEmpresa.value,
-        trabalhoAtualUsuario: trabalhoAtual.value, //se está check = on
+        trabalhoAtualUsuario: trabalhoAtual.value, //imprimindo como ON no "curriculo", será revisado posteriormente
         atividadesTrabalho: atividadesTrabalho.value,
         instituicaoUsuario: instituicao.value,
         cursoUsuario: curso.value,
@@ -115,27 +121,52 @@ function cadastraCurriculo() {
         dataInicioCurso: dataInicioCurso.value,
         dataFimCurso: dataFimCurso.value,
         atividadesEscolares: atividadesEscolares.value,
-        template1: template1.value,
-        template2: template2.value,
+        template1: template1.value, //imprimindo como ON no "curriculo", será revisado posteriormente
+        template2: template2.value, //imprimindo como ON no "curriculo", será revisado posteriormente
     }
 
     dados.push(registro);
     localStorage.setItem("dadosCurriculo", JSON.stringify(dados));
+    mostraCurriculo(dados, novoId);
 }
 
-
-/* function mostraCurriculo() {
-    let dados = readInformacao();
-
-    let conteudo = "";
-    dados.forEach((item) => {
-        conteudo += `
-            <h1 id="titulo">${nome.id}</h1>
-        `
-
-    });
-    curriculo.innerHTML = conteudo;
-
-} */
-
-
+     // função para listar na tabela os contatos que estão associados aos filtros 
+     function mostraCurriculo(dados, novoId) {
+        let curriculo = dados.filter(curriculoInfo => curriculoInfo.id === novoId);
+    
+        if (curriculo.length > 0) {
+            div = document.getElementById("curriculo");
+            div.innerHTML = ""; 
+    
+            // Exibe apenas o currículo com o ID específico
+            const curriculoInfo = curriculo[0];
+            div.innerHTML = `
+                <div>${curriculoInfo.nomeUsuario}</div>
+                <div>${curriculoInfo.telUsuario}</div>
+                <div>${curriculoInfo.emailUsuario}</div>
+                <div>${curriculoInfo.cidadeUsuario}</div>
+                <div>${curriculoInfo.estadoUsuario}</div>
+                <div>${curriculoInfo.paisUsuario}</div>
+                <div>${curriculoInfo.linkedinUsuario}</div>
+                <div>${curriculoInfo.githubUsuario}</div>
+                <div>${curriculoInfo.websiteUsuario}</div>
+                <div>${curriculoInfo.resumoUsuario}</div>
+                <div>${curriculoInfo.habilidadesUsuario}</div>
+                <div>${curriculoInfo.cargoUsuario}</div>
+                <div>${curriculoInfo.empresaUsuario}</div>
+                <div>${curriculoInfo.localUsuario}</div>
+                <div>${curriculoInfo.dataInicioEmpresa}</div>
+                <div>${curriculoInfo.dataFimEmpresa}</div>
+                <div>${curriculoInfo.trabalhoAtualUsuario}</div>
+                <div>${curriculoInfo.atividadesTrabalho}</div>
+                <div>${curriculoInfo.instituicaoUsuario}</div>
+                <div>${curriculoInfo.cursoUsuario}</div>
+                <div>${curriculoInfo.grauInstrucao}</div>
+                <div>${curriculoInfo.dataInicioCurso}</div>
+                <div>${curriculoInfo.dataFimCurso}</div>
+                <div>${curriculoInfo.atividadesEscolares}</div>
+            `;
+        } else {
+            console.log("Nenhum currículo encontrado com o ID especificado.");
+        }
+    }

@@ -73,29 +73,29 @@ function exibeVagas() {
     }
 }
 //UPDATE
-/* function updateCadastro(id, cadastro) {
+/* function updateVaga(id, vaga) {
 
-    let index = db.cadastro.map(obj => obj.id).indexOf(id);
+    let index = db.vaga.map(obj => obj.id).indexOf(id);
 
    
-    db.cadastro[index].Cargo = contato.Cargo,
-    db.cadastro[index].Empresa = contato.Empresa,
-    db.cadastro[index].Descrição = contato.Descrição,
-    db.cadastro[index].Localidade = contato.Localidade,
-    db.cadastro[index].Status = contato.Status,
+    db.vaga[index].Cargo = cargo.value,
+    db.vaga[index].Empresa = empresa.value,
+    db.vaga[index].Descricao = descricao.value,
+    db.vaga[index].Localidade = localidade.value,
+    db.vaga[index].Status = status.value,
 
-    displayMessage("Cadastro alterado com sucesso");
+    displayMessage("Vaga alterada com sucesso");
 
     
-    localStorage.setItem('db_cadastro', JSON.stringify(db));
+    localStorage.setItem('db_vaga', JSON.stringify(db));
 }
 //DELETE
-function deleteCadastro(id) {    
+function deleteVaga(id) {    
    
-    db.cadastro = db.cadastro.filter(function (element) { return element.id != id });
+    db.vaga = db.vaga.filter(function (element) { return element.id != id });
 
-    displayMessage("Cadastro removido com sucesso");
+    displayMessage("Vaga removida com sucesso");
 
     // Atualiza os dados no Local Storage
-    localStorage.setItem('db_cadastro', JSON.stringify(db));
+    localStorage.setItem('db_vaga', JSON.stringify(db));
 }*/
