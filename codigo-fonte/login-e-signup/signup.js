@@ -36,32 +36,26 @@ function inserirCadastro() {
     localStorage.setItem('db_cadastro', JSON.stringify(db));
 
     window.location.href= "../home/index.html";
+
 }
-//READ
-//UPDATE
-/* function updateCadastro(id, cadastro) {
 
-    let index = db.cadastro.map(obj => obj.id).indexOf(id);
+const formularioLogin = document.getElementById("formulario");
+const btnLogin = document.getElementsByClassName("btn");
+function fazerLogin (){
+    let email= document.getElementById("email").value;
+    let senha= document.getElementById("senha").value;
+    var db = JSON.parse(localStorage.getItem('db_cadastro'));
 
-   
-    db.cadastro[index].Nome = contato.nome,
-    db.cadastro[index].Sobrenome = contato.sobrenome,
-    db.cadastro[index].Email = contato.email,
-    db.cadastro[index].Senha = contato.senha,
-
-    displayMessage("");
-
-    
-    localStorage.setItem('db_cadastro', JSON.stringify(db));
+    if (db) {
+        var usuario = db.find(cadastro => cadastro.Email === email && cadastro.Senha === senha);
+        console.log (usuario)
+        if (usuario) {
+            window.location.href = "../home/index.html";
+        } else {
+            console.log ("invalido");
+            alert ("Usuário ou senha inválido");
+        }
+    } else {
+        console.log ("Não tem usuarios");
+    }
 }
-//DELETE
-function deleteCadastro(id) {    
-   
-    db.cadastro = db.cadastro.filter(function (element) { return element.id != id });
-
-    displayMessage("Cadastro removido com sucesso");
-
-    // Atualiza os dados no Local Storage
-    localStorage.setItem('db_cadastro', JSON.stringify(db));
-}*/
-
