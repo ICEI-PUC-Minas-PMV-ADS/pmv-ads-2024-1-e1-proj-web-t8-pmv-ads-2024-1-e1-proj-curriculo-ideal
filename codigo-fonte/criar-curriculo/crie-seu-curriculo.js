@@ -6,15 +6,29 @@ var botoesAvancar = document.querySelectorAll('.avancar-btn');
 var botoesRetroceder = document.querySelectorAll('.retroceder-btn');
 
 function avancar() {
-    if(indiceAtual < secoes.length - 1) {
-        console.log("indice atual antes i" + indiceAtual)
-        document.getElementById(secoes[indiceAtual]).style.display = 'none';
-        indiceAtual++;
-        console.log("indice atual depois i" + indiceAtual)
-        document.getElementById(secoes[indiceAtual]).style.display= 'block';
-        avancarBarraDeProgresso();
+    if (indiceAtual < secoes.length - 1) {
+        var secaoAtual = document.getElementById(secoes[indiceAtual]);
+        var proximaSecao = document.getElementById(secoes[indiceAtual + 1]);
+
+        if (secaoAtual && proximaSecao) {
+            secaoAtual.style.display = 'none';
+            indiceAtual++;
+            proximaSecao.style.display = 'block';
+            console.log(indiceAtual);
+            console.log(secoes[indiceAtual]);
+            avancarBarraDeProgresso();
+            
+            if (indiceAtual === 4) { // Se estiver na seção 5
+                document.getElementById(secoes[5]).style.display = 'none';
+                document.getElementById(secoes[6]).style.display = 'block';
+                cadastraCurriculo(); // Chama a função para cadastrar o currículo
+            }
+        } else {
+            console.error('Seção não encontrada.');
+        }
     }
 }
+
 
 function retroceder() {
     if(indiceAtual > 0) {
