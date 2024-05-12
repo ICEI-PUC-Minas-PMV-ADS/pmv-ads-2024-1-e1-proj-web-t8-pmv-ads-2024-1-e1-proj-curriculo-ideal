@@ -53,8 +53,25 @@ function inserirVaga() {
     db.push(novaVaga);
    
     localStorage.setItem('db_vaga', JSON.stringify(db));
+    exibeVagas()
 }
 //READ
+function exibeVagas() {
+    let vagas =  db_vaga
+
+    
+    document.getElementById("card-rejeitado").html("")
+
+    
+    for (i = 0; i < db.length; i++) { 
+        let vaga = vagas[i]
+        document.getElementById("card-rejeitado").append(`
+            <h5 class="nome de vaga">${cargo.value}</h5>
+            <h6 class="empresa">${empresa.value}</h6>
+            <p class="descricao">${descricao.value}</p>
+        `)
+    }
+}
 //UPDATE
 /* function updateCadastro(id, cadastro) {
 
