@@ -1,30 +1,24 @@
 var modal = document.getElementById('modalCandidatura');
-var db_vaga_inicial = {
-    "vaga": [
-        {
-            "id": 1,
-            "Cargo": "Leanne Graham",
-            "Empresa": "Belo Horizonte",
-            "Descricao": "amigos",
-            "Localidade": "Sincere@april.biz",
-            "Status": "1-770-736-8031",  
-        }
-    ]
-}
+
  
 function abrirModal () {
  
     var modalCandidatura = new bootstrap.Modal(modal);
     modalCandidatura.show();
 }
+// Carregar os dados que já estao no local storage ao abrir
+window.onload = function() {
+    var db = JSON.parse(localStorage.getItem('db_vaga'));
+ 
+    if (db && db.length > 0) {
+        exibeVagas(db);
+    }
+};
  
 // [CRUD] Estruturando e separando o CRUD em partes
  
 //CREATE
-var db = JSON.parse(localStorage.getItem('db_vaga'));
-if (!db) {
-    db = db_vaga_inicial
-};
+
 function inserirVaga() {
     var cargo = document.getElementById('Cargo');
     var empresa = document.getElementById('Empresa');
@@ -53,32 +47,75 @@ function inserirVaga() {
     db.push(novaVaga);
    
     localStorage.setItem('db_vaga', JSON.stringify(db));
+    exibeVagas(db)
 }
 //READ
+function exibeVagas(db) {
+    // Pra cada vaga cadastrada, gerar um card novo com a informacao do local storage
+    db.forEach(function(infoVaga) {
+        // cria o card
+        var card = document.createElement('div');
+        card.className = 'row';
+ 
+        // adiciona info
+        card.innerHTML = `
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">${infoVaga.Cargo}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">${infoVaga.Empresa}</h6>
+                    <p class="card-text">${infoVaga.Descricao}</p>
+                    <p class="card-text">${infoVaga.Localidade}</p>
+                    <p class="card-text">${infoVaga.Status}</p>
+                </div>
+            </div>`;
+ 
+        // lógica pra determinar o status
+        var sectionId;
+        switch(infoVaga.Status) {
+            case 'Aplicado':
+                sectionId = 'aplicadasCards';
+                break;
+            case 'Em processo':
+                sectionId = 'emProcessoCards';
+                break;
+            case 'Aprovado':
+                sectionId = 'aprovadoCards';
+                break;
+            case 'Rejeitado':
+                sectionId = 'rejeitadoCards';
+                break;
+            default:
+                sectionId = 'aplicadasCards'; 
+        }
+ 
+        // Sobe a info ao card
+        document.getElementById(sectionId).appendChild(card);
+    });
+}
 //UPDATE
-/* function updateCadastro(id, cadastro) {
+/* function updateVaga(id, vaga) {
 
-    let index = db.cadastro.map(obj => obj.id).indexOf(id);
+    let index = db.vaga.map(obj => obj.id).indexOf(id);
 
    
-    db.cadastro[index].Cargo = contato.Cargo,
-    db.cadastro[index].Empresa = contato.Empresa,
-    db.cadastro[index].Descrição = contato.Descrição,
-    db.cadastro[index].Localidade = contato.Localidade,
-    db.cadastro[index].Status = contato.Status,
+    db.vaga[index].Cargo = cargo.value,
+    db.vaga[index].Empresa = empresa.value,
+    db.vaga[index].Descricao = descricao.value,
+    db.vaga[index].Localidade = localidade.value,
+    db.vaga[index].Status = status.value,
 
-    displayMessage("Cadastro alterado com sucesso");
+    displayMessage("Vaga alterada com sucesso");
 
     
-    localStorage.setItem('db_cadastro', JSON.stringify(db));
+    localStorage.setItem('db_vaga', JSON.stringify(db));
 }
 //DELETE
-function deleteCadastro(id) {    
+function deleteVaga(id) {    
    
-    db.cadastro = db.cadastro.filter(function (element) { return element.id != id });
+    db.vaga = db.vaga.filter(function (element) { return element.id != id });
 
-    displayMessage("Cadastro removido com sucesso");
+    displayMessage("Vaga removida com sucesso");
 
     // Atualiza os dados no Local Storage
-    localStorage.setItem('db_cadastro', JSON.stringify(db));
+    localStorage.setItem('db_vaga', JSON.stringify(db));
 }*/
