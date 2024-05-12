@@ -1,5 +1,5 @@
 // Definindo as seções do formulário
-var secoes = ['1', '2', '3', '4', '5'];
+var secoes = ['1', '2', '3', '4', '5', '6'];
 var indiceAtual = 0;
 var progresso = 25;
 var botoesAvancar = document.querySelectorAll('.avancar-btn');
@@ -7,10 +7,10 @@ var botoesRetroceder = document.querySelectorAll('.retroceder-btn');
 
 function avancar() {
     if(indiceAtual < secoes.length - 1) {
+        console.log("indice atual antes i" + indiceAtual)
         document.getElementById(secoes[indiceAtual]).style.display = 'none';
-        console.log("secao atual avancar" + secoes[indiceAtual])
         indiceAtual++;
-        console.log("indice atual avancar" + indiceAtual)
+        console.log("indice atual depois i" + indiceAtual)
         document.getElementById(secoes[indiceAtual]).style.display= 'block';
         avancarBarraDeProgresso();
     }
@@ -31,7 +31,7 @@ botoesAvancar.forEach(function(botao) {
 
 botoesRetroceder.forEach(function(botao) {
     botao.addEventListener('click', retroceder);
-});
+    });
 
 // funcao pra atualizar a barra de progresso
 
@@ -121,10 +121,43 @@ function cadastraCurriculo() {
 
     dados.push(registro);
     localStorage.setItem("dadosCurriculo", JSON.stringify(dados));
+    mostraCurriculo(dados);
 }
 
+     // função para listar na tabela os contatos que estão associados aos filtros 
+     function mostraCurriculo(dados) {
+        let curriculo =  dados;
+        
+        // Obtem os dados informados pelo usuário nos filtros
+        //let fc = document.getElementById('filtro_cidade').value;
+        //let fcg = document.getElementById('filtro_categoria').value;
+        //divCurriculo = document.getElementById("curriculo");
+        //console.log(divCurriculo);
+        // limpa a lista de contatos apresentados
+        //divCurriculo.empty();
 
-/* function mostraCurriculo() {
+        // Popula a tabela com os registros do banco de dados
+        
+        for (let index = 0; index < curriculo.length; index++) {
+            const curriculoInfo = curriculo[index];
+
+            // Verifica se os dados do contato batem com os filtros
+            //if (((contato.cidade == fc) || (fc == '')) &&
+                //((contato.categoria == fcg) || (fcg == ''))) {
+            div = document.getElementById("curriculo");
+                // Inclui o contato na tabela    
+                div.append(`<tr><td scope="row">${curriculoInfo.id}</td>
+                                                <td>${curriculoInfo.nomeUsuario}</td>
+                                                <td>${curriculoInfo.telUsuario}</td>
+                                                <td>${curriculoInfo.emailUsuario}</td>
+                                                <td>${curriculoInfo.cidadeUsuario}</td>
+                                            </tr>`);
+            }
+        }
+
+//    }
+
+  /* function mostraCurriculo() {
     let dados = readInformacao();
 
     let conteudo = "";
