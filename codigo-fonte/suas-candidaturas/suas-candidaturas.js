@@ -6,74 +6,66 @@ function abrirModal () {
     modalCandidatura.show();
 }
 
+
 /** help */
 function log(message) {
-    console.log('> ' + message)
+    console.log('>' + message)
 }
+
 
 /** app */
 const cards = document.querySelectorAll('.card')
 const dropzones = document.querySelectorAll('.dropzone')
 
-
-/** our cards */
+/** os cards */
 cards.forEach(card => {
     card.addEventListener('dragstart', dragstart)
     card.addEventListener('drag', drag)
     card.addEventListener('dragend', dragend)
 })
 
-function dragstart() {
-    // log('CARD: Start dragging ')
-    dropzones.forEach( dropzone => dropzone.classList.add('highlight'))
-
-    // this = card
+function dragstart(){
+    log('> CARD: Start dragging')
     this.classList.add('is-dragging')
 }
 
-function drag() {
-    // log('CARD: Is dragging ')
+function drag(){
+    log('> CARD: Is dragging')
 }
 
-function dragend() {
-    // log('CARD: Stop drag! ')
-    dropzones.forEach( dropzone => dropzone.classList.remove('highlight'))
-
-    // this = card
+function dragend(){
+    log('> CARD: Stop drag')
     this.classList.remove('is-dragging')
 }
 
-/** place where we will drop cards */
+/** onde os cards serão soltos */  
+
 dropzones.forEach( dropzone => {
-    dropzone.addEventListener('dragenter', dragenter)
-    dropzone.addEventListener('dragover', dragover)
-    dropzone.addEventListener('dragleave', dragleave)
-    dropzone.addEventListener('drop', drop)
+dropzone.addEventListener('dragenter', dragenter)
+dropzone.addEventListener('dragover', dragover)
+dropzone.addEventListener('dragleave', dragleave)
+dropzone.addEventListener('drop', drop)
 })
 
-function dragenter() {
-    // log('DROPZONE: Enter in zone ')
+function dragenter( ){
+ log('DROPZONE: Enter in zone')
 }
-
-function dragover() {
-    // this = dropzone
+function dragover( ){
+    log('DROPZONE: Over') 
     this.classList.add('over')
-
-    // get dragging card
     const cardBeingDragged = document.querySelector('.is-dragging')
-
-    // this = dropzone
     this.appendChild(cardBeingDragged)
 }
-
-function dragleave() {
-    // log('DROPZONE: Leave ')
-    // this = dropzone
-    this.classList.remove('over')
-
-}
-
-function drop() {
-    // log('DROPZONE: dropped ')
+function dragleave( ){
+    log('DROPZONE: Leave')
     this.classList.remove('over')
 }
+function drop( ){
+    log('DROPZONE: Dropped')
+    
+}
+
+
+
+
+

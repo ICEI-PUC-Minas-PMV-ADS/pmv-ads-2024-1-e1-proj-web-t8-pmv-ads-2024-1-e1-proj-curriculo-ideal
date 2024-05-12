@@ -199,5 +199,14 @@ section{
 }
 
 .over {
-  background-color: #4cd13711;
+  background-color: #FFC805;
+}
+
+.is-dragging{
+  cursor: move;
+  opacity: 0,3;
+
+}
+.over{
+  background-color: #235784;
 }
