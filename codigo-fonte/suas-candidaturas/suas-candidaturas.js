@@ -83,7 +83,7 @@ function inserirVaga() {
         id: novoId,
         Cargo: cargo.value,
         Empresa : empresa.value,
-        Descrição: descricao.value,
+        Descricao: descricao.value,
         Localidade: localidade.value,
         Status: status.value,
     };
