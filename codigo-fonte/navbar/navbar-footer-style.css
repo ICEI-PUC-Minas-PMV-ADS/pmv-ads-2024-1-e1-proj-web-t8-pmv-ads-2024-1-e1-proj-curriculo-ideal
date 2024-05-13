@@ -18,8 +18,8 @@ nav {
 
 .logo {
     margin: 10px;
-    height: 35px;
-    width: 35px;
+    height: 200px;
+    width: 200px;
 }
 
 #menu {
@@ -62,8 +62,8 @@ footer .logo {
 }
 
 footer .logo-footer {
-    height: 35px;
-    width: 35px;
+    height: 200px;
+    width: 200px;
 }
 
 footer .logo .marca {
