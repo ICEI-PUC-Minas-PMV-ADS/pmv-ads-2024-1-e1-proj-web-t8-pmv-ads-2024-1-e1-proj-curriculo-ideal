@@ -16,15 +16,28 @@
     padding-top: 1px;
     padding-bottom: 1px;
     position: sticky;
-    top: 0;
+    top: 20%;
     height: 10%;
 
 }
 
 .menu-lateral div{
     padding: 5px;
+    border-radius: 20px;
+    margin: 2px 0px;
+}
+
+.menu-lateral div:hover:not(.highlight) {
+    background-color: #23578470;
+    transition: background 400ms ease;
 
 }
+
+.menu-lateral a {
+    text-decoration: none;
+    color: #374375;
+}
+
 
 dd {
     text-align: center;
@@ -33,17 +46,13 @@ dd {
     margin-bottom: 3%;
 
 }
-.highlight dd {
-    color: white
-}
+
 
 dt {
     text-align: center;
     color: #235784;
 }
-.highlight dt {
-    color: white;
-}
+
 
 .tutorial {
     margin: 3% 3% 3% 2%;
@@ -70,7 +79,19 @@ dt {
 }
 
 .highlight {
-background-color: #235784;
-border-radius: 20px;
+    background: #235784;
+    box-shadow: 2px 2px 2px darkgray;
+    transition: background 400ms ease;
+}
 
+.highlight dt {
+    color: white;
+}
+
+.highlight dd a {
+    color: #F0F0F0;
+}
+
+.highlight dd {
+    color: white
 }
