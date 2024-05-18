@@ -28,7 +28,7 @@
 }
 
 .menu-lateral div:hover:not(.highlight) {
-    background-color: #23578470;
+    background-color: #23578449;
     transition: background 400ms ease;
 
 }
