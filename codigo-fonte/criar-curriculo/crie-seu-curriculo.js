@@ -8,9 +8,8 @@ var botoesRetroceder = document.querySelectorAll('.retroceder-btn');
 function avancar() {
     if(indiceAtual < secoes.length) {
         document.getElementById(secoes[indiceAtual]).style.display = 'none';
-        console.log("secao atual avancar" + secoes[indiceAtual])
         indiceAtual++;
-        console.log("indice atual avancar" + indiceAtual)
+        console.log(indiceAtual)
         document.getElementById(secoes[indiceAtual]).style.display= 'block';
         avancarBarraDeProgresso();
     }
@@ -44,7 +43,7 @@ function avancarBarraDeProgresso() {
 }
 
 function retrocederBarraDeProgresso() {
-    if (indiceAtual > 5) {
+    if (indiceAtual < 4) {
         var progressoAtual = document.getElementById((progresso * secoes[indiceAtual]));
         progressoAtual.classList.remove("complete");
         progressoAtual.classList.add("disabled");
