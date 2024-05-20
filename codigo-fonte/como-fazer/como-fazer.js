@@ -5,12 +5,6 @@ if (divInicial) {
     divInicial.classList.add('highlight');
 }
 
-
-window.addEventListener('load', () => {
-    console.log(posicao);
-    console.log(divInicial);
-})
-
 let posicaoAtualId = '';
 window.addEventListener('scroll', () => {
     posicao.forEach(posicao => {
@@ -20,9 +14,7 @@ window.addEventListener('scroll', () => {
         }
     })
     
-console.log(posicaoAtualId)
     let menuLateral = document.querySelectorAll('aside.menu-lateral > div');
-    console.log(menuLateral);
     menuLateral.forEach(selecionado => {
         if (selecionado.getAttribute('href').slice(1) === posicaoAtualId) {
             selecionado.classList.add('highlight');
