@@ -15,22 +15,60 @@ span {
     font-size: xx-large;
 }
 
-.curriculo1 {
-    margin-top: 75px;
+.posicao-circulo {
+  display: grid;
+  grid-template-columns: 19% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+
+}
+
+.setor1 {
+display: grid;
+grid-template-columns: 19% 20% 20% 20% 19%;
+grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+
+.imagem-principal {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    margin: 3% 15% 5%; 
+}
+
+.circle1 {
+  background-color: #ffc9058a;
+  height: 400px;
+  width: 400px;
+  border-radius: 200px;
+  grid-area: 2/5/2/6;
+
+}
+.circle2 {
+  background-color: #374375af;
+  height: 175px;
+  width: 350px;
+  border-radius: 0px 0px 175px 175px;
+  grid-area: 1/2/1/2;
 
 }
 
 .botoes1 {
-    margin-top: 120px;
-    margin-bottom: 110px;
+  border-radius: 20px;
+  margin-top: 150px;
+  margin-bottom: 150px;
+  grid-area: 2/3/3/5;
 
-    }
+}
 
 .botoes1 a {
-    background-color:#FFC805 ;
+    background-color:#FFC805;
     color: white;
-    border: none;
-    margin: 0 15px
+    margin: 0 20px;
+    padding: 5px 20px ;
+    border-radius: 20px;
+    font-family: 'Encode Sans';
+    font-weight: 500;
+    font-size: large;
 
 }   
 
