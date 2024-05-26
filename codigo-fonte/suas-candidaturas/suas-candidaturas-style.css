@@ -1,48 +1,53 @@
 * {
 
-    padding: 0;
-    margin: 0;
-    box-sizing: 'border-box';
+  padding: 0;
+  margin: 0;
+  box-sizing: 'border-box';
 
 }
 
-body{
-    font-family: 'Encode sans';
-    
+body {
+  font-family: 'Encode sans';
+
 }
 
-#cabecalho{
-  display:flex;
+#cabecalho {
+  display: flex;
   justify-content: space-between;
 
 }
 
-#interacoes{
+#interacoes {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-#adicionarvaga{
-  background-color:#235784;
+#adicionarvaga {
+  background-color: #235784;
 }
 
- #grafico {
-  background-color:#235784;
+#grafico {
+  background-color: #235784;
   color: white;
   border: none;
   margin: 0 15px
 }
 
-
-h4{
-  color: #374375
-
+#filtro{
+  background-color: #235784;
+  color: white;
+  border-radius: 60px;
+  margin: 0px
 }
 
-label{
-  color: #235784
 
+h4 {
+  color: #374375
+}
+
+label {
+  color: #235784
 }
 
 .btn#avancar {
@@ -50,73 +55,60 @@ label{
   border-color: #FFC805;
 }
 
-input#Cargo.form-control{
+input#Cargo.form-control {
   color: #235784
-
 }
 
-input#Cargo.form-control{
+input#Cargo.form-control {
   border-color: #235784
-
 }
 
-input#Cargo::placeholder{
+input#Cargo::placeholder {
   color: #235784
-
 }
 
-input#Empresa.form-control{
-  color:#235784 
-
-}
-
-input#Empresa.form-control{
-  border-color:#235784 
-
-}
-
-input#Empresa::placeholder{
+input#Empresa.form-control {
   color: #235784
-
 }
 
-textarea#Descricao.form-control{
-  color:#235784 
-
-}
-textarea#Descricao.form-control{
-  border-color:#235784 
-
+input#Empresa.form-control {
+  border-color: #235784
 }
 
-textarea#Descricao::placeholder{
-  color:#235784
-
-}
-
-input#Localidade.form-control{
-  color:#235784
-
-}
-
-input#Localidade.form-control{
-  border-color:#235784
-
-}
-
-input#Localidade::placeholder{
+input#Empresa::placeholder {
   color: #235784
-
 }
 
-select#Status.form-control{
-  color:#235784
-
+textarea#Descricao.form-control {
+  color: #235784
 }
 
-select#Status.form-control{
-  border-color:#235784
+textarea#Descricao.form-control {
+  border-color: #235784
+}
 
+textarea#Descricao::placeholder {
+  color: #235784
+}
+
+input#Localidade.form-control {
+  color: #235784
+}
+
+input#Localidade.form-control {
+  border-color: #235784
+}
+
+input#Localidade::placeholder {
+  color: #235784
+}
+
+select#Status.form-control {
+  color: #235784
+}
+
+select#Status.form-control {
+  border-color: #235784
 }
 
 
@@ -126,7 +118,7 @@ select#Status.form-control{
 
 
 
-#cabecalho{
+#cabecalho {
   background-color: #f4f4f4;
   margin-top: 10px;
 }
@@ -134,7 +126,7 @@ select#Status.form-control{
 
 
 
-section{
+section {
   padding: 3%;
   justify-content: center;
 }
@@ -145,7 +137,7 @@ section{
   justify-content: space-around;
   background-color: #f4f4f4;
   border-radius: 50px;
-  }
+}
 
 
 
@@ -156,21 +148,21 @@ section{
   margin-top: 3%;
 }
 
-#aplicada{
- border-bottom: 5px solid #374375;
+#aplicada {
+  border-bottom: 5px solid #374375;
 }
 
-#processo{
+#processo {
   border-bottom: 5px solid #FFC805;
- }
- 
- #aprovadas{
+}
+
+#aprovadas {
   border-bottom: 5px solid #24d10e;
- }
- 
- #rejeitadas{
+}
+
+#rejeitadas {
   border-bottom: 5px solid #ff0d05;
- }
+}
 
 .dropzone {
   padding: 16px;
@@ -189,7 +181,8 @@ section{
   font-size: 18px;
 }
 
-.card, .dropzone {
+.card,
+.dropzone {
   transition: 400ms;
 }
 
@@ -202,11 +195,18 @@ section{
   background-color: #FFC805;
 }
 
-.is-dragging{
+.is-dragging {
   cursor: move;
-  opacity: 0,3;
+  opacity: 0, 3;
 
 }
-.over{
+
+.over {
   background-color: #235784;
+}
+
+.edit-button, .delete-button {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
 }
