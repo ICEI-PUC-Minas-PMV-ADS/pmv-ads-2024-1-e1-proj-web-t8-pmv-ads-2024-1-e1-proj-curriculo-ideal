@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         <p class="card-text">${infoVaga.Descricao}</p>
                         <p class="card-text">${infoVaga.Localidade}</p>
                         <p class="card-text">${infoVaga.Status}</p>
-                        <button class="btn btn-warning btn-sm edit-button"><a href="#"><img src="img/Editar.png" class="edit-button"></a></button>
-                        <button class="btn btn-danger btn-sm delete-button">"<img src='img/Excluir.png'>"</button>
+                        <button class="btn btn-warning btn-sm edit-button">"<img src='../img/Editar.png'>"</button>
+                        <button class="btn btn-danger btn-sm delete-button">"<img src='../img/Excluir.png'>"</button>
                     </div>
                 </div>`;
 
