@@ -38,12 +38,11 @@
     </header>
     <!-- Botoes e modal foram feitos por Enrique Alves e pagina foi feita por Alexsander Custodio -->
     <main>
-
         <div id="cabecalho">
             <h1>SUAS CANDIDATURAS</h1>
             <div id="interacoes">
-                <button type="button" onclick="abrirModal()" class="btn btn-primary" id="adicionarvaga"
-                    data-toggle="modal" data-target="#modalCandidatura">
+                <button type="button" onclick="abrirModal()" class="btn btn-primary" id="adicionarvaga" data-toggle="modal"
+                    data-target="#modalCandidatura">
                     Adicionar vaga
                 </button>
                 <a class="btn btn-primary" href="../grafico/grafico.html" id="grafico">Gráfico</a>
@@ -72,8 +71,7 @@
                                 <textarea type="text" class="form-control" id="Descricao" row="12"
                                     placeholder="Sua Descrição"></textarea><br>
                                 <label for="Localidade">Localidade</label>
-                                <input type="text" class="form-control" id="Localidade"
-                                    placeholder="Sua localidade"><br>
+                                <input type="text" class="form-control" id="Localidade" placeholder="Sua localidade"><br>
                                 <div class="form-group">
                                     <label for="Status">Status</label>
                                     <select class="form-control" id="Status">
@@ -86,8 +84,7 @@
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" onclick="inserirVaga()" class="btn btn-primary"
-                                id="avancar">Avançar</button>
+                            <button type="button" onclick="inserirVaga()" class="btn btn-primary" id="avancar">Avançar</button>
                         </div>
                     </div>
                 </div>
@@ -98,37 +95,20 @@
             <div class="boards">
                 <div class="board">
                     <h3 id="aplicada">Aplicadas</h3>
-                    <div class="dropzone">
-                        <div class="card" draggable="true">
-                            <div id="aplicadas"></div>
-                        </div>
-                    </div>
+                    <div class="dropzone" id="aplicadas"></div>
                 </div>
                 <div class="board">
                     <h3 id="processo">Em processo</h3>
-                    <div class="dropzone">
-                        <div class="card" draggable="true">
-                            <div id="emProcesso"></div>
-                        </div>
-                    </div>
+                    <div class="dropzone" id="emProcesso"></div>
                 </div>
                 <div class="board">
                     <h3 id="aprovadas">Aprovadas</h3>
-                    <div class="dropzone">
-                        <div class="card" draggable="true">
-                            <div id="aprovado"></div>
-                        </div>
-                    </div>
+                    <div class="dropzone" id="aprovado"></div>
                 </div>
                 <div class="board">
                     <h3 id="rejeitadas">Rejeitadas</h3>
-                    <div class="dropzone">
-                        <div class="card" draggable="true">
-                            <div id="rejeitado"></div>
-                        </div>
-                    </div>
+                    <div class="dropzone" id="rejeitado"></div>
                 </div>
-            </div>
             </div>
         </section>
 
@@ -145,18 +125,17 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-</body>
-<script type="text/javascript" src="suas-candidaturas.js"></script>
-<script>
-    window.onload = function () {
-        var db = JSON.parse(localStorage.getItem('db_vaga'));
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="suas-candidaturas.js"></script>
+    <script>
+        window.onload = function () {
+            var db = JSON.parse(localStorage.getItem('db_vaga'));
+            if (db && db.length > 0) {
+                exibeVagas(db);
+            }
+        };
+    </script>
 
-        if (db && db.length > 0) {
-            exibeVagas(db);
-        }
-    };
-</script>
+</body>
 
 </html>

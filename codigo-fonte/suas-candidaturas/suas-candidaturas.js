@@ -1,144 +1,220 @@
-var modal = document.getElementById('modalCandidatura');
+document.addEventListener('DOMContentLoaded', function () {
+    var modal = document.getElementById('modalCandidatura');
+    var isEditing = false;
+    var currentEditingId = null;
 
-
-function abrirModal() {
-
-    var modalCandidatura = new bootstrap.Modal(modal);
-    modalCandidatura.show();
-}
-
-
-// Carregar os dados que já estao no local storage ao abrir
-
-
-// [CRUD] Estruturando e separando o CRUD em partes
-
-//CREATE
-
-function inserirVaga() {
-    var cargo = document.getElementById('Cargo');
-    var empresa = document.getElementById('Empresa');
-    var descricao = document.getElementById('Descricao');
-    var localidade = document.getElementById('Localidade');
-    var status = document.getElementById('Status');
-    var db = JSON.parse(localStorage.getItem('db_vaga'));
-
-    if (db == null) {
-        localStorage.setItem('db_vaga', '[]');
-        db = [];
+    function abrirModal() {
+        var modalCandidatura = new bootstrap.Modal(modal);
+        modalCandidatura.show();
     }
-    let novoId = 1;
-    if (db.length != 0)
-        novoId = db[db.length - 1].id + 1;
 
-    let novaVaga = {
-        id: novoId,
-        Cargo: cargo.value,
-        Empresa: empresa.value,
-        Descricao: descricao.value,
-        Localidade: localidade.value,
-        Status: status.value,
-    };
+    document.getElementById('adicionarvaga').addEventListener('click', function () {
+        isEditing = false;
+        resetForm();
+        abrirModal();
+    });
 
-    db.push(novaVaga);
+    function resetForm() {
+        document.getElementById('Cargo').value = '';
+        document.getElementById('Empresa').value = '';
+        document.getElementById('Descricao').value = '';
+        document.getElementById('Localidade').value = '';
+        document.getElementById('Status').value = 'Aplicado';
+    }
 
-    localStorage.setItem('db_vaga', JSON.stringify(db));
-    window.location.reload();
-}
-//READ
-function exibeVagas(db) {
-    // Pra cada vaga cadastrada, gerar um card novo com a informacao do local storage
-    db.forEach(function (infoVaga) {
-        // cria o card
-        var card = document.createElement('div');
-        card.className = 'row';
+    function carregarVagas() {
+        var db = JSON.parse(localStorage.getItem('db_vaga')) || [];
+        exibeVagas(db);
+    }
 
-        // adiciona info
-        card.innerHTML = `
-        <div class="board">
-            <div class="dropzone">
-                <div class="card" draggable="true">
-                    <div class="content">
-                        <div class="card-body">
-                            <h5 class="card-title">${infoVaga.Cargo}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">${infoVaga.Empresa}</h6>
-                            <p class="card-text">${infoVaga.Descricao}</p>
-                            <p class="card-text">${infoVaga.Localidade}</p>
-                            <p class="card-text">${infoVaga.Status}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>`;
+    document.getElementById('avancar').addEventListener('click', function () {
+        var cargo = document.getElementById('Cargo').value;
+        var empresa = document.getElementById('Empresa').value;
+        var descricao = document.getElementById('Descricao').value;
+        var localidade = document.getElementById('Localidade').value;
+        var status = document.getElementById('Status').value;
 
-        // lógica pra determinar o status
-        var sectionId;
-        switch (infoVaga.Status) {
-            case 'Aplicado':
-                sectionId = 'aplicadas';
-                break;
-            case 'Em processo':
-                sectionId = 'emProcesso';
-                break;
-            case 'Aprovado':
-                sectionId = 'aprovado';
-                break;
-            case 'Rejeitado':
-                sectionId = 'rejeitado';
-                break;
-            default:
-                sectionId = 'aplicadas';
+        if (!cargo || !empresa || !descricao || !localidade) {
+            alert('Por favor, preencha todos os campos.');
+            return;
         }
 
-        // Sobe a info ao card
-        document.getElementById(sectionId).appendChild(card);
+        var db = JSON.parse(localStorage.getItem('db_vaga')) || [];
+
+        if (isEditing) {
+            let index = db.findIndex(vaga => vaga.id === currentEditingId);
+            db[index] = {
+                id: currentEditingId,
+                Cargo: cargo,
+                Empresa: empresa,
+                Descricao: descricao,
+                Localidade: localidade,
+                Status: status,
+            };
+        } else {
+            let novoId = db.length ? db[db.length - 1].id + 1 : 1;
+            let novaVaga = {
+                id: novoId,
+                Cargo: cargo,
+                Empresa: empresa,
+                Descricao: descricao,
+                Localidade: localidade,
+                Status: status,
+            };
+            db.push(novaVaga);
+        }
+
+        localStorage.setItem('db_vaga', JSON.stringify(db));
+        window.location.reload();
     });
-}
 
-/** app */
-const cards = document.querySelectorAll('.card');
-const dropzones = document.querySelectorAll('.dropzone');
+    function exibeVagas(db) {
+        db.forEach(function (infoVaga) {
+            var card = document.createElement('div');
+            card.className = 'card';
+            card.setAttribute('draggable', 'true');
+            card.dataset.id = infoVaga.id;
+            card.innerHTML = `
+                <div class="content">
+                    <div class="card-body">
+                        <h5 class="card-title">${infoVaga.Cargo}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">${infoVaga.Empresa}</h6>
+                        <p class="card-text">${infoVaga.Descricao}</p>
+                        <p class="card-text">${infoVaga.Localidade}</p>
+                        <p class="card-text">${infoVaga.Status}</p>
+                        <button class="btn btn-warning btn-sm edit-button">Editar</button>
+                        <button class="btn btn-danger btn-sm delete-button">Deletar</button>
+                    </div>
+                </div>
+            `;
 
-/** os cards */
-cards.forEach(card => {
-    card.addEventListener('dragstart', dragstart);
-    card.addEventListener('drag', drag);
-    card.addEventListener('dragend', dragend)
-})
+            var sectionId;
+            switch (infoVaga.Status) {
+                case 'Aplicado':
+                    sectionId = 'aplicadas';
+                    break;
+                case 'Em processo':
+                    sectionId = 'emProcesso';
+                    break;
+                case 'Aceito':
+                    sectionId = 'aprovado';
+                    break;
+                case 'Rejeitado':
+                    sectionId = 'rejeitado';
+                    break;
+                default:
+                    sectionId = 'aplicadas';
+            }
 
-function dragstart() {
-    this.classList.add('is-dragging')
-}
+            document.getElementById(sectionId).appendChild(card);
+        });
 
-function drag() {
-}
+        adicionarDragAndDrop();
+        adicionarEventosDeEdicao();
+        adicionarEventosDeletar();
+    }
 
-function dragend() {
-    this.classList.remove('is-dragging')
-}
+    function adicionarEventosDeEdicao() {
+        document.querySelectorAll('.edit-button').forEach(button => {
+            button.addEventListener('click', function () {
+                var card = this.closest('.card');
+                var id = parseInt(card.dataset.id);
+                var db = JSON.parse(localStorage.getItem('db_vaga'));
 
-/** onde os cards serão soltos */
+                var vaga = db.find(vaga => vaga.id === id);
+                if (vaga) {
+                    document.getElementById('Cargo').value = vaga.Cargo;
+                    document.getElementById('Empresa').value = vaga.Empresa;
+                    document.getElementById('Descricao').value = vaga.Descricao;
+                    document.getElementById('Localidade').value = vaga.Localidade;
+                    document.getElementById('Status').value = vaga.Status;
 
-dropzones.forEach(dropzone => {
-    dropzone.addEventListener('dragenter', dragenter)
-    dropzone.addEventListener('dragover', dragover)
-    dropzone.addEventListener('dragleave', dragleave)
-    dropzone.addEventListener('drop', drop)
-})
+                    isEditing = true;
+                    currentEditingId = id;
+                    abrirModal();
+                }
+            });
+        });
+    }
 
-function dragenter() {
-}
+    function adicionarEventosDeletar() {
+        document.querySelectorAll('.delete-button').forEach(button => {
+            button.addEventListener('click', function () {
+                var card = this.closest('.card');
+                var id = parseInt(card.dataset.id);
+                var db = JSON.parse(localStorage.getItem('db_vaga'));
 
-function dragover() {
+                var novaDb = db.filter(vaga => vaga.id !== id);
+                localStorage.setItem('db_vaga', JSON.stringify(novaDb));
+                window.location.reload();
+            });
+        });
+    }
 
-    this.classList.add('over')
-    const cardBeingDragged = document.querySelector('.is-dragging')
-    this.appendChild(cardBeingDragged)
-}
-function dragleave() {
-    this.classList.remove('over')
-}
+    function adicionarDragAndDrop() {
+        const cards = document.querySelectorAll('.card');
+        const dropzones = document.querySelectorAll('.dropzone');
 
-function drop() {
+        cards.forEach(card => {
+            card.addEventListener('dragstart', dragstart);
+            card.addEventListener('drag', drag);
+            card.addEventListener('dragend', dragend);
+        });
 
-}
+        dropzones.forEach(dropzone => {
+            dropzone.addEventListener('dragenter', dragenter);
+            dropzone.addEventListener('dragover', dragover);
+            dropzone.addEventListener('dragleave', dragleave);
+            dropzone.addEventListener('drop', drop);
+        });
+
+        function dragstart() {
+            this.classList.add('is-dragging');
+        }
+
+        function drag() {}
+
+        function dragend() {
+            this.classList.remove('is-dragging');
+        }
+
+        function dragenter() {}
+
+        function dragover(event) {
+            event.preventDefault();
+            this.classList.add('over');
+            const cardBeingDragged = document.querySelector('.is-dragging');
+            this.appendChild(cardBeingDragged);
+        }
+
+        function dragleave() {
+            this.classList.remove('over');
+        }
+
+        function drop() {
+            this.classList.remove('over');
+            atualizarStatus(this.id);
+        }
+
+        function atualizarStatus(sectionId) {
+            const statusMap = {
+                'aplicadas': 'Aplicado',
+                'emProcesso': 'Em processo',
+                'aprovado': 'Aceito',
+                'rejeitado': 'Rejeitado'
+            };
+
+            const card = document.querySelector('.is-dragging');
+            const db = JSON.parse(localStorage.getItem('db_vaga'));
+            const cardId = parseInt(card.dataset.id);
+            const vaga = db.find(vaga => vaga.id === cardId);
+
+            if (vaga) {
+                vaga.Status = statusMap[sectionId];
+                localStorage.setItem('db_vaga', JSON.stringify(db));
+            }
+        }
+    }
+
+    carregarVagas();
+});
