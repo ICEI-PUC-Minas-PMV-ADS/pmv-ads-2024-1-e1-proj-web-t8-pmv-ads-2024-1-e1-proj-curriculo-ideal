@@ -23,8 +23,12 @@ body{
   justify-content: flex-end;
 }
 
-#adicionarvaga{
+#adicionarvaga, #mostrarGrafico{
   background-color:#235784;
+}
+
+#mostrarGrafico {
+  margin-left: 8px;
 }
 
  #grafico {
@@ -210,3 +214,4 @@ section{
 .over{
   background-color: #235784;
 }
+

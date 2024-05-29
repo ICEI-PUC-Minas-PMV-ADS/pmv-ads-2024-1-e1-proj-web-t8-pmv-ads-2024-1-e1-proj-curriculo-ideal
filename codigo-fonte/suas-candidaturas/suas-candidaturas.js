@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
+    
+    
     var modal = document.getElementById('modalCandidatura');
+
     var isEditing = false;
     var currentEditingId = null;
 
@@ -8,11 +11,18 @@ document.addEventListener('DOMContentLoaded', function () {
         modalCandidatura.show();
     }
 
+    function abrirModalGrafico() {
+        let modalGrafico = document.getElementById('modalGrafico');
+        new bootstrap.Modal(modalGrafico).show();
+    }
+
     document.getElementById('adicionarvaga').addEventListener('click', function () {
         isEditing = false;
         resetForm();
         abrirModal();
     });
+
+    document.getElementById('mostrarGrafico').addEventListener('click', abrirModalGrafico)
 
     function resetForm() {
         document.getElementById('Cargo').value = '';
