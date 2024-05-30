@@ -169,3 +169,7 @@ function cadastraCurriculo() {
             console.log("Nenhum currículo encontrado com o ID especificado.");
         }
     }
+function gerarCurriculo(){
+    var curriculoPronto = document.getElementById("curriculo");
+    html2pdf(curriculoPronto);
+}
