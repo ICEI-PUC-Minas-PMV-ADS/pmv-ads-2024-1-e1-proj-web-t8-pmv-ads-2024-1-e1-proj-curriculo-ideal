@@ -31,10 +31,19 @@ body {
 }
  
 #filtro {
-  background-color: #235784;
+  background-color:#235784;
   color: white;
   border-radius: 60px;
   margin: 0px;
+}
+
+#busca {
+border-color: #235784;
+color:#235784
+}
+
+input#busca::placeholder{
+  color:#235784
 }
  
 h4 {
