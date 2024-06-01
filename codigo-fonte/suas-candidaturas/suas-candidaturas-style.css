@@ -1,183 +1,175 @@
 * {
-
-    padding: 0;
-    margin: 0;
-    box-sizing: 'border-box';
-
+ 
+  padding: 0;
+  margin: 0;
+  box-sizing: 'border-box';
+ 
 }
-
-body{
-    font-family: 'Encode sans';
-    
+ 
+body {
+  font-family: 'Encode sans';
+ 
 }
-
-#cabecalho{
-  display:flex;
+ 
+#cabecalho {
+  display: flex;
   justify-content: space-between;
-
+ 
 }
-
-#interacoes{
+ 
+#interacoes {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
-
-#adicionarvaga{
-  background-color:#235784;
+ 
+#adicionarvaga {
+  background-color: #235784;
 }
-
- #grafico {
-  background-color:#235784;
+ 
+#grafico {
+  background-color: #235784;
   color: white;
   border: none;
   margin: 0 15px
 }
-
-
-h4{
+ 
+#filtro{
+  background-color: #235784;
+  color: white;
+  border-radius: 60px;
+  margin: 0px
+}
+ 
+ 
+h4 {
   color: #374375
-
 }
-
-label{
+ 
+label {
   color: #235784
-
 }
-
+ 
 .btn#avancar {
   background-color: #FFC805;
   border-color: #FFC805;
 }
-
-input#Cargo.form-control{
+ 
+input#Cargo.form-control {
   color: #235784
-
 }
-
-input#Cargo.form-control{
+ 
+input#Cargo.form-control {
   border-color: #235784
-
 }
-
-input#Cargo::placeholder{
+ 
+input#Cargo::placeholder {
   color: #235784
-
 }
-
-input#Empresa.form-control{
-  color:#235784 
-
-}
-
-input#Empresa.form-control{
-  border-color:#235784 
-
-}
-
-input#Empresa::placeholder{
+ 
+input#Empresa.form-control {
   color: #235784
-
 }
-
-textarea#Descricao.form-control{
-  color:#235784 
-
+ 
+input#Empresa.form-control {
+  border-color: #235784
 }
-textarea#Descricao.form-control{
-  border-color:#235784 
-
-}
-
-textarea#Descricao::placeholder{
-  color:#235784
-
-}
-
-input#Localidade.form-control{
-  color:#235784
-
-}
-
-input#Localidade.form-control{
-  border-color:#235784
-
-}
-
-input#Localidade::placeholder{
+ 
+input#Empresa::placeholder {
   color: #235784
-
 }
-
-select#Status.form-control{
-  color:#235784
-
+ 
+textarea#Descricao.form-control {
+  color: #235784
 }
-
-select#Status.form-control{
-  border-color:#235784
-
+ 
+textarea#Descricao.form-control {
+  border-color: #235784
 }
-
-
-
-
-
-
-
-
-#cabecalho{
+ 
+textarea#Descricao::placeholder {
+  color: #235784
+}
+ 
+input#Localidade.form-control {
+  color: #235784
+}
+ 
+input#Localidade.form-control {
+  border-color: #235784
+}
+ 
+input#Localidade::placeholder {
+  color: #235784
+}
+ 
+select#Status.form-control {
+  color: #235784
+}
+ 
+select#Status.form-control {
+  border-color: #235784
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+#cabecalho {
   background-color: #f4f4f4;
   margin-top: 10px;
 }
-
-
-
-
-section{
+ 
+ 
+ 
+ 
+section {
   padding: 3%;
   justify-content: center;
 }
-
+ 
 .boards {
   display: flex;
   margin-top: 32px;
   justify-content: space-around;
   background-color: #f4f4f4;
   border-radius: 50px;
-  }
-
-
-
+}
+ 
+ 
+ 
 .board h3 {
   padding: 16px;
   justify-content: space-around;
   color: #000000cc;
   margin-top: 3%;
 }
-
-#aplicada{
- border-bottom: 5px solid #374375;
+ 
+#aplicada {
+  border-bottom: 5px solid #374375;
 }
-
-#processo{
+ 
+#processo {
   border-bottom: 5px solid #FFC805;
- }
+}
  
- #aprovadas{
+#aprovadas {
   border-bottom: 5px solid #24d10e;
- }
+}
  
- #rejeitadas{
+#rejeitadas {
   border-bottom: 5px solid #ff0d05;
- }
-
+}
+ 
 .dropzone {
   padding: 16px;
   min-width: 282px;
   min-height: 200px;
 }
-
+ 
 .card {
   background-color: #ffffff;
   padding: 16px;
@@ -188,25 +180,27 @@ section{
   font-weight: 600;
   font-size: 18px;
 }
-
-.card, .dropzone {
+ 
+.card,
+.dropzone {
   transition: 400ms;
 }
-
+ 
 .is-dragging {
   cursor: move;
   opacity: 0.3;
 }
-
+ 
 .over {
   background-color: #FFC805;
 }
-
-.is-dragging{
+ 
+.is-dragging {
   cursor: move;
-  opacity: 0,3;
-
+  opacity: 0, 3;
+ 
 }
-.over{
+ 
+.over {
   background-color: #235784;
 }
