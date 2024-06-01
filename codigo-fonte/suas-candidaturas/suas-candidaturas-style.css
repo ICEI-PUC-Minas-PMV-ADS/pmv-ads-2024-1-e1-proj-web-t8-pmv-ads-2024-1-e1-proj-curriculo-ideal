@@ -1,20 +1,16 @@
 * {
- 
   padding: 0;
   margin: 0;
   box-sizing: 'border-box';
- 
 }
  
 body {
   font-family: 'Encode sans';
- 
 }
  
 #cabecalho {
   display: flex;
   justify-content: space-between;
- 
 }
  
 #interacoes {
@@ -31,23 +27,22 @@ body {
   background-color: #235784;
   color: white;
   border: none;
-  margin: 0 15px
+  margin: 0 15px;
 }
  
-#filtro{
+#filtro {
   background-color: #235784;
   color: white;
   border-radius: 60px;
-  margin: 0px
+  margin: 0px;
 }
  
- 
 h4 {
-  color: #374375
+  color: #374375;
 }
  
 label {
-  color: #235784
+  color: #235784;
 }
  
 .btn#avancar {
@@ -55,76 +50,26 @@ label {
   border-color: #FFC805;
 }
  
-input#Cargo.form-control {
-  color: #235784
+input#Cargo.form-control,
+input#Empresa.form-control,
+input#Localidade.form-control,
+textarea#Descricao.form-control,
+select#Status.form-control {
+  color: #235784;
+  border-color: #235784;
 }
  
-input#Cargo.form-control {
-  border-color: #235784
-}
- 
-input#Cargo::placeholder {
-  color: #235784
-}
- 
-input#Empresa.form-control {
-  color: #235784
-}
- 
-input#Empresa.form-control {
-  border-color: #235784
-}
- 
-input#Empresa::placeholder {
-  color: #235784
-}
- 
-textarea#Descricao.form-control {
-  color: #235784
-}
- 
-textarea#Descricao.form-control {
-  border-color: #235784
-}
- 
+input#Cargo::placeholder,
+input#Empresa::placeholder,
+input#Localidade::placeholder,
 textarea#Descricao::placeholder {
-  color: #235784
+  color: #235784;
 }
- 
-input#Localidade.form-control {
-  color: #235784
-}
- 
-input#Localidade.form-control {
-  border-color: #235784
-}
- 
-input#Localidade::placeholder {
-  color: #235784
-}
- 
-select#Status.form-control {
-  color: #235784
-}
- 
-select#Status.form-control {
-  border-color: #235784
-}
- 
- 
- 
- 
- 
- 
- 
  
 #cabecalho {
   background-color: #f4f4f4;
   margin-top: 10px;
 }
- 
- 
- 
  
 section {
   padding: 3%;
@@ -138,8 +83,6 @@ section {
   background-color: #f4f4f4;
   border-radius: 50px;
 }
- 
- 
  
 .board h3 {
   padding: 16px;
@@ -197,10 +140,30 @@ section {
  
 .is-dragging {
   cursor: move;
-  opacity: 0, 3;
- 
+  opacity: 0.3;
 }
  
 .over {
   background-color: #235784;
+}
+ 
+/* Adições para a visualização em lista */
+.list-view .boards {
+  display: block;
+}
+ 
+.list-view .board {
+  width: 100%;
+  margin-bottom: 20px;
+}
+ 
+.list-view .dropzone {
+  display: block;
+  padding: 10px 0;
+}
+ 
+.list-view .card {
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 10px;
 }

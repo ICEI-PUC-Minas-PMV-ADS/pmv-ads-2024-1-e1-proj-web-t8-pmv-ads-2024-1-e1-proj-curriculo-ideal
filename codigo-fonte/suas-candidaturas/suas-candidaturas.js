@@ -242,6 +242,11 @@ document.addEventListener('DOMContentLoaded', function () {
         var vagasFiltradas = db.filter(vaga => vaga.Cargo.toLowerCase().includes(termo) || vaga.Empresa.toLowerCase().includes(termo));
         exibeVagas(vagasFiltradas);
     });
+    document.getElementById('toggleView').addEventListener('click', function () {
+        var main = document.querySelector('main');
+        main.classList.toggle('list-view');
+        this.textContent = main.classList.contains('list-view') ? 'Quadro' : 'Lista';
+    });
  
     carregarVagas();
 });
