@@ -102,8 +102,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         <p class="card-text">${infoVaga.Descricao}</p>
                         <p class="card-text">${infoVaga.Localidade}</p>
                         <p class="card-text">${infoVaga.Status}</p>
-                        <button class="btn btn-warning btn-sm edit-button">Editar</button>
-                        <button class="btn btn-danger btn-sm delete-button">Deletar</button>
+                        <button class="btn btn-sm edit-button"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn btn-sm delete-button"><i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>`;
  

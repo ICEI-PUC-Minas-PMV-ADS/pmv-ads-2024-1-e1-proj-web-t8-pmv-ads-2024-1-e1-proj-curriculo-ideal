@@ -29,12 +29,11 @@ body {
   border: none;
   margin: 0 15px;
 }
- 
-#filtro {
+ #toggleView {
   background-color:#235784;
   color: white;
-  border-radius: 60px;
-  margin: 0px;
+  border-radius: 10px;
+  margin-right: 10px;
 }
 
 #busca {
@@ -78,6 +77,14 @@ textarea#Descricao::placeholder {
 #cabecalho {
   background-color: #f4f4f4;
   margin-top: 10px;
+}
+
+.edit-button{
+  color:#FFC805;
+}
+
+.delete-button{
+  color:#ff0d05;
 }
  
 section {
