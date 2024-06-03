@@ -72,36 +72,49 @@ grid-template-rows: 20% 20% 20% 20% 20%;
 
 }   
 
-.circulos {
-    position: center;
-    margin-top: 150px;
-    margin-left: 300px;
-    margin-right: 0px;
-    width: 900px;
-    height: 800px;
 
+.bola {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(182, 182, 182, 0.15);
+  height: 250px;
+  width: 250px;
+  border-radius: 125px;
+  box-shadow: 0px 5px 5px gray;
+}
+
+.bola p {
+  color: #374375;
+  font-weight: 550;
+  font-size: 22px;
+  text-align: center;
+}
+
+.bola b {
+  font-weight: 800;
+  font-size: 24px;
 }
 
 .carousel {
-    height: 100%;
-    margin-left: 25px;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-  }
+  margin: 10% 5%;
+
+}
+
+.parte {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nao-mostrar {
+  display: none;
+
+}  
+
   
-  .carousel-inner {
-    width: 100%;
-    display: flex;
-  }
-  
-  .carousel-inner img {
-    height: 50%;
-    width: 100%;
-    transition: transform 0.5s ease;
-  }
-  
-  #prevBtn, #nextBtn {
+  #prevBtn, #nextBtn { 
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -110,6 +123,7 @@ grid-template-rows: 20% 20% 20% 20% 20%;
     border: none;
     padding: 10px 10px;
     cursor: pointer;
+    border-radius: 20px;
   }
   
   #prevBtn {
@@ -119,36 +133,42 @@ grid-template-rows: 20% 20% 20% 20% 20%;
   #nextBtn {
     right: 10px;
   }
-     
-
-.imagem1 {
-    margin-top: 0px;
-    margin-left:500px;
-    margin-right: 225px;
-    width: 325px;
-    height: 125px;
-    
+  
+.posicionamento-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.p1 {
-    margin-left: 250px;
-
+.bloco-rodape {
+  margin-left: 250px;
 }
 
-.botoes2 {
-    margin-left: 235px;
-    margin-bottom: 50px;
-    
+.texto-rodape {
+  font-weight: 600;
+  font-size: 22px;
 }
 
-.botoes2 a {
-    background-color:#FFC805 ;
-    color: white;
-    border: none;
-
+.botao-crie-rodape {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  border-radius: 25px;
+  height: 30px;
+  width: 90px;
+  background-color: #FFC805;
 }
 
+.botao-crie-rodape a {
+  color: white;
+}
 
+.bloco-imagem {
+  margin-right: 250px;
+}
 
-
-
+.imagemMenina {
+  width: 450px;
+  height: 450px;   
+}
