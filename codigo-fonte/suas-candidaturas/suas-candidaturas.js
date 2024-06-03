@@ -41,6 +41,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var db = JSON.parse(localStorage.getItem('db_vaga')) || [];
 
+        // Validação para evitar duplicidade
+        if (!isEditing) {
+            var vagaExistente = db.some(vaga => vaga.Cargo === cargo && vaga.Empresa === empresa);
+            if (vagaExistente) {
+                alert('Uma vaga com o mesmo cargo e empresa já existe.');
+                return;
+            }
+        }
+
         if (isEditing) {
             let index = db.findIndex(vaga => vaga.id === currentEditingId);
             db[index] = {
@@ -65,10 +74,21 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         localStorage.setItem('db_vaga', JSON.stringify(db));
-        window.location.reload();
+        carregarVagas();
+        var modalCandidatura = bootstrap.Modal.getInstance(modal);
+        modalCandidatura.hide();
     });
 
     function exibeVagas(db) {
+        const sections = {
+            'aplicadas': document.getElementById('aplicadas'),
+            'emProcesso': document.getElementById('emProcesso'),
+            'aprovado': document.getElementById('aprovado'),
+            'rejeitado': document.getElementById('rejeitado')
+        };
+
+        Object.values(sections).forEach(section => section.innerHTML = '');
+
         db.forEach(function (infoVaga) {
             var card = document.createElement('div');
             card.className = 'card';
@@ -85,8 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <button class="btn btn-warning btn-sm edit-button">Editar</button>
                         <button class="btn btn-danger btn-sm delete-button">Deletar</button>
                     </div>
-                </div>
-            `;
+                </div>`;
 
             var sectionId;
             switch (infoVaga.Status) {
@@ -96,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 case 'Em processo':
                     sectionId = 'emProcesso';
                     break;
-                case 'Aceito':
+                case 'Aprovado':
                     sectionId = 'aprovado';
                     break;
                 case 'Rejeitado':
@@ -106,12 +125,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     sectionId = 'aplicadas';
             }
 
-            document.getElementById(sectionId).appendChild(card);
+            sections[sectionId].appendChild(card);
         });
 
-        adicionarDragAndDrop();
         adicionarEventosDeEdicao();
         adicionarEventosDeletar();
+        adicionarDragAndDrop();
     }
 
     function adicionarEventosDeEdicao() {
@@ -140,13 +159,15 @@ document.addEventListener('DOMContentLoaded', function () {
     function adicionarEventosDeletar() {
         document.querySelectorAll('.delete-button').forEach(button => {
             button.addEventListener('click', function () {
-                var card = this.closest('.card');
-                var id = parseInt(card.dataset.id);
-                var db = JSON.parse(localStorage.getItem('db_vaga'));
+                if (confirm('Tem certeza que deseja deletar esta vaga?')) {
+                    var card = this.closest('.card');
+                    var id = parseInt(card.dataset.id);
+                    var db = JSON.parse(localStorage.getItem('db_vaga'));
 
-                var novaDb = db.filter(vaga => vaga.id !== id);
-                localStorage.setItem('db_vaga', JSON.stringify(novaDb));
-                window.location.reload();
+                    var novaDb = db.filter(vaga => vaga.id !== id);
+                    localStorage.setItem('db_vaga', JSON.stringify(novaDb));
+                    carregarVagas();
+                }
             });
         });
     }
@@ -172,19 +193,17 @@ document.addEventListener('DOMContentLoaded', function () {
             this.classList.add('is-dragging');
         }
 
-        function drag() {}
+        function drag() { }
 
         function dragend() {
             this.classList.remove('is-dragging');
         }
 
-        function dragenter() {}
+        function dragenter() { }
 
         function dragover(event) {
             event.preventDefault();
             this.classList.add('over');
-            const cardBeingDragged = document.querySelector('.is-dragging');
-            this.appendChild(cardBeingDragged);
         }
 
         function dragleave() {
@@ -200,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const statusMap = {
                 'aplicadas': 'Aplicado',
                 'emProcesso': 'Em processo',
-                'aprovado': 'Aceito',
+                'aprovado': 'Aprovado',
                 'rejeitado': 'Rejeitado'
             };
 
@@ -212,9 +231,17 @@ document.addEventListener('DOMContentLoaded', function () {
             if (vaga) {
                 vaga.Status = statusMap[sectionId];
                 localStorage.setItem('db_vaga', JSON.stringify(db));
+                carregarVagas();
             }
         }
     }
+
+    document.getElementById('busca').addEventListener('input', function () {
+        var termo = this.value.toLowerCase();
+        var db = JSON.parse(localStorage.getItem('db_vaga')) || [];
+        var vagasFiltradas = db.filter(vaga => vaga.Cargo.toLowerCase().includes(termo) || vaga.Empresa.toLowerCase().includes(termo));
+        exibeVagas(vagasFiltradas);
+    });
 
     carregarVagas();
 });
