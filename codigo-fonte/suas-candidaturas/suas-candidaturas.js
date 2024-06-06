@@ -2,18 +2,18 @@ document.addEventListener('DOMContentLoaded', function () {
     var modal = document.getElementById('modalCandidatura');
     var isEditing = false;
     var currentEditingId = null;
-
+ 
     function abrirModal() {
         var modalCandidatura = new bootstrap.Modal(modal);
         modalCandidatura.show();
     }
-
+ 
     document.getElementById('adicionarvaga').addEventListener('click', function () {
         isEditing = false;
         resetForm();
         abrirModal();
     });
-
+ 
     function resetForm() {
         document.getElementById('Cargo').value = '';
         document.getElementById('Empresa').value = '';
@@ -21,24 +21,24 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('Localidade').value = '';
         document.getElementById('Status').value = 'Aplicado';
     }
-
+ 
     function carregarVagas() {
         var db = JSON.parse(localStorage.getItem('db_vaga')) || [];
         exibeVagas(db);
     }
-
+ 
     document.getElementById('avancar').addEventListener('click', function () {
         var cargo = document.getElementById('Cargo').value;
         var empresa = document.getElementById('Empresa').value;
         var descricao = document.getElementById('Descricao').value;
         var localidade = document.getElementById('Localidade').value;
         var status = document.getElementById('Status').value;
-
+ 
         if (!cargo || !empresa || !descricao || !localidade) {
             alert('Por favor, preencha todos os campos.');
             return;
         }
-
+ 
         var db = JSON.parse(localStorage.getItem('db_vaga')) || [];
 
         // Validação para evitar duplicidade
@@ -72,13 +72,13 @@ document.addEventListener('DOMContentLoaded', function () {
             };
             db.push(novaVaga);
         }
-
+ 
         localStorage.setItem('db_vaga', JSON.stringify(db));
         carregarVagas();
         var modalCandidatura = bootstrap.Modal.getInstance(modal);
         modalCandidatura.hide();
     });
-
+ 
     function exibeVagas(db) {
         const sections = {
             'aplicadas': document.getElementById('aplicadas'),
@@ -86,9 +86,9 @@ document.addEventListener('DOMContentLoaded', function () {
             'aprovado': document.getElementById('aprovado'),
             'rejeitado': document.getElementById('rejeitado')
         };
-
+ 
         Object.values(sections).forEach(section => section.innerHTML = '');
-
+ 
         db.forEach(function (infoVaga) {
             var card = document.createElement('div');
             card.className = 'card';
@@ -102,8 +102,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         <p class="card-text">${infoVaga.Descricao}</p>
                         <p class="card-text">${infoVaga.Localidade}</p>
                         <p class="card-text">${infoVaga.Status}</p>
-                        <button class="btn btn-warning btn-sm edit-button">Editar</button>
-                        <button class="btn btn-danger btn-sm delete-button">Deletar</button>
+                        <button class="btn btn-sm edit-button"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn btn-sm delete-button"><i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>`;
 
@@ -127,19 +127,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
             sections[sectionId].appendChild(card);
         });
-
+ 
         adicionarEventosDeEdicao();
         adicionarEventosDeletar();
         adicionarDragAndDrop();
     }
-
+ 
     function adicionarEventosDeEdicao() {
         document.querySelectorAll('.edit-button').forEach(button => {
             button.addEventListener('click', function () {
                 var card = this.closest('.card');
                 var id = parseInt(card.dataset.id);
                 var db = JSON.parse(localStorage.getItem('db_vaga'));
-
+ 
                 var vaga = db.find(vaga => vaga.id === id);
                 if (vaga) {
                     document.getElementById('Cargo').value = vaga.Cargo;
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.getElementById('Descricao').value = vaga.Descricao;
                     document.getElementById('Localidade').value = vaga.Localidade;
                     document.getElementById('Status').value = vaga.Status;
-
+ 
                     isEditing = true;
                     currentEditingId = id;
                     abrirModal();
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-
+ 
     function adicionarEventosDeletar() {
         document.querySelectorAll('.delete-button').forEach(button => {
             button.addEventListener('click', function () {
@@ -171,50 +171,51 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-
+ 
     function adicionarDragAndDrop() {
         const cards = document.querySelectorAll('.card');
         const dropzones = document.querySelectorAll('.dropzone');
-
+ 
         cards.forEach(card => {
             card.addEventListener('dragstart', dragstart);
             card.addEventListener('drag', drag);
             card.addEventListener('dragend', dragend);
         });
-
+ 
         dropzones.forEach(dropzone => {
             dropzone.addEventListener('dragenter', dragenter);
             dropzone.addEventListener('dragover', dragover);
             dropzone.addEventListener('dragleave', dragleave);
             dropzone.addEventListener('drop', drop);
         });
-
+ 
         function dragstart() {
             this.classList.add('is-dragging');
         }
-
-        function drag() { }
-
+ 
+        function drag() {}
+ 
         function dragend() {
             this.classList.remove('is-dragging');
         }
-
-        function dragenter() { }
+ 
+        function dragenter() {}
+ 
 
         function dragover(event) {
             event.preventDefault();
             this.classList.add('over');
         }
-
+ 
         function dragleave() {
             this.classList.remove('over');
         }
-
+ 
         function drop() {
             this.classList.remove('over');
             atualizarStatus(this.id);
         }
-
+ 
         function atualizarStatus(sectionId) {
             const statusMap = {
                 'aplicadas': 'Aplicado',
@@ -222,12 +223,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 'aprovado': 'Aprovado',
                 'rejeitado': 'Rejeitado'
             };
-
+ 
             const card = document.querySelector('.is-dragging');
             const db = JSON.parse(localStorage.getItem('db_vaga'));
             const cardId = parseInt(card.dataset.id);
             const vaga = db.find(vaga => vaga.id === cardId);
-
+ 
             if (vaga) {
                 vaga.Status = statusMap[sectionId];
                 localStorage.setItem('db_vaga', JSON.stringify(db));
@@ -243,5 +244,11 @@ document.addEventListener('DOMContentLoaded', function () {
         exibeVagas(vagasFiltradas);
     });
 
+    document.getElementById('toggleView').addEventListener('click', function () {
+        var main = document.querySelector('main');
+        main.classList.toggle('list-view');
+        this.textContent = main.classList.contains('list-view') ? 'Quadro' : 'Lista';
+    });
+ 
     carregarVagas();
 });
