@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
  
         var db = JSON.parse(localStorage.getItem('db_vaga')) || [];
- 
+
         // Validação para evitar duplicidade
         if (!isEditing) {
             var vagaExistente = db.some(vaga => vaga.Cargo === cargo && vaga.Empresa === empresa);
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
         }
- 
+
         if (isEditing) {
             let index = db.findIndex(vaga => vaga.id === currentEditingId);
             db[index] = {
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <button class="btn btn-sm delete-button"><i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>`;
- 
+
             var sectionId;
             switch (infoVaga.Status) {
                 case 'Aplicado':
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 default:
                     sectionId = 'aplicadas';
             }
- 
+
             sections[sectionId].appendChild(card);
         });
  
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     var card = this.closest('.card');
                     var id = parseInt(card.dataset.id);
                     var db = JSON.parse(localStorage.getItem('db_vaga'));
- 
+
                     var novaDb = db.filter(vaga => vaga.id !== id);
                     localStorage.setItem('db_vaga', JSON.stringify(novaDb));
                     carregarVagas();
@@ -201,6 +201,7 @@ document.addEventListener('DOMContentLoaded', function () {
  
         function dragenter() {}
  
+
         function dragover(event) {
             event.preventDefault();
             this.classList.add('over');
@@ -235,13 +236,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     }
- 
+
     document.getElementById('busca').addEventListener('input', function () {
         var termo = this.value.toLowerCase();
         var db = JSON.parse(localStorage.getItem('db_vaga')) || [];
         var vagasFiltradas = db.filter(vaga => vaga.Cargo.toLowerCase().includes(termo) || vaga.Empresa.toLowerCase().includes(termo));
         exibeVagas(vagasFiltradas);
     });
+
     document.getElementById('toggleView').addEventListener('click', function () {
         var main = document.querySelector('main');
         main.classList.toggle('list-view');

@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: 'border-box';
 }
- 
+
 body {
   font-family: 'Encode sans';
 }
@@ -12,7 +12,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
- 
+
 #interacoes {
   display: flex;
   align-items: center;
@@ -22,13 +22,14 @@ body {
 #adicionarvaga {
   background-color: #235784;
 }
- 
+
 #grafico {
   background-color: #235784;
   color: white;
   border: none;
   margin: 0 15px;
 }
+
  #toggleView {
   background-color:#235784;
   color: white;
@@ -57,7 +58,7 @@ label {
   background-color: #FFC805;
   border-color: #FFC805;
 }
- 
+
 input#Cargo.form-control,
 input#Empresa.form-control,
 input#Localidade.form-control,
@@ -66,18 +67,19 @@ select#Status.form-control {
   color: #235784;
   border-color: #235784;
 }
- 
+
 input#Cargo::placeholder,
 input#Empresa::placeholder,
 input#Localidade::placeholder,
 textarea#Descricao::placeholder {
   color: #235784;
 }
- 
+
 #cabecalho {
   background-color: #f4f4f4;
   margin-top: 10px;
 }
+
 
 .edit-button{
   color:#FFC805;
@@ -99,7 +101,7 @@ section {
   background-color: #f4f4f4;
   border-radius: 50px;
 }
- 
+
 .board h3 {
   padding: 16px;
   justify-content: space-around;
@@ -139,7 +141,7 @@ section {
   font-weight: 600;
   font-size: 18px;
 }
- 
+
 .card,
 .dropzone {
   transition: 400ms;
@@ -153,7 +155,7 @@ section {
 .over {
   background-color: #FFC805;
 }
- 
+
 .is-dragging {
   cursor: move;
   opacity: 0.3;
@@ -183,3 +185,4 @@ section {
   margin: 10px 0;
   border-radius: 10px;
 }
+
