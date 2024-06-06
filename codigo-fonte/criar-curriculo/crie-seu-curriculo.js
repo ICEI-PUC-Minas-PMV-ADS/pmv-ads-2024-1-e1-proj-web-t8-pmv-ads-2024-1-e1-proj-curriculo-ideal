@@ -6,7 +6,8 @@ var botoesAvancar = document.querySelectorAll('.avancar-btn');
 var botoesRetroceder = document.querySelectorAll('.retroceder-btn');
 
 let novoId = 1;
-var experiencias = [];   
+var experiencias = [];
+var formacoes = [];   
 
 function avancar() {
     if(indiceAtual < secoes.length) {
@@ -15,6 +16,15 @@ function avancar() {
             var curriculo = dados.find(item => item.id == novoId) || {};
 
             curriculo.experiencias = experiencias;
+
+            localStorage.setItem("dadosCurriculo", JSON.stringify(dados));
+        } 
+        
+        if (indiceAtual == 3) {
+            var dados = JSON.parse(localStorage.getItem("dadosCurriculo")) || [];
+            var curriculo = dados.find(item => item.id == novoId) || {};
+
+            curriculo.formacoes = formacoes;
 
             localStorage.setItem("dadosCurriculo", JSON.stringify(dados));
         }
@@ -116,6 +126,56 @@ function exibirExperiencias() {
     });
 }
 
+// Função para adicionar formação acadêmica
+document.getElementById("adicionar-formacao").addEventListener("click", function() {
+    const instituicao = document.getElementById("instituicao").value;
+    const curso = document.getElementById("curso").value;
+    const grauInstrucao = document.getElementById("grau-instrucao").value;
+    const dataInicioCurso = document.getElementById("data-inicio-curso").value;
+    const dataFimCurso = document.getElementById("data-fim-curso").value;
+    const atividadesEscolares = document.getElementById("resumo-atividades-escolares").value;
+
+    formacoes.push({
+        instituicao: instituicao,
+        curso: curso,
+        grauInstrucao: grauInstrucao,
+        dataInicioCurso: dataInicioCurso,
+        dataFimCurso: dataFimCurso,
+        atividadesEscolares: atividadesEscolares
+    });
+
+    document.getElementById("instituicao").value = "";
+    document.getElementById("curso").value = "";
+    document.getElementById("grau-instrucao").value = "";
+    document.getElementById("data-inicio-curso").value = "";
+    document.getElementById("data-fim-curso").value = "";
+    document.getElementById("resumo-atividades-escolares").value = "";
+
+    exibirFormacoes();
+});
+
+function exibirFormacoes() {
+    const containerFormacoes = document.getElementById("formacoes-adicionadas");
+    containerFormacoes.innerHTML = "";
+
+    formacoes.forEach(function(form, index) {
+        const formacaoDiv = document.createElement("div");
+        formacaoDiv.className = "formacao-item";
+        formacaoDiv.innerHTML = `
+            <h4>Formação ${index + 1}</h4>
+            <p><strong>Instituição:</strong> ${form.instituicao}</p>
+            <p><strong>Curso:</strong> ${form.curso}</p>
+            <p><strong>Grau de Instrução:</strong> ${form.grauInstrucao}</p>
+            <p><strong>Data de Início:</strong> ${form.dataInicioCurso}</p>
+            <p><strong>Data de Término:</strong> ${form.dataFimCurso}</p>
+            <p><strong>Atividades:</strong> ${form.atividadesEscolares}</p>
+        `;
+            
+        containerFormacoes.appendChild(formacaoDiv);
+    });
+}
+
+
 function cadastraCurriculo() {
 
     // Chamando elementos do formulário
@@ -182,13 +242,17 @@ function cadastraCurriculo() {
             dataFimEmpresa: dataFimEmpresa.value,
             trabalhoAtualUsuario: trabalhoAtual.value,
             atividadesTrabalho: atividadesTrabalho.value,
-        },            
-        instituicaoUsuario: instituicao.value,
-        cursoUsuario: curso.value,
-        grauInstrucao: grauInstrucao.value,
-        dataInicioCurso: dataInicioCurso.value,
-        dataFimCurso: dataFimCurso.value,
-        atividadesEscolares: atividadesEscolares.value,
+        },
+        
+        formacao: {
+            formacoes,
+            instituicaoUsuario: instituicao.value,
+            cursoUsuario: curso.value,
+            grauInstrucao: grauInstrucao.value,
+            dataInicioCurso: dataInicioCurso.value,
+            dataFimCurso: dataFimCurso.value,
+            atividadesEscolares: atividadesEscolares.value,
+        },
         template1: template1.value, //imprimindo como ON no "curriculo", será revisado posteriormente
         template2: template2.value, //imprimindo como ON no "curriculo", será revisado posteriormente
     }
