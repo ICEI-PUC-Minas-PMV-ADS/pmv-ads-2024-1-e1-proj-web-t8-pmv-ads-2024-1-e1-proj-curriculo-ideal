@@ -23,6 +23,11 @@ body {
   background-color: #235784;
 }
 
+#mostrarGrafico {
+  margin: 8px;
+  background-color:#235784;
+}
+
 #grafico {
   background-color: #235784;
   color: white;
