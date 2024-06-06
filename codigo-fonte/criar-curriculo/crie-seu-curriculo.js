@@ -5,11 +5,22 @@ var progresso = 25;
 var botoesAvancar = document.querySelectorAll('.avancar-btn');
 var botoesRetroceder = document.querySelectorAll('.retroceder-btn');
 
+let novoId = 1;
+var experiencias = [];   
+
 function avancar() {
     if(indiceAtual < secoes.length) {
+        if(indiceAtual == 2) {
+            var dados = JSON.parse(localStorage.getItem("dadosCurriculo")) || [];
+            var curriculo = dados.find(item => item.id == novoId) || {};
+
+            curriculo.experiencias = experiencias;
+
+            localStorage.setItem("dadosCurriculo", JSON.stringify(dados));
+        }
+
         document.getElementById(secoes[indiceAtual]).style.display = 'none';
         indiceAtual++;
-        console.log(indiceAtual)
         document.getElementById(secoes[indiceAtual]).style.display= 'block';
         avancarBarraDeProgresso();
     }
@@ -51,9 +62,63 @@ function retrocederBarraDeProgresso() {
 
 }
 
-// Chamando elementos do formulário
+
+// Função para adicionar experiência profissional
+
+document.getElementById("adicionar-experiencia").addEventListener("click", function() {
+    const cargo = document.getElementById("cargo").value;
+    const empresa = document.getElementById("empresa").value;
+    const local = document.getElementById("local").value;
+    const dataInicioEmpresa = document.getElementById("data-inicio-empresa").value;
+    const dataFimEmpresa = document.getElementById("data-fim-empresa").value;
+    const trabalhoAtual = document.getElementById("trabalho-atual").value;
+    const atividadesTrabalho = document.getElementById("atividades-trabalho").value;
+
+    experiencias.push({
+        cargo: cargo,
+        empresa: empresa,
+        local: local,
+        dataInicioEmpresa: dataInicioEmpresa,
+        dataFimEmpresa: dataFimEmpresa,
+        trabalhoAtual: trabalhoAtual,
+        atividadesTrabalho: atividadesTrabalho
+    });
+
+    document.getElementById("cargo").value = "";
+    document.getElementById("empresa").value = "";
+    document.getElementById("local").value = "";
+    document.getElementById("data-inicio-empresa").value = "";
+    document.getElementById("data-fim-empresa").value = "";
+    document.getElementById("trabalho-atual").value = "";
+    document.getElementById("atividades-trabalho").value = "";
+
+    exibirExperiencias();
+});
+
+function exibirExperiencias() {
+    const containerExperiencias = document.getElementById("experiencias-adicionadas");
+    containerExperiencias.innerHTML = "";
+
+    experiencias.forEach(function(exp, index) {
+        const experienciaDiv = document.createElement("div");
+        experienciaDiv.className = "experiencia-item";
+        experienciaDiv.innerHTML = `
+        <h4>Experiência ${index + 1}</h4>
+        <p><strong>Cargo:</strong> ${exp.cargo}</p>
+        <p><strong>Empresa:</strong> ${exp.empresa}</p>
+        <p><strong>Local:</strong> ${exp.local}</p>
+        <p><strong>Data de Início:</strong> ${exp.dataInicio}</p>
+        <p><strong>Data de Término:</strong> ${exp.dataFim}</p>
+        <p><strong>Trabalho Atual:</strong> ${exp.trabalhoAtual ? 'Não' : 'Sim'}</p>
+        <p><strong>Atividades:</strong> ${exp.atividades}</p>
+    `;
+        containerExperiencias.appendChild(experienciaDiv);
+    });
+}
 
 function cadastraCurriculo() {
+
+    // Chamando elementos do formulário
     var nome = document.getElementById("nome");
     var cidade = document.getElementById("cidade");
     var estado = document.getElementById("estado");
@@ -89,7 +154,7 @@ function cadastraCurriculo() {
         dados = [];
     }
 
-    let novoId = 1;
+    
     if (dados.length != 0) {
         novoId = dados[dados.length - 1].id + 1;
     }
@@ -107,13 +172,17 @@ function cadastraCurriculo() {
         websiteUsuario: website.value,
         resumoUsuario: resumo.value,
         habilidadesUsuario: habilidades.value,
-        cargoUsuario: cargo.value,
-        empresaUsuario: empresa.value,
-        localUsuario: local.value,
-        dataInicioEmpresa: dataInicioEmpresa.value,
-        dataFimEmpresa: dataFimEmpresa.value,
-        trabalhoAtualUsuario: trabalhoAtual.value, //imprimindo como ON no "curriculo", será revisado posteriormente
-        atividadesTrabalho: atividadesTrabalho.value,
+
+        experiencia: {
+            experiencias,
+            cargoUsuario: cargo.value,
+            empresaUsuario: empresa.value,
+            localUsuario: local.value,
+            dataInicioEmpresa: dataInicioEmpresa.value,
+            dataFimEmpresa: dataFimEmpresa.value,
+            trabalhoAtualUsuario: trabalhoAtual.value,
+            atividadesTrabalho: atividadesTrabalho.value,
+        },            
         instituicaoUsuario: instituicao.value,
         cursoUsuario: curso.value,
         grauInstrucao: grauInstrucao.value,
@@ -151,13 +220,7 @@ function cadastraCurriculo() {
                 <div>${curriculoInfo.websiteUsuario}</div>
                 <div>${curriculoInfo.resumoUsuario}</div>
                 <div>${curriculoInfo.habilidadesUsuario}</div>
-                <div>${curriculoInfo.cargoUsuario}</div>
-                <div>${curriculoInfo.empresaUsuario}</div>
-                <div>${curriculoInfo.localUsuario}</div>
-                <div>${curriculoInfo.dataInicioEmpresa}</div>
-                <div>${curriculoInfo.dataFimEmpresa}</div>
-                <div>${curriculoInfo.trabalhoAtualUsuario}</div>
-                <div>${curriculoInfo.atividadesTrabalho}</div>
+                <div>${curriculoInfo.experiencia}</div>
                 <div>${curriculoInfo.instituicaoUsuario}</div>
                 <div>${curriculoInfo.cursoUsuario}</div>
                 <div>${curriculoInfo.grauInstrucao}</div>
