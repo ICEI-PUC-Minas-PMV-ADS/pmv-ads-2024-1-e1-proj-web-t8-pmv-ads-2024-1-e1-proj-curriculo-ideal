@@ -42,7 +42,10 @@
                 <button type="button" onclick="abrirModal()" class="btn btn-primary" id="adicionarvaga" data-toggle="modal" data-target="#modalCandidatura">
                     Adicionar vaga
                 </button>
-                <a class="btn btn-primary" href="../grafico/grafico.html" id="grafico">Gráfico</a>
+                <button type="button" onclick="abrirModalGrafico()" class="btn btn-primary" id="mostrarGrafico" data-toggle="modal"
+                    data-target="#modalGrafico">
+                    Gráfico
+                </button>
                 <button type="button" class="btn btn-secondary" id="toggleView" onclick="toggleView()">Lista</button>
                 <div id="filtro">
                     <input type="text" id="busca" placeholder="Buscar por cargo ou empresa..." class="form-control">
@@ -50,6 +53,29 @@
             </div>
         </div>
  
+        <!--MODAL GRÁFICO-->
+        <div class="modal" id="modalGrafico" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div id="tituloModal">
+                            <h4 class="modal-title text-center">GRÁFICO</h4>
+                        </div>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="grafico">
+                            <!-- GRAFICO -->
+                            <canvas id="grafico1" width="400" height="400"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL INSERIR CANDIDATURAS -->
         <div class="modal" id="modalCandidatura" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -128,6 +154,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script type="text/javascript" src="suas-candidaturas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="../grafico/grafico.js"></script>
     <script>
         window.onload = function () {
             var db = JSON.parse(localStorage.getItem('db_vaga'));

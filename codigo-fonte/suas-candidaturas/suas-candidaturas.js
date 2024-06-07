@@ -78,6 +78,16 @@ document.addEventListener('DOMContentLoaded', function () {
         var modalCandidatura = bootstrap.Modal.getInstance(modal);
         modalCandidatura.hide();
     });
+
+    // Gráfico
+    function abrirModalGrafico() {
+        let modalGrafico = document.getElementById('modalGrafico');
+        new bootstrap.Modal(modalGrafico).show();
+    }
+
+    document.getElementById('mostrarGrafico').addEventListener('click', abrirModalGrafico);
+
+    // Vagas
  
     function exibeVagas(db) {
         const sections = {
