@@ -7,6 +7,10 @@
     padding: 0;
 }
 
+body {
+   height: 100%;
+}
+
 nav {
     height: 5vh;
     background-color: var(--cor-de-fundo-nav);
@@ -43,7 +47,6 @@ nav {
 }
 
 footer {
-    height: 5vh;
     display: flex !important;
     background-color: var(--cor-de-fundo-nav);
     justify-content: space-between;
@@ -58,11 +61,11 @@ footer .logo {
     display: flex;
     align-items: center;
     margin: 10px;
+    height: 0;
 
 }
 
 footer .logo-footer {
-    height: 200px;
     width: 200px;
 }
 
