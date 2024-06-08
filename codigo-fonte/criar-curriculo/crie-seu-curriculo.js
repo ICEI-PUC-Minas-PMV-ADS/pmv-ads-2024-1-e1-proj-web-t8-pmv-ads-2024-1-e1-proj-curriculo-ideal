@@ -26,9 +26,23 @@ function atualizarCurriculo() {
     localStorage.setItem("dadosCurriculo", JSON.stringify(dados));
 }
 
+// Função para verificar se todos os campos obrigatórios da seção atual estão preenchidos
+function camposObrigatoriosPreenchidos() {
+    var secaoAtual = document.getElementById(secoes[indiceAtual]);
+    var camposObrigatorios = secaoAtual.querySelectorAll('input[required], select[required], textarea[required]');
+    let preenchidos = true;
+
+    camposObrigatorios.forEach(function(campo) {
+        if (!campo.value.trim()) {
+            preenchidos = false;
+        }
+    });
+
+    return preenchidos;
+}
 
 function avancar() {
-    if(indiceAtual < secoes.length) {
+    if(indiceAtual < secoes.length && camposObrigatoriosPreenchidos) {
         if(indiceAtual == 2 || indiceAtual == 3) {
            atualizarCurriculo();
         }
@@ -37,8 +51,8 @@ function avancar() {
         indiceAtual++;
         document.getElementById(secoes[indiceAtual]).style.display= 'block';
         avancarBarraDeProgresso();
-    }
-}
+    };
+};
 
 function retroceder() {
     if(indiceAtual > 0) {
@@ -50,7 +64,13 @@ function retroceder() {
 }
 
 botoesAvancar.forEach(function(botao) {
-    botao.addEventListener('click', avancar);
+    botao.addEventListener('click', function() {
+        if (camposObrigatoriosPreenchidos()) {
+            avancar();
+        } else {
+            alert('Preencha todos os campos obrigatórios.');
+        }
+    });
 });
 
 botoesRetroceder.forEach(function(botao) {
@@ -200,8 +220,33 @@ function mostraCurriculo(dados, novoId) {
                 <div>${curriculo.websiteUsuario}</div>
                 <div>${curriculo.resumoUsuario}</div>
                 <div>${curriculo.habilidadesUsuario}</div>
-                <div>${curriculo.experiencias}</div>
-                <div>${curriculo.formacoes}</div>
+                <div>
+                <h4>Experiências</h4>
+                ${curriculo.experiencias.map(exp => `
+                    <div>
+                        <p><strong>Cargo:</strong> ${exp.cargo}</p>
+                        <p><strong>Empresa:</strong> ${exp.empresa}</p>
+                        <p><strong>Local:</strong> ${exp.local}</p>
+                        <p><strong>Data de Início:</strong> ${exp.dataInicioEmpresa}</p>
+                        <p><strong>Data de Término:</strong> ${exp.dataFimEmpresa}</p>
+                        <p><strong>Trabalho Atual:</strong> ${exp.trabalhoAtual ? 'Sim' : 'Não'}</p>
+                        <p><strong>Atividades:</strong> ${exp.atividadesTrabalho}</p>
+                    </div>
+                `).join('')}
+            </div>
+            <div>
+                <h4>Formações</h4>
+                ${curriculo.formacoes.map(form => `
+                    <div>
+                        <p><strong>Instituição:</strong> ${form.instituicao}</p>
+                        <p><strong>Curso:</strong> ${form.curso}</p>
+                        <p><strong>Grau de Instrução:</strong> ${form.grauInstrucao}</p>
+                        <p><strong>Data de Início:</strong> ${form.dataInicioCurso}</p>
+                        <p><strong>Data de Término:</strong> ${form.dataFimCurso}</p>
+                        <p><strong>Atividades:</strong> ${form.atividadesEscolares}</p>
+                    </div>
+                `).join('')}
+            </div>
             `;
         } else {
             console.log("Nenhum currículo encontrado com o ID especificado.");
