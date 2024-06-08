@@ -9,32 +9,50 @@ let novoId = 1;
 var experiencias = [];
 var formacoes = [];   
 
+function atualizarCurriculo() {
+    const dados = JSON.parse(localStorage.getItem("dadosCurriculo")) || [];
+    let curriculo = dados.find(item => item.id === novoId) || {};
+
+    if (indiceAtual === 2) {
+        curriculo.experiencias = experiencias;
+    } else if (indiceAtual === 3) {
+        curriculo.formacoes = formacoes;
+    }
+
+    if (!dados.includes(curriculo)) {
+        dados.push(curriculo);
+    }
+
+    localStorage.setItem("dadosCurriculo", JSON.stringify(dados));
+}
+
+// Função para verificar se todos os campos obrigatórios da seção atual estão preenchidos
+function camposObrigatoriosPreenchidos() {
+    var secaoAtual = document.getElementById(secoes[indiceAtual]);
+    var camposObrigatorios = secaoAtual.querySelectorAll('input[required], select[required], textarea[required]');
+    let preenchidos = true;
+
+    camposObrigatorios.forEach(function(campo) {
+        if (!campo.value.trim()) {
+            preenchidos = false;
+        }
+    });
+
+    return preenchidos;
+}
+
 function avancar() {
-    if(indiceAtual < secoes.length) {
-        if(indiceAtual == 2) {
-            var dados = JSON.parse(localStorage.getItem("dadosCurriculo")) || [];
-            var curriculo = dados.find(item => item.id == novoId) || {};
-
-            curriculo.experiencias = experiencias;
-
-            localStorage.setItem("dadosCurriculo", JSON.stringify(dados));
-        } 
-        
-        if (indiceAtual == 3) {
-            var dados = JSON.parse(localStorage.getItem("dadosCurriculo")) || [];
-            var curriculo = dados.find(item => item.id == novoId) || {};
-
-            curriculo.formacoes = formacoes;
-
-            localStorage.setItem("dadosCurriculo", JSON.stringify(dados));
+    if(indiceAtual < secoes.length && camposObrigatoriosPreenchidos) {
+        if(indiceAtual == 2 || indiceAtual == 3) {
+           atualizarCurriculo();
         }
 
         document.getElementById(secoes[indiceAtual]).style.display = 'none';
         indiceAtual++;
         document.getElementById(secoes[indiceAtual]).style.display= 'block';
         avancarBarraDeProgresso();
-    }
-}
+    };
+};
 
 function retroceder() {
     if(indiceAtual > 0) {
@@ -46,7 +64,13 @@ function retroceder() {
 }
 
 botoesAvancar.forEach(function(botao) {
-    botao.addEventListener('click', avancar);
+    botao.addEventListener('click', function() {
+        if (camposObrigatoriosPreenchidos()) {
+            avancar();
+        } else {
+            alert('Preencha todos os campos obrigatórios.');
+        }
+    });
 });
 
 botoesRetroceder.forEach(function(botao) {
@@ -76,193 +100,127 @@ function retrocederBarraDeProgresso() {
 // Função para adicionar experiência profissional
 
 document.getElementById("adicionar-experiencia").addEventListener("click", function() {
-    const cargo = document.getElementById("cargo").value;
-    const empresa = document.getElementById("empresa").value;
-    const local = document.getElementById("local").value;
-    const dataInicioEmpresa = document.getElementById("data-inicio-empresa").value;
-    const dataFimEmpresa = document.getElementById("data-fim-empresa").value;
-    const trabalhoAtual = document.getElementById("trabalho-atual").value;
-    const atividadesTrabalho = document.getElementById("atividades-trabalho").value;
+    const experiencia = {
+        cargo: document.getElementById("cargo").value,
+        empresa: document.getElementById("empresa").value,
+        local: document.getElementById("local").value,
+        dataInicioEmpresa: document.getElementById("data-inicio-empresa").value,
+        dataFimEmpresa: document.getElementById("trabalho-atual").checked ? "Atualmente": document.getElementById("data-fim-empresa").value,
+        trabalhoAtual: document.getElementById("trabalho-atual").checked,
+        atividadesTrabalho: document.getElementById("atividades-trabalho").value,
+    };
 
-    experiencias.push({
-        cargo: cargo,
-        empresa: empresa,
-        local: local,
-        dataInicioEmpresa: dataInicioEmpresa,
-        dataFimEmpresa: dataFimEmpresa,
-        trabalhoAtual: trabalhoAtual,
-        atividadesTrabalho: atividadesTrabalho
-    });
-
-    document.getElementById("cargo").value = "";
-    document.getElementById("empresa").value = "";
-    document.getElementById("local").value = "";
-    document.getElementById("data-inicio-empresa").value = "";
-    document.getElementById("data-fim-empresa").value = "";
-    document.getElementById("trabalho-atual").value = "";
-    document.getElementById("atividades-trabalho").value = "";
-
+    experiencias.push(experiencia);
     exibirExperiencias();
+    limparCampos(["cargo", "empresa", "local", "data-inicio-empresa", "data-fim-empresa", "trabalho-atual", "atividades-trabalho"]);
 });
 
 function exibirExperiencias() {
     const containerExperiencias = document.getElementById("experiencias-adicionadas");
-    containerExperiencias.innerHTML = "";
-
-    experiencias.forEach(function(exp, index) {
-        const experienciaDiv = document.createElement("div");
-        experienciaDiv.className = "experiencia-item";
-        experienciaDiv.innerHTML = `
-        <div class="exp-item">
-        <h4>Experiência ${index + 1}</h4>
-        <p><strong>Cargo:</strong> ${exp.cargo}</p>
-        <p><strong>Empresa:</strong> ${exp.empresa}</p>
-        <p><strong>Local:</strong> ${exp.local}</p>
-        <p><strong>Data de Início:</strong> ${exp.dataInicio}</p>
-        <p><strong>Data de Término:</strong> ${exp.dataFim}</p>
-        <p><strong>Trabalho Atual:</strong> ${exp.trabalhoAtual ? 'Não' : 'Sim'}</p>
+    containerExperiencias.innerHTML = experiencias.map((exp, index) => `
+        <div class="experiencia-item">
+            <div class="exp-info">
+                <h4>Experiência ${index + 1}</h4>
+                <p><strong>Cargo:</strong> ${exp.cargo}</p>
+                <p><strong>Empresa:</strong> ${exp.empresa}</p>
+                <p><strong>Local:</strong> ${exp.local}</p>
+                <p><strong>Data de Início:</strong> ${exp.dataInicioEmpresa}</p>
+                <p><strong>Data de Término:</strong> ${exp.dataFimEmpresa}</p>
+                <p><strong>Trabalho Atual:</strong> ${exp.trabalhoAtual ? 'Sim' : 'Não'}</p>
+            </div>
+            <div class="exp-atividade">
+                <p><strong>Atividades:</strong> ${exp.atividadesTrabalho}</p>
+            </div>
         </div>
-        <div class="exp-atividade">
-        <p><strong>Atividades:</strong> ${exp.atividades}</p>
-        </div>
-    `;
-        containerExperiencias.appendChild(experienciaDiv);
-    });
+    `).join('');
 }
 
 // Função para adicionar formação acadêmica
 document.getElementById("adicionar-formacao").addEventListener("click", function() {
-    const instituicao = document.getElementById("instituicao").value;
-    const curso = document.getElementById("curso").value;
-    const grauInstrucao = document.getElementById("grau-instrucao").value;
-    const dataInicioCurso = document.getElementById("data-inicio-curso").value;
-    const dataFimCurso = document.getElementById("data-fim-curso").value;
-    const atividadesEscolares = document.getElementById("resumo-atividades-escolares").value;
+    const formacao = { 
+    instituicao: document.getElementById("instituicao").value,
+    curso: document.getElementById("curso").value,
+    grauInstrucao: document.getElementById("grau-instrucao").value,
+    dataInicioCurso: document.getElementById("data-inicio-curso").value,
+    dataFimCurso: document.getElementById("data-fim-curso").value,
+    atividadesEscolares: document.getElementById("resumo-atividades-escolares").value,
+    };
 
-    formacoes.push({
-        instituicao: instituicao,
-        curso: curso,
-        grauInstrucao: grauInstrucao,
-        dataInicioCurso: dataInicioCurso,
-        dataFimCurso: dataFimCurso,
-        atividadesEscolares: atividadesEscolares
-    });
-
-    document.getElementById("instituicao").value = "";
-    document.getElementById("curso").value = "";
-    document.getElementById("grau-instrucao").value = "";
-    document.getElementById("data-inicio-curso").value = "";
-    document.getElementById("data-fim-curso").value = "";
-    document.getElementById("resumo-atividades-escolares").value = "";
-
+    formacoes.push(formacao);
     exibirFormacoes();
+    limparCampos(["instituicao", "curso", "grau-instrucao", "data-inicio-curso", "data-fim-curso", "resumo-atividades-escolares"]);
 });
 
 function exibirFormacoes() {
     const containerFormacoes = document.getElementById("formacoes-adicionadas");
-    containerFormacoes.innerHTML = "";
-
-    formacoes.forEach(function(form, index) {
-        const formacaoDiv = document.createElement("div");
-        formacaoDiv.className = "formacao-item";
-        formacaoDiv.innerHTML = `
-        <div class="form-item">
-            <h4>Formação ${index + 1}</h4>
-            <p><strong>Instituição:</strong> ${form.instituicao}</p>
-            <p><strong>Curso:</strong> ${form.curso}</p>
-            <p><strong>Grau de Instrução:</strong> ${form.grauInstrucao}</p>
-            <p><strong>Data de Início:</strong> ${form.dataInicioCurso}</p>
-            <p><strong>Data de Término:</strong> ${form.dataFimCurso}</p>
+    containerFormacoes.innerHTML = formacoes.map((form, index) => `
+        <div class="formacao-item">
+            <div class="form-info">
+                <h4>Formação ${index + 1}</h4>
+                <p><strong>Instituição:</strong> ${form.instituicao}</p>
+                <p><strong>Curso:</strong> ${form.curso}</p>
+                <p><strong>Grau de Instrução:</strong> ${form.grauInstrucao}</p>
+                <p><strong>Data de Início:</strong> ${form.dataInicioCurso}</p>
+                <p><strong>Data de Término:</strong> ${form.dataFimCurso}</p>
             </div>
             <div class="form-atividade">
-            <p><strong>Atividades:</strong> ${form.atividadesEscolares}</p>
+                <p><strong>Atividades:</strong> ${form.atividadesEscolares}</p>
             </div>
-        `;
-            
-        containerFormacoes.appendChild(formacaoDiv);
-    });
+        </div>
+        `).join('');
+};
+
+function limparCampos(ids) {
+    ids.forEach(id => document.getElementById(id).value = '');
 }
 
-
-function cadastraCurriculo() {
-
-    // Chamando elementos do formulário
-    var nome = document.getElementById("nome");
-    var cidade = document.getElementById("cidade");
-    var estado = document.getElementById("estado");
-    var pais = document.getElementById("pais");
-    var tel = document.getElementById("telefone");
-    var email = document.getElementById("email");
-    var linkedin = document.getElementById("linkedin");
-    var github = document.getElementById("github");
-    var website = document.getElementById("website");
-    var resumo = document.getElementById("resumo");
-    var habilidades = document.getElementById("habilidades");
-    var cargo = document.getElementById("cargo");
-    var empresa = document.getElementById("empresa");
-    var local = document.getElementById("local");
-    var dataInicioEmpresa = document.getElementById("data-inicio-empresa");
-    var dataFimEmpresa = document.getElementById("data-fim-empresa");
-    var trabalhoAtual = document.getElementById("trabalho-atual");
-    var atividadesTrabalho = document.getElementById("atividades-trabalho");
-    var instituicao = document.getElementById("instituicao");
-    var curso = document.getElementById("curso");
-    var grauInstrucao = document.getElementById("grau-instrucao");
-    var dataInicioCurso = document.getElementById("data-inicio-curso");
-    var dataFimCurso = document.getElementById("data-fim-curso");
-    var atividadesEscolares = document.getElementById("resumo-atividades-escolares");
-    var template1 = document.getElementById("template-1");
-    var template2 = document.getElementById("template-2");
-    
-
-    var dados = JSON.parse(localStorage.getItem("dadosCurriculo"));
-
-    if(dados == null){
-        localStorage.setItem("dadosCurriculo", "[]");
-        dados = [];
+document.getElementById("trabalho-atual").addEventListener("change", function() {
+    const dataFimEmpresaInput = document.getElementById("data-fim-empresa");
+    if (this.checked) {
+        dataFimEmpresaInput.value = ""; // Limpa o valor do campo de data de término
+        dataFimEmpresaInput.disabled = true; // Desativa o campo de data de término
+    } else {
+        dataFimEmpresaInput.disabled = false; // Ativa o campo de data de término
     }
+});
 
+document.getElementById("template-1").addEventListener("change", function() {
+    if (this.checked) {
+        cadastraCurriculo("template-1"); // Passando o ID do template selecionado
+    }
+});
+
+document.getElementById("template-2").addEventListener("change", function() {
+    if (this.checked) {
+        cadastraCurriculo("template-2"); // Passando o ID do template selecionado
+    }
+});
+
+
+
+function cadastraCurriculo(templateSelecionado) {
+    var dados = JSON.parse(localStorage.getItem("dadosCurriculo")) || [];
     
-    if (dados.length != 0) {
+    if (dados.length > 0) {
         novoId = dados[dados.length - 1].id + 1;
     }
 
-    var registro = {
+    const registro = {
         id: novoId,
-        nomeUsuario: nome.value,
-        cidadeUsuario: cidade.value,
-        estadoUsuario: estado.value,
-        paisUsuario: pais.value,
-        telUsuario: tel.value,
-        emailUsuario: email.value,
-        linkedinUsuario: linkedin.value,
-        githubUsuario: github.value,
-        websiteUsuario: website.value,
-        resumoUsuario: resumo.value,
-        habilidadesUsuario: habilidades.value,
-
-        experiencia: {
-            experiencias,
-            cargoUsuario: cargo.value,
-            empresaUsuario: empresa.value,
-            localUsuario: local.value,
-            dataInicioEmpresa: dataInicioEmpresa.value,
-            dataFimEmpresa: dataFimEmpresa.value,
-            trabalhoAtualUsuario: trabalhoAtual.value,
-            atividadesTrabalho: atividadesTrabalho.value,
-        },
-        
-        formacao: {
-            formacoes,
-            instituicaoUsuario: instituicao.value,
-            cursoUsuario: curso.value,
-            grauInstrucao: grauInstrucao.value,
-            dataInicioCurso: dataInicioCurso.value,
-            dataFimCurso: dataFimCurso.value,
-            atividadesEscolares: atividadesEscolares.value,
-        },
-        template1: template1.value, //imprimindo como ON no "curriculo", será revisado posteriormente
-        template2: template2.value, //imprimindo como ON no "curriculo", será revisado posteriormente
+        nomeUsuario: document.getElementById("nome").value,
+        cidadeUsuario: document.getElementById("cidade").value,
+        estadoUsuario: document.getElementById("estado").value,
+        paisUsuario:  document.getElementById("pais").value,
+        telUsuario: document.getElementById("telefone").value,
+        emailUsuario: document.getElementById("email").value,
+        linkedinUsuario: document.getElementById("linkedin").value,
+        githubUsuario: document.getElementById("github").value,
+        websiteUsuario: document.getElementById("website").value,
+        resumoUsuario: document.getElementById("resumo").value,
+        habilidadesUsuario: document.getElementById("habilidades").value,
+        experiencias,
+        formacoes,
+        template: templateSelecionado,
     }
 
     dados.push(registro);
@@ -270,40 +228,65 @@ function cadastraCurriculo() {
     mostraCurriculo(dados, novoId);
 }
 
-     // função para listar na tabela os contatos que estão associados aos filtros 
-     function mostraCurriculo(dados, novoId) {
-        let curriculo = dados.filter(curriculoInfo => curriculoInfo.id === novoId);
+ // função para listar na tabela os contatos que estão associados aos filtros 
+function mostraCurriculo(dados, novoId) {
+    const curriculo = dados.find(curriculoInfo => curriculoInfo.id === novoId);
     
-        if (curriculo.length > 0) {
-            div = document.getElementById("curriculo");
-            div.innerHTML = ""; 
-    
-            // Exibe apenas o currículo com o ID específico
-            const curriculoInfo = curriculo[0];
-            div.innerHTML = `
-                <div>${curriculoInfo.nomeUsuario}</div>
-                <div>${curriculoInfo.telUsuario}</div>
-                <div>${curriculoInfo.emailUsuario}</div>
-                <div>${curriculoInfo.cidadeUsuario}</div>
-                <div>${curriculoInfo.estadoUsuario}</div>
-                <div>${curriculoInfo.paisUsuario}</div>
-                <div>${curriculoInfo.linkedinUsuario}</div>
-                <div>${curriculoInfo.githubUsuario}</div>
-                <div>${curriculoInfo.websiteUsuario}</div>
-                <div>${curriculoInfo.resumoUsuario}</div>
-                <div>${curriculoInfo.habilidadesUsuario}</div>
-                <div>${curriculoInfo.experiencia}</div>
-                <div>${curriculoInfo.instituicaoUsuario}</div>
-                <div>${curriculoInfo.cursoUsuario}</div>
-                <div>${curriculoInfo.grauInstrucao}</div>
-                <div>${curriculoInfo.dataInicioCurso}</div>
-                <div>${curriculoInfo.dataFimCurso}</div>
-                <div>${curriculoInfo.atividadesEscolares}</div>
+        if (curriculo) {
+            const div = document.getElementById("curriculo");
+            div.innerHTML = '';
+
+            if (curriculo.template === "template-1") {
+                div.classList.add("template-1");
+            } else if (curriculo.template === "template-2") {
+                div.classList.add("template-2");
+            }
+
+            div.innerHTML += ` 
+                <div>${curriculo.nomeUsuario}</div>
+                <div>${curriculo.telUsuario}</div>
+                <div>${curriculo.emailUsuario}</div>
+                <div>${curriculo.cidadeUsuario}</div>
+                <div>${curriculo.estadoUsuario}</div>
+                <div>${curriculo.paisUsuario}</div>
+                <div>${curriculo.linkedinUsuario}</div>
+                <div>${curriculo.githubUsuario}</div>
+                <div>${curriculo.websiteUsuario}</div>
+                <div>${curriculo.resumoUsuario}</div>
+                <div>${curriculo.habilidadesUsuario}</div>
+                <div>
+                <h4>Experiências</h4>
+                ${curriculo.experiencias.map(exp => `
+                    <div>
+                        <p><strong>Cargo:</strong> ${exp.cargo}</p>
+                        <p><strong>Empresa:</strong> ${exp.empresa}</p>
+                        <p><strong>Local:</strong> ${exp.local}</p>
+                        <p><strong>Data de Início:</strong> ${exp.dataInicioEmpresa}</p>
+                        <p><strong>Data de Término:</strong> ${exp.dataFimEmpresa}</p>
+                        <p><strong>Trabalho Atual:</strong> ${exp.trabalhoAtual ? 'Sim' : 'Não'}</p>
+                        <p><strong>Atividades:</strong> ${exp.atividadesTrabalho}</p>
+                    </div>
+                `).join('')}
+            </div>
+            <div>
+                <h4>Formações</h4>
+                ${curriculo.formacoes.map(form => `
+                    <div>
+                        <p><strong>Instituição:</strong> ${form.instituicao}</p>
+                        <p><strong>Curso:</strong> ${form.curso}</p>
+                        <p><strong>Grau de Instrução:</strong> ${form.grauInstrucao}</p>
+                        <p><strong>Data de Início:</strong> ${form.dataInicioCurso}</p>
+                        <p><strong>Data de Término:</strong> ${form.dataFimCurso}</p>
+                        <p><strong>Atividades:</strong> ${form.atividadesEscolares}</p>
+                    </div>
+                `).join('')}
+            </div>
             `;
         } else {
             console.log("Nenhum currículo encontrado com o ID especificado.");
         }
     }
+
 function gerarCurriculo(){
     var pdfObject = jsPDFInvoiceTemplate.default(props);
     console.log(pdfObject)
