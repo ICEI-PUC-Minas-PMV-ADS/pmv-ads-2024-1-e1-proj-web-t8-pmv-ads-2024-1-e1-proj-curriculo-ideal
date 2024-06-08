@@ -105,8 +105,8 @@ document.getElementById("adicionar-experiencia").addEventListener("click", funct
         empresa: document.getElementById("empresa").value,
         local: document.getElementById("local").value,
         dataInicioEmpresa: document.getElementById("data-inicio-empresa").value,
-        dataFimEmpresa: document.getElementById("data-fim-empresa").value,
-        trabalhoAtual: document.getElementById("trabalho-atual").value,
+        dataFimEmpresa: document.getElementById("trabalho-atual").checked ? "Atualmente": document.getElementById("data-fim-empresa").value,
+        trabalhoAtual: document.getElementById("trabalho-atual").checked,
         atividadesTrabalho: document.getElementById("atividades-trabalho").value,
     };
 
@@ -119,16 +119,18 @@ function exibirExperiencias() {
     const containerExperiencias = document.getElementById("experiencias-adicionadas");
     containerExperiencias.innerHTML = experiencias.map((exp, index) => `
         <div class="experiencia-item">
-        <h4>Experiência ${index + 1}</h4>
-        <p><strong>Cargo:</strong> ${exp.cargo}</p>
-        <p><strong>Empresa:</strong> ${exp.empresa}</p>
-        <p><strong>Local:</strong> ${exp.local}</p>
-        <p><strong>Data de Início:</strong> ${exp.dataInicioEmpresa}</p>
-        <p><strong>Data de Término:</strong> ${exp.dataFimEmpresa}</p>
-        <p><strong>Trabalho Atual:</strong> ${exp.trabalhoAtual ? 'Não' : 'Sim'}</p>
-        </div>
-        <div class="exp-atividade">
-        <p><strong>Atividades:</strong> ${exp.atividadesTrabalho}</p>
+            <div class="exp-info">
+                <h4>Experiência ${index + 1}</h4>
+                <p><strong>Cargo:</strong> ${exp.cargo}</p>
+                <p><strong>Empresa:</strong> ${exp.empresa}</p>
+                <p><strong>Local:</strong> ${exp.local}</p>
+                <p><strong>Data de Início:</strong> ${exp.dataInicioEmpresa}</p>
+                <p><strong>Data de Término:</strong> ${exp.dataFimEmpresa}</p>
+                <p><strong>Trabalho Atual:</strong> ${exp.trabalhoAtual ? 'Sim' : 'Não'}</p>
+            </div>
+            <div class="exp-atividade">
+                <p><strong>Atividades:</strong> ${exp.atividadesTrabalho}</p>
+            </div>
         </div>
     `).join('');
 }
@@ -153,16 +155,18 @@ function exibirFormacoes() {
     const containerFormacoes = document.getElementById("formacoes-adicionadas");
     containerFormacoes.innerHTML = formacoes.map((form, index) => `
         <div class="formacao-item">
-            <h4>Formação ${index + 1}</h4>
-            <p><strong>Instituição:</strong> ${form.instituicao}</p>
-            <p><strong>Curso:</strong> ${form.curso}</p>
-            <p><strong>Grau de Instrução:</strong> ${form.grauInstrucao}</p>
-            <p><strong>Data de Início:</strong> ${form.dataInicioCurso}</p>
-            <p><strong>Data de Término:</strong> ${form.dataFimCurso}</p>
+            <div class="form-info">
+                <h4>Formação ${index + 1}</h4>
+                <p><strong>Instituição:</strong> ${form.instituicao}</p>
+                <p><strong>Curso:</strong> ${form.curso}</p>
+                <p><strong>Grau de Instrução:</strong> ${form.grauInstrucao}</p>
+                <p><strong>Data de Início:</strong> ${form.dataInicioCurso}</p>
+                <p><strong>Data de Término:</strong> ${form.dataFimCurso}</p>
             </div>
             <div class="form-atividade">
-            <p><strong>Atividades:</strong> ${form.atividadesEscolares}</p>
+                <p><strong>Atividades:</strong> ${form.atividadesEscolares}</p>
             </div>
+        </div>
         `).join('');
 };
 
@@ -170,8 +174,31 @@ function limparCampos(ids) {
     ids.forEach(id => document.getElementById(id).value = '');
 }
 
+document.getElementById("trabalho-atual").addEventListener("change", function() {
+    const dataFimEmpresaInput = document.getElementById("data-fim-empresa");
+    if (this.checked) {
+        dataFimEmpresaInput.value = ""; // Limpa o valor do campo de data de término
+        dataFimEmpresaInput.disabled = true; // Desativa o campo de data de término
+    } else {
+        dataFimEmpresaInput.disabled = false; // Ativa o campo de data de término
+    }
+});
 
-function cadastraCurriculo() {
+document.getElementById("template-1").addEventListener("change", function() {
+    if (this.checked) {
+        cadastraCurriculo("template-1"); // Passando o ID do template selecionado
+    }
+});
+
+document.getElementById("template-2").addEventListener("change", function() {
+    if (this.checked) {
+        cadastraCurriculo("template-2"); // Passando o ID do template selecionado
+    }
+});
+
+
+
+function cadastraCurriculo(templateSelecionado) {
     var dados = JSON.parse(localStorage.getItem("dadosCurriculo")) || [];
     
     if (dados.length > 0) {
@@ -193,8 +220,7 @@ function cadastraCurriculo() {
         habilidadesUsuario: document.getElementById("habilidades").value,
         experiencias,
         formacoes,
-        template1: document.getElementById("template-1").value, //como imprimir em um formato se template 1 ou em outro formato se template 2?
-        template2: document.getElementById("template-2").value, //como imprimir em um formato se template 1 ou em outro formato se template 2?
+        template: templateSelecionado,
     }
 
     dados.push(registro);
@@ -208,7 +234,15 @@ function mostraCurriculo(dados, novoId) {
     
         if (curriculo) {
             const div = document.getElementById("curriculo");
-            div.innerHTML = ` 
+            div.innerHTML = '';
+
+            if (curriculo.template === "template-1") {
+                div.classList.add("template-1");
+            } else if (curriculo.template === "template-2") {
+                div.classList.add("template-2");
+            }
+
+            div.innerHTML += ` 
                 <div>${curriculo.nomeUsuario}</div>
                 <div>${curriculo.telUsuario}</div>
                 <div>${curriculo.emailUsuario}</div>
