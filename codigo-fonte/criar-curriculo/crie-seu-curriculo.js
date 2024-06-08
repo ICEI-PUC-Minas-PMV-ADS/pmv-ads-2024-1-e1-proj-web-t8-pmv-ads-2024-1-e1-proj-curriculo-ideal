@@ -113,6 +113,7 @@ function exibirExperiencias() {
         const experienciaDiv = document.createElement("div");
         experienciaDiv.className = "experiencia-item";
         experienciaDiv.innerHTML = `
+        <div class="exp-item">
         <h4>Experiência ${index + 1}</h4>
         <p><strong>Cargo:</strong> ${exp.cargo}</p>
         <p><strong>Empresa:</strong> ${exp.empresa}</p>
@@ -120,7 +121,10 @@ function exibirExperiencias() {
         <p><strong>Data de Início:</strong> ${exp.dataInicio}</p>
         <p><strong>Data de Término:</strong> ${exp.dataFim}</p>
         <p><strong>Trabalho Atual:</strong> ${exp.trabalhoAtual ? 'Não' : 'Sim'}</p>
+        </div>
+        <div class="exp-atividade">
         <p><strong>Atividades:</strong> ${exp.atividades}</p>
+        </div>
     `;
         containerExperiencias.appendChild(experienciaDiv);
     });
@@ -162,13 +166,17 @@ function exibirFormacoes() {
         const formacaoDiv = document.createElement("div");
         formacaoDiv.className = "formacao-item";
         formacaoDiv.innerHTML = `
+        <div class="form-item">
             <h4>Formação ${index + 1}</h4>
             <p><strong>Instituição:</strong> ${form.instituicao}</p>
             <p><strong>Curso:</strong> ${form.curso}</p>
             <p><strong>Grau de Instrução:</strong> ${form.grauInstrucao}</p>
             <p><strong>Data de Início:</strong> ${form.dataInicioCurso}</p>
             <p><strong>Data de Término:</strong> ${form.dataFimCurso}</p>
+            </div>
+            <div class="form-atividade">
             <p><strong>Atividades:</strong> ${form.atividadesEscolares}</p>
+            </div>
         `;
             
         containerFormacoes.appendChild(formacaoDiv);
