@@ -9,14 +9,14 @@
 }
 
 body {
-    height: 100vh;
+    
 }
 
 .background {
     background-color: var(--cor-de-fundo);
     border-radius: 39px;
     margin: 20px;
-    height: 90vh;
+    padding-bottom: 5px;
 }
 
 .barra {
@@ -51,7 +51,7 @@ body {
     background-color: white;
     border-radius: 39px;
     margin-top: -14px;
-    height: 80vh;
+    margin-bottom: 14px;
     width: 100%;
 }
 
