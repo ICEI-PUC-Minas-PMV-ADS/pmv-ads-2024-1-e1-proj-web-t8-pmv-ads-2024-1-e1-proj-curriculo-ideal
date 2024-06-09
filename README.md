@@ -12,10 +12,8 @@ Um site gerador de currículos é uma ferramenta online que ajuda a criar currí
 
 * Alexsander Gomes Custodio
 * Alycia Silva Oliveira
-* Andrea Mariana Alves da Silva
 * Enrique Alves da Cruz Lira Barbosa
 * Guilherme Holanda
-* Pedro Maia
 
 ## Orientador
 
