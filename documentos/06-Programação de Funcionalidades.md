@@ -28,7 +28,7 @@ RF-001: O sistema deve apresentar ao usuário um botão para criação do novo c
 
 #### Estrutura de Dados
 
-
+Não aplica.
 
 #### Instruções de acesso
 
@@ -161,6 +161,7 @@ RF-005: O sistema deve permitir ao usuário fazer login e logout
 
 #### Estrutura de Dados
 
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal/assets/108914238/1808124f-2c15-4344-b5fa-47f4d94100f1)
 
 
 #### Instruções de acesso
@@ -202,7 +203,7 @@ RF-007: O sistema deve possuir uma página com tutorial para instruir a criar o 
 
 #### Estrutura de Dados
 
-
+Não aplica.
 
 #### Instruções de acesso
 
@@ -281,6 +282,7 @@ RF-013: Drag & Drop das vagas, para utilização mais intuitiva.
 
 #### Estrutura de Dados
 
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal/assets/108914238/1141003f-0b9f-49bc-991e-40097a31a7d7)
 
 
 #### Instruções de acesso
