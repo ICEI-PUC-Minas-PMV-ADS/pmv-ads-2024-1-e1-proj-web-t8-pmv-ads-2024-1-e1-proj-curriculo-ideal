@@ -29,8 +29,7 @@
                 <button type="button" onclick="abrirModal()" class="btn btn-primary" id="adicionarvaga" data-toggle="modal" data-target="#modalCandidatura">
                     Adicionar vaga
                 </button>
-                <button type="button" onclick="abrirModalGrafico()" class="btn btn-primary" id="mostrarGrafico" data-toggle="modal"
-                    data-target="#modalGrafico">
+                <button type="button" onclick="abrirModalGrafico()" class="btn btn-primary" id="mostrarGrafico" data-toggle="modal" data-target="#modalGrafico">
                     Gráfico
                 </button>
                 <button type="button" class="btn btn-secondary" id="toggleView" onclick="toggleView()">Lista</button>
@@ -144,14 +143,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="text/javascript" src="../grafico/grafico.js"></script>
     <script src="../navbar/navbar.js"></script>
-    <script>
-        window.onload = function () {
-            var db = JSON.parse(localStorage.getItem('db_vaga'));
-            if (db && db.length > 0) {
-                exibeVagas(db);
-            }
-        };
-    </script>
+
 </body>
 
 </html>
