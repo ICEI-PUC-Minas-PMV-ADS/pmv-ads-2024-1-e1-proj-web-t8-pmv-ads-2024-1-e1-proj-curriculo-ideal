@@ -79,14 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
         modalCandidatura.hide();
     });
 
-    // Gráfico
-    function abrirModalGrafico() {
-        let modalGrafico = document.getElementById('modalGrafico');
-        new bootstrap.Modal(modalGrafico).show();
-    }
-
-    document.getElementById('mostrarGrafico').addEventListener('click', abrirModalGrafico);
-
     // Vagas
  
     function exibeVagas(db) {
@@ -142,6 +134,13 @@ document.addEventListener('DOMContentLoaded', function () {
         adicionarEventosDeletar();
         adicionarDragAndDrop();
     }
+
+    window.onload = function () {
+        var db = JSON.parse(localStorage.getItem('db_vaga'));
+        if (db && db.length > 0) {
+            exibeVagas(db);
+        }
+    };
  
     function adicionarEventosDeEdicao() {
         document.querySelectorAll('.edit-button').forEach(button => {
@@ -177,9 +176,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     var novaDb = db.filter(vaga => vaga.id !== id);
                     localStorage.setItem('db_vaga', JSON.stringify(novaDb));
                     carregarVagas();
+                    window.location.reload();
                 }
             });
         });
+        
     }
  
     function adicionarDragAndDrop() {
@@ -243,6 +244,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 vaga.Status = statusMap[sectionId];
                 localStorage.setItem('db_vaga', JSON.stringify(db));
                 carregarVagas();
+                window.location.reload();
             }
         }
     }
