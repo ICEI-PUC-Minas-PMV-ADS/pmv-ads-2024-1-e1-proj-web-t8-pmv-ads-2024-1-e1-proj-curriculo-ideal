@@ -18,6 +18,7 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding-top: 10px;
 }
 
 .logo {
@@ -30,20 +31,21 @@ nav {
     margin: 10px;
 }
 
-#menu ul {
+#menu ul, #btnLogout {
     list-style: none;
 }
 
-#menu li {
+#menu li, #btnLogout {
     display: inline;
 }
 
-#menu li a {
+#menu li a, #btnLogout {
     text-decoration: none;
     color: var(--cor-texto);
     font-weight: 700;
     font-family: 'Encode Sans';
     padding: 5px;
+    border: none;
 }
 
 footer {

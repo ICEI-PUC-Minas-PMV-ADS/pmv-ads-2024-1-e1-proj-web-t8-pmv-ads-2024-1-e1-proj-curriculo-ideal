@@ -5,13 +5,8 @@ function initPage() {
     verificaLogin();
 
     const btnLogin = document.getElementById('btnLogin');
-    const btnLogout = document.getElementById('btnLogout');
     if (btnLogin) {
         btnLogin.addEventListener('click', fazerLogin);
-    }
-
-    if (btnLogout) {
-        btnLogout.addEventListener('click', logoutUser);
     }
 }
 
@@ -50,10 +45,5 @@ function fazerLogin() {
     }
 }
 
-function logoutUser() {
-    usuarioCorrente = {};
-    localStorage.removeItem('usuarioCorrente');
-    window.location.href = "../login-e-signup/login.html";
-}
 
 document.addEventListener('DOMContentLoaded', initPage);
