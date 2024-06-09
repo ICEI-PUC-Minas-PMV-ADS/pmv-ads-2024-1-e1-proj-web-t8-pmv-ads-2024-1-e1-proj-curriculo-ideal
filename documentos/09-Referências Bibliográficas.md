@@ -1,5 +1,7 @@
 # Referências Bibliográficas
 
+AMARAL, Vanessa de Araújo; OLIVEIRA, Angela Maria Fleury de; ISONI, Taciana Maria.  Inovação social e metodologias ágeis: uma história de sucesso. Nova Lima, DOM v.12, n.38, p. 66-71, maio/ago. 2019.
+
 CAPELLI, P. Your Approach to Hiring Is All Wrong. Harvard Business Review, v. 63, n. 3, p. 48-58, 2019.
  
 CHAKRABARTI, S. et al. Compressed Data Structures for Annotated Web Search. In: THE 21 ST INTERNATIONAL CONFERENCE ON WORLD WIDE WEB (WWW'12), 21., 2012, Lyon. Proceedings Lyon: WWW'12, 2012. p. 121-130.
