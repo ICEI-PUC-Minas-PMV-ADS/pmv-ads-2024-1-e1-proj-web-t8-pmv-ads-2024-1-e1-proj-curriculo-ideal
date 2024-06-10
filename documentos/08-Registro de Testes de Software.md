@@ -5,14 +5,13 @@ Relatório com as evidências dos testes de software realizados na aplicação p
 Os resultados dos testes funcionais realizados na aplicação são descritos a seguir.
 
 
-|Caso de Teste    | CT-1 -Teste de Funcionamento da página Crie Seu Currículo |
+|Caso de Teste    | CT-001 – Teste de Funcionamento da página Crie Seu Currículo |
+|:---|:---|
+| Resultados obtidos | Foi possivel concluir os testes com exito, ao acessar a página conseguimos clicar e seguir para a página crie, preencher as informações pessoais relevantes para a criação do currículo, conseguimos alternar entre a escolha do template disponiveis, logo em seguida conseguimos fazer o download do currículo que acabamos de criar.  |
+| Responsável pela execução do caso de Teste | Alexsander Gomes |
+
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal/assets/162763640/160e8ba7-52f1-4506-960f-e640a33edc97
-
-
-| Resultados obtidos | Descrever resultados do teste  |
-| Responsável pela execução do caso de Teste | Nome do integrante da equipe |
-
 
 |Caso de Teste    | CT-002 – Teste de funcionamento da página Sign up e CT-003 – Teste de funcionamento da página Login |
 |:---|:---|
