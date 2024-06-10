@@ -9,14 +9,8 @@ Os resultados dos testes funcionais realizados na aplicação são descritos a s
 | Resultados obtidos | O usuário acessa a página de cadastro (sign up) através da página inicial (home). Lá, preenche os campos obrigatórios, incluindo nome, sobrenome, email e senha. Após preencher os campos, o cadastro é concluído com sucesso e o usuário é redirecionado de volta para a página inicial (home). Mais tarde, ao clicar na página de login, o usuário insere seu email e senha nos campos correspondentes. Para testar a validação dos campos, o usuário insere uma senha incorreta e um alerta aparece, indicando que a senha é inválida. No entanto, ao inserir corretamente os dados de login, o usuário é redirecionado novamente para a página inicial (home), onde pode acessar todas as funcionalidades disponíveis, incluindo fazer logoff quando desejar.  |
 | Responsável pela execução do caso de Teste | Alycia Oliveira |
 
-[CT002_CT003.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal/assets/108914238/7ef3edf0-e6ef-4103-97be-5e2ef717a227)
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal/assets/108914238/cb510b48-949d-447e-9df8-daa8051f07c7
 
-
-# Registro de Testes de Software
-
-Relatório com as evidências dos testes de software realizados na aplicação pela equipe, baseado no plano de testes pré-definido.
-
-Os resultados dos testes funcionais realizados na aplicação são descritos a seguir.
 
 |Caso de Teste    | CT-006 – Testando a adição de vagas, CT-007 – Testando a troca de status da vaga, CT-008 – Testando o filtro de busca, CT-009 – Testando funcionalidade de visualização, CT-010 – Testando botão de excluir, CT-011 – Testando gráfico de vagas |
 |:---|:---|
