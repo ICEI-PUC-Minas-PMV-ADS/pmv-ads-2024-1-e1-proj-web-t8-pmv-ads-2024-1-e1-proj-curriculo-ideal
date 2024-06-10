@@ -21,6 +21,27 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal/assets/108914238/cb510b48-949d-447e-9df8-daa8051f07c7
 
+|Caso de Teste    | CT-004 – Teste de Funcionamento da página Home |
+|:---|:---|
+| Resultados obtidos | Foi possível pesquisar pelo link da página no website e abrir na página de Home. Foi possível clicar nos links da página e ver o carrosel funcionando. Os links também levavam para as outras respectivas páginas de Aprenda, Crie e Organize.  |
+| Responsável pela execução do caso de Teste | Enrique Alves |
+
+![Gravação-da-HOME-do-Currículo-Ideal](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal/assets/162921119/1dce2e21-8c08-4f66-9065-b508b7a9f39b)
+
+
+
+|Caso de Teste    | CT-005 – Teste de Funcionamento da página Aprenda |
+|:---|:---|
+| Resultados obtidos | Foi possível pesquisar pelo link da página no website e abrir na página de Aprenda. Foi possível dar scroll na página e perceber o menu acompanhando o movimento do scroll e também foi possível ver o menu levar para as determinadas partes do texto.  |
+| Responsável pela execução do caso de Teste | Enrique Alves |
+
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal/assets/162921119/1f999897-c77a-48c1-aeae-092cc5427f69
+
+
+
+
+
 
 |Caso de Teste    | CT-006 – Testando a adição de vagas, CT-007 – Testando a troca de status da vaga, CT-008 – Testando o filtro de busca, CT-009 – Testando funcionalidade de visualização, CT-010 – Testando botão de excluir, CT-011 – Testando gráfico de vagas |
 |:---|:---|
