@@ -13,6 +13,7 @@ Os resultados dos testes funcionais realizados na aplicação são descritos a s
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal/assets/162763640/160e8ba7-52f1-4506-960f-e640a33edc97
 
 
+
 |Caso de Teste    | CT-002 – Teste de funcionamento da página Sign up e CT-003 – Teste de funcionamento da página Login |
 |:---|:---|
 | Resultados obtidos | O usuário acessa a página de cadastro (sign up) através da página inicial (home). Lá, preenche os campos obrigatórios, incluindo nome, sobrenome, email e senha. Após preencher os campos, o cadastro é concluído com sucesso e o usuário é redirecionado de volta para a página inicial (home). Mais tarde, ao clicar na página de login, o usuário insere seu email e senha nos campos correspondentes. Para testar a validação dos campos, o usuário insere uma senha incorreta e um alerta aparece, indicando que a senha é inválida. No entanto, ao inserir corretamente os dados de login, o usuário é redirecionado novamente para a página inicial (home), onde pode acessar todas as funcionalidades disponíveis, incluindo fazer logoff quando desejar.  |
