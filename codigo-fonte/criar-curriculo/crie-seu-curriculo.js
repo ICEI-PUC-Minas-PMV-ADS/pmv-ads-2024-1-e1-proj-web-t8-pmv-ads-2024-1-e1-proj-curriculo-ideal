@@ -32,6 +32,10 @@ function camposObrigatoriosPreenchidos() {
     var camposObrigatorios = secaoAtual.querySelectorAll('input[required], select[required], textarea[required]');
     let preenchidos = true;
 
+    if (indiceAtual === 2 || indiceAtual === 3) {
+        return true;
+    }
+
     camposObrigatorios.forEach(function(campo) {
         if (!campo.value.trim()) {
             preenchidos = false;
@@ -99,6 +103,11 @@ function retrocederBarraDeProgresso() {
 // Função para adicionar experiência profissional
 
 document.getElementById("adicionar-experiencia").addEventListener("click", function() {
+    if (!camposObrigatoriosPreenchidosExperiencia()) {
+        alert('Preencha todos os campos obrigatórios para adicionar uma experiência.');
+        return;
+    }
+    
     const experiencia = {
         cargo: document.getElementById("cargo").value,
         empresa: document.getElementById("empresa").value,
@@ -134,8 +143,26 @@ function exibirExperiencias() {
     `).join('');
 }
 
+function camposObrigatoriosPreenchidosExperiencia() {
+    var camposObrigatorios = document.querySelectorAll('#experiencia-form input[required], #experiencia-form select[required], #experiencia-form textarea[required]');
+    let preenchidos = true;
+
+    camposObrigatorios.forEach(function(campo) {
+        if (!campo.value.trim()) {
+            preenchidos = false;
+        }
+    });
+
+    return preenchidos;
+}
+
 // Função para adicionar formação acadêmica
 document.getElementById("adicionar-formacao").addEventListener("click", function() {
+    if (!camposObrigatoriosPreenchidosFormacao()) {
+        alert('Preencha todos os campos obrigatórios para adicionar uma formação.');
+        return;
+    }
+    
     const formacao = { 
     instituicao: document.getElementById("instituicao").value,
     curso: document.getElementById("curso").value,
@@ -168,6 +195,20 @@ function exibirFormacoes() {
         </div>
         `).join('');
 };
+
+
+function camposObrigatoriosPreenchidosFormacao() {
+    var camposObrigatorios = document.querySelectorAll('#formacao-form input[required], #formacao-form select[required], #formacao-form textarea[required]');
+    let preenchidos = true;
+
+    camposObrigatorios.forEach(function(campo) {
+        if (!campo.value.trim()) {
+            preenchidos = false;
+        }
+    });
+
+    return preenchidos;
+}
 
 function limparCampos(ids) {
     ids.forEach(id => document.getElementById(id).value = '');
