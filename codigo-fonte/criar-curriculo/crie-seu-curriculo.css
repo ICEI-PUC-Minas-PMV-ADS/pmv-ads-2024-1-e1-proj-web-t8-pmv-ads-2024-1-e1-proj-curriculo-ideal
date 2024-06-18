@@ -108,3 +108,7 @@ label {
     display: flex;
     justify-content: space-around;
 }
+
+.template-1 {
+    background-color: yellow;
+}	

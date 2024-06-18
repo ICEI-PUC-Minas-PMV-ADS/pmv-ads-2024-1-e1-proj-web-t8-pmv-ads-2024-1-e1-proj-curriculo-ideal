@@ -96,7 +96,6 @@ function retrocederBarraDeProgresso() {
 
 }
 
-
 // Função para adicionar experiência profissional
 
 document.getElementById("adicionar-experiencia").addEventListener("click", function() {
@@ -197,7 +196,6 @@ document.getElementById("template-2").addEventListener("change", function() {
 });
 
 
-
 function cadastraCurriculo(templateSelecionado) {
     var dados = JSON.parse(localStorage.getItem("dadosCurriculo")) || [];
     
@@ -287,63 +285,18 @@ function mostraCurriculo(dados, novoId) {
         }
     }
 
-function gerarCurriculo() {
-    const dados = JSON.parse(localStorage.getItem("dadosCurriculo")) || [];
-    const curriculoData = dados.find(item => item.id === novoId);
+    function gerarCurriculo() {
+        const { jsPDF } = window.jspdf;
+        var doc = new jsPDF('l', 'mm', [1200, 1210]);
 
-    props.business.name = curriculoData.nomeUsuario;
-    props.business.phone = curriculoData.telUsuario;
-    props.business.email = curriculoData.emailUsuario;
-    props.business.address = `${curriculoData.paisUsuario}, ${curriculoData.estadoUsuario}, ${curriculoData.cidadeUsuario}`;
-    props.business.website = curriculoData.websiteUsuario;
-    props.business.email_1 = curriculoData.githubUsuario;
-
-
-    var pdfObject = jsPDFInvoiceTemplate.default(props);
-    console.log(pdfObject);
-
-}
-
-var props = {
-    outputType: jsPDFInvoiceTemplate.OutputType.Save,
-    //onJsPDFDocCreation?: (jsPDFDoc: jsPDF) => void, //Allows for additional configuration prior to writing among others, adds support for different languages and symbols
-    returnJsPDFDocObject: true,
-    fileName: "Currículo Ideal",
-    orientationLandscape: false,
-    compress: true,
-    stamp: {
-        inAllPages: false, //by default = false, just in the last page
-        src: "https://raw.githubusercontent.com/edisonneza/jspdf-invoice-template/demo/images/qr_code.jpg",
-        type: 'JPG', //optional, when src= data:uri (nodejs case)
-        width: 20, //aspect ratio = width/height
-        height: 20,
-        margin: {
-            top: 0, //negative or positive num, from the current position
-            left: 0 //negative or positive num, from the current position
-        }
-    },
-    business: {
-        name: 'nome',
-        address: "Albania, Tirane ish-Dogana, Durres 2001",
-        phone: "(+355) 069 11 11 111",
-        email: "email@example.com",
-        email_1: "https://github.com/seu-github",
-        website: "info@example.al",
-        
-    },
-    contact: {
-        //label: "Invoice issued for:",
-        name: "Auxiliar Administrativo",
-        empresa: "Empresa de Administração",
-        telefone: "(85) 9 9999-9999",
-        email: "empresa@administraçao.com",
-        site: "www.website.al",
-      
-  
-    },
-    footer: {
-        text: "O currículo apresentado nesse PDF ainda está em fase de desenvolvimento",
-    },
-    pageEnable: true,
-    pageLabel: "Page ",
-};
+        var pdfjs = document.querySelector('#curriculo');
+    
+        // Convert HTML to PDF in JavaScript
+        doc.html(pdfjs, {
+            callback: function(doc) {
+                doc.save("output.pdf");
+            },
+            x: 10,
+            y: 10
+        });
+    }

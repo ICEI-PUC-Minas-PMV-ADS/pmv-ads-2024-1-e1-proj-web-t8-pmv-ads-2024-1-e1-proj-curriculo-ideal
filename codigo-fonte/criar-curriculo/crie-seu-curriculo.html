@@ -326,7 +326,7 @@
                         <div class="container text-center">
                             <h1 class="title">Seu curriculo</h1>
                         </div>
-                        <div class="curriculo" id="curriculo">A</div>
+                        <div class="curriculo" id="curriculo"></div>
                         <button type="button" class="btn retroceder-btn">Voltar</button>
                         <button type="button" class="btn" onclick="gerarCurriculo();">Download</button>
                     </section>
@@ -349,7 +349,9 @@
         <script src="https://unpkg.com/jspdf-invoice-template@1.4.0/dist/index.js"></script>
                 
     </body>
-
-    <script type="text/javascript" src="crie-seu-curriculo.js"></script>
+    <script type="text/javascript"
+        src="../node_modules/html2canvas/dist/html2canvas.js"></script>
+    <script src="../node_modules/jspdf/dist/jspdf.umd.min.js"></script>
+    <script type="text/Javascript" src="crie-seu-curriculo.js"></script>
     <script src="../navbar/navbar.js"></script>
 </html>
