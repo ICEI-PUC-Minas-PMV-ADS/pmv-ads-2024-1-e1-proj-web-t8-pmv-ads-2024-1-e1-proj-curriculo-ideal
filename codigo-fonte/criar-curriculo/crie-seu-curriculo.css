@@ -112,3 +112,9 @@ label {
 .template-1 {
     background-color: yellow;
 }	
+
+.template-2 .nome {
+    background-color: #235784;
+    font-size: x-large;
+
+}

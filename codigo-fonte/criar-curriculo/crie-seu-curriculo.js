@@ -183,14 +183,19 @@ document.getElementById("trabalho-atual").addEventListener("change", function() 
     }
 });
 
+cadastraCurriculo("template-1");
+
 document.getElementById("template-1").addEventListener("change", function() {
+    console.log("cliquei template 1", this.checked);
     if (this.checked) {
         cadastraCurriculo("template-1"); // Passando o ID do template selecionado
     }
 });
 
 document.getElementById("template-2").addEventListener("change", function() {
+    console.log("cliquei template 2", this.checked);
     if (this.checked) {
+
         cadastraCurriculo("template-2"); // Passando o ID do template selecionado
     }
 });
@@ -234,24 +239,27 @@ function mostraCurriculo(dados, novoId) {
             const div = document.getElementById("curriculo");
             div.innerHTML = '';
 
+
             if (curriculo.template === "template-1") {
+                div.className = 'curriculo';
                 div.classList.add("template-1");
             } else if (curriculo.template === "template-2") {
+                div.className = 'curriculo';
                 div.classList.add("template-2");
             }
 
             div.innerHTML += ` 
-                <div>${curriculo.nomeUsuario}</div>
-                <div>${curriculo.telUsuario}</div>
-                <div>${curriculo.emailUsuario}</div>
-                <div>${curriculo.cidadeUsuario}</div>
-                <div>${curriculo.estadoUsuario}</div>
-                <div>${curriculo.paisUsuario}</div>
-                <div>${curriculo.linkedinUsuario}</div>
-                <div>${curriculo.githubUsuario}</div>
-                <div>${curriculo.websiteUsuario}</div>
-                <div>${curriculo.resumoUsuario}</div>
-                <div>${curriculo.habilidadesUsuario}</div>
+                <div class="nome">${curriculo.nomeUsuario}</div>
+                <div class="tel">${curriculo.telUsuario}</div>
+                <div class="email">${curriculo.emailUsuario}</div>
+                <div class="cidade">${curriculo.cidadeUsuario}</div>
+                <div class="estado">${curriculo.estadoUsuario}</div>
+                <div class="pais">${curriculo.paisUsuario}</div>
+                <div class="linkedin">${curriculo.linkedinUsuario}</div>
+                <div class="github">${curriculo.githubUsuario}</div>
+                <div class="website">${curriculo.websiteUsuario}</div>
+                <div class="resumo">${curriculo.resumoUsuario}</div>
+                <div class="habilidades">${curriculo.habilidadesUsuario}</div>
                 <div>
                 <h4>Experiências</h4>
                 ${curriculo.experiencias.map(exp => `
@@ -296,7 +304,7 @@ function mostraCurriculo(dados, novoId) {
             callback: function(doc) {
                 doc.save("output.pdf");
             },
-            x: 10,
-            y: 10
+            x: 100,
+            y: 100
         });
     }
