@@ -7,11 +7,7 @@ Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapea
 
 ![User Flow](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal/blob/main/documentos/img/user-flow.png)
 
-## Protótipo
-
-Protótipo é o termo usado para se referir ao que foi criado pela primeira vez, servindo de modelo ou molde para futuras produções e também é uma das formas mais rápidas, e com menos custo, para validar uma ideia. Isso permite a interação, avaliação, modificação e aprovação das principais características de uma interface antes de entrar na fase de desenvolvimento. O nosso projeto apresenta um tipo de protótipo de alta fidelidade.
-
-### Protótipo de alta fidelidade
+## Protótipo de alta fidelidade
 
 O protótipo de alta fidelidade possui uma interface mais avançada e próxima do estágio completo, com muitos aspectos visuais e funcionais que aumentam a interatividade e o fluxo entre as páginas. Ele foi desenvolvido com a ajuda do software Figma para fornecer uma representação precisa das características finais do produto. 
 
