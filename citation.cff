@@ -1,0 +1,21 @@
+message: Please cite this software using these metadata.
+title: Currículo Ideal
+authors:
+  - family-names: Gomes Custodio
+    given-names: Alexsander
+  - family-names: Silva Oliveira
+    given-names: Alycia
+  - family-names: Alves da Cruz Lira Barbosa
+    given-names: Enrique
+  - family-names: Holanda
+    given-names: Guilherme
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Soares Vieira de Vasconcelos
+    given-names: Amália
+keywords:
+  - curriculo
+  - ATS
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal
+version: 1.0.0
+date-released: 2024-06-20
