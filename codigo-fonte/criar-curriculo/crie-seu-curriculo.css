@@ -109,12 +109,85 @@ label {
     justify-content: space-around;
 }
 
+
 .template-1 {
     background-color: yellow;
 }	
 
-.template-2 .nome {
-    background-color: #235784;
-    font-size: x-large;
+.template-2 .conteudo {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    grid-template-rows: 33% 33% 33%;
+}
 
+.template-2 .nome {
+    font-size: 40px;
+    font-weight: 600;
+}
+ 
+.template-2 .resumo {
+    font-size: 15px;
+    padding-top: 3mm;
+    grid-column-start: 1;
+}
+
+.template-2 .habilidades {
+    font-size: 15px;
+    padding-top: 3mm;
+    grid-column-start: 1;
+    
+}
+
+.template-2 .localizacao {
+    font-size: 18px;
+    padding-top: 5mm;
+    padding-right: 2cm;
+    text-align: right;
+    grid-column-start: 2;
+}
+
+.template-2 .email {
+    padding-top: 1mm;
+    font-size: 18px;
+    padding-right: 2cm;
+    text-align: right;
+    grid-column-start: 2;
+}
+
+.template-2 .tel {
+    padding-top: 1mm;
+    font-size: 18px;
+    padding-right: 2cm;
+    text-align: right;
+    grid-column-start: 2;
+}
+
+.template-2 .linkedin {
+    padding-top: 1mm;
+    font-size: 18px;
+    padding-right: 2cm;
+    text-align: right;
+    grid-column-start: 2;
+}
+
+.template-2 .github {
+    padding-top: 1mm;
+    font-size: 18px;
+    padding-right: 2cm;
+    text-align: right;
+    grid-column-start: 2;
+}
+
+.template-2 .website {
+    padding-top: 1mm;
+    font-size: 18px;
+    padding-right: 2cm;
+    text-align: right;
+    grid-column-start: 2;
+}
+
+.template-2 #exp {
+    padding-top: 12mm;
+    font-size: 30px;
+    color: #235784;
 }

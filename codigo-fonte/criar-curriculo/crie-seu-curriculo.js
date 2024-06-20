@@ -284,19 +284,23 @@ function mostraCurriculo(dados, novoId) {
             }
 
             div.innerHTML += ` 
+                <div class="conteudo">
+                <div class="principal">
                 <div class="nome">${curriculo.nomeUsuario}</div>
-                <div class="tel">${curriculo.telUsuario}</div>
+                <div class="resumo">${curriculo.resumoUsuario}</div>
+                <div class="habilidades">${curriculo.habilidadesUsuario}</div>
+                </div>
+                <div class="sidebar">
+                <div class="localizacao">${curriculo.cidadeUsuario}, ${curriculo.estadoUsuario}, ${curriculo.paisUsuario}</div>
                 <div class="email">${curriculo.emailUsuario}</div>
-                <div class="cidade">${curriculo.cidadeUsuario}</div>
-                <div class="estado">${curriculo.estadoUsuario}</div>
-                <div class="pais">${curriculo.paisUsuario}</div>
+                <div class="tel">${curriculo.telUsuario}</div>
                 <div class="linkedin">${curriculo.linkedinUsuario}</div>
                 <div class="github">${curriculo.githubUsuario}</div>
                 <div class="website">${curriculo.websiteUsuario}</div>
-                <div class="resumo">${curriculo.resumoUsuario}</div>
-                <div class="habilidades">${curriculo.habilidadesUsuario}</div>
+                </div>
+                </div>
                 <div>
-                <h4>Experiências</h4>
+                <h4 id=exp>Experiências</h4>
                 ${curriculo.experiencias.map(exp => `
                     <div>
                         <p><strong>Cargo:</strong> ${exp.cargo}</p>
@@ -310,7 +314,7 @@ function mostraCurriculo(dados, novoId) {
                 `).join('')}
             </div>
             <div>
-                <h4>Formações</h4>
+                <h4 id=formação>Formações</h4>
                 ${curriculo.formacoes.map(form => `
                     <div>
                         <p><strong>Instituição:</strong> ${form.instituicao}</p>
