@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!cargo || !empresa || !descricao || !localidade) {
             alert('Por favor, preencha todos os campos.');
             return;
-        }
- 
+        } 
+
         var db = JSON.parse(localStorage.getItem('db_vaga')) || [];
 
         // Validação para evitar duplicidade
@@ -262,5 +262,5 @@ document.addEventListener('DOMContentLoaded', function () {
         this.textContent = main.classList.contains('list-view') ? 'Quadro' : 'Lista';
     });
  
-    carregarVagas();
+    carregarVagas(); 
 });
