@@ -258,16 +258,8 @@ function buscarVagas(termo) {
 }
 
 function toggleView(button) {
-    console.log('Entrou em toggleView');
     const main = document.querySelector('main');
-    if (main) {
-        console.log('Main encontrado:', main);
-        main.classList.toggle('list-view');
-        console.log('Classe list-view:', main.classList.contains('list-view'));
-        button.textContent = main.classList.contains('list-view') ? 'Quadro' : 'Lista';
-        console.log('Texto do botão atualizado para:', button.textContent);
-    } else {
-        console.error('Elemento <main> não encontrado');
-    }
+    main.classList.toggle('list-view');
+    button.textContent = main.classList.contains('list-view') ? 'Quadro' : 'Lista';
 }
 
