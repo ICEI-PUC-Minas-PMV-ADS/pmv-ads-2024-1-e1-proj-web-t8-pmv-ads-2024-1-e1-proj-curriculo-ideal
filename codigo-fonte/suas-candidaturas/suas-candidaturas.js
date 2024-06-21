@@ -172,6 +172,7 @@ function adicionarEventosDeletar() {
                 const card = this.closest('.card');
                 const id = parseInt(card.dataset.id);
                 deletarVaga(id);
+                window.location.reload();
             }
         });
     });
@@ -244,6 +245,7 @@ function adicionarDragAndDrop() {
             vaga.Status = statusMap[sectionId];
             localStorage.setItem('db_vaga', JSON.stringify(db));
             carregarVagas();
+            window.location.reload();
         }
     }
 }
