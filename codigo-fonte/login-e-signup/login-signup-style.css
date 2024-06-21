@@ -19,7 +19,7 @@ body {
     min-height: 100vh;
 }
 
-.signup, 
+.signup,
 .login {
     display: flex;
     height: 90vh;
@@ -101,8 +101,8 @@ form .row input:focus {
     border-bottom: 2px solid #FFC805;
 }
 
-form .row input:focus ~ label,
-form .row input:valid ~ label {
+form .row input:focus~label,
+form .row input:valid~label {
     transform: translateY(-24px);
     font-size: 16px;
     color: #374375;

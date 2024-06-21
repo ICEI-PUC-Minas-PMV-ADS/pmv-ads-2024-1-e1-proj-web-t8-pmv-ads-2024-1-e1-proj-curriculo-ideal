@@ -7,7 +7,7 @@
 body {
   font-family: 'Encode sans';
 }
- 
+
 #cabecalho {
   display: flex;
   justify-content: space-between;
@@ -18,14 +18,14 @@ body {
   align-items: center;
   justify-content: flex-end;
 }
- 
+
 #adicionarvaga {
   background-color: #235784;
 }
 
 #mostrarGrafico {
   margin: 8px;
-  background-color:#235784;
+  background-color: #235784;
 }
 
 #grafico {
@@ -35,30 +35,30 @@ body {
   margin: 0 15px;
 }
 
- #toggleView {
-  background-color:#235784;
+#toggleView {
+  background-color: #235784;
   color: white;
   border-radius: 10px;
   margin-right: 10px;
 }
 
 #busca {
-border-color: #235784;
-color:#235784
+  border-color: #235784;
+  color: #235784
 }
 
-input#busca::placeholder{
-  color:#235784
+input#busca::placeholder {
+  color: #235784
 }
- 
+
 h4 {
   color: #374375;
 }
- 
+
 label {
   color: #235784;
 }
- 
+
 .btn#avancar {
   background-color: #FFC805;
   border-color: #FFC805;
@@ -86,19 +86,19 @@ textarea#Descricao::placeholder {
 }
 
 
-.edit-button{
-  color:#FFC805;
+.edit-button {
+  color: #FFC805;
 }
 
-.delete-button{
-  color:#ff0d05;
+.delete-button {
+  color: #ff0d05;
 }
- 
+
 section {
   padding: 3%;
   justify-content: center;
 }
- 
+
 .boards {
   display: flex;
   margin-top: 32px;
@@ -113,29 +113,29 @@ section {
   color: #000000cc;
   margin-top: 3%;
 }
- 
+
 #aplicada {
   border-bottom: 5px solid #374375;
 }
- 
+
 #processo {
   border-bottom: 5px solid #FFC805;
 }
- 
+
 #aprovadas {
   border-bottom: 5px solid #24d10e;
 }
- 
+
 #rejeitadas {
   border-bottom: 5px solid #ff0d05;
 }
- 
+
 .dropzone {
   padding: 16px;
   min-width: 282px;
   min-height: 200px;
 }
- 
+
 .card {
   background-color: #ffffff;
   padding: 16px;
@@ -151,12 +151,12 @@ section {
 .dropzone {
   transition: 400ms;
 }
- 
+
 .is-dragging {
   cursor: move;
   opacity: 0.3;
 }
- 
+
 .over {
   background-color: #FFC805;
 }
@@ -165,29 +165,28 @@ section {
   cursor: move;
   opacity: 0.3;
 }
- 
+
 .over {
   background-color: #235784;
 }
- 
+
 /* Adições para a visualização em lista */
 .list-view .boards {
   display: block;
 }
- 
+
 .list-view .board {
   width: 100%;
   margin-bottom: 20px;
 }
- 
+
 .list-view .dropzone {
   display: block;
   padding: 10px 0;
 }
- 
+
 .list-view .card {
   width: 100%;
   margin: 10px 0;
   border-radius: 10px;
 }
-
