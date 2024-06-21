@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,17 +9,14 @@
     <!-- Fonte Encode Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!-- Arquivos CSS -->
     <link rel="stylesheet" href="../navbar/navbar-footer-style.css">
     <link rel="stylesheet" href="suas-candidaturas-style.css">
     <!-- Font awesome -->
-    <script src="https://kit.fontawesome.com/51d0cae634.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/51d0cae634.js" crossorigin="anonymous"></script> 
     <title>Curriculo Ideal</title>
 </head>
-
 <body>
     <header>
         <nav id="navbar"></nav>
@@ -30,12 +26,10 @@
         <div id="cabecalho">
             <h1>SUAS CANDIDATURAS</h1>
             <div id="interacoes">
-                <button type="button" onclick="abrirModal()" class="btn btn-primary" id="adicionarvaga"
-                    data-toggle="modal" data-target="#modalCandidatura">
+                <button type="button" onclick="abrirModal()" class="btn btn-primary" id="adicionarvaga" data-toggle="modal" data-target="#modalCandidatura">
                     Adicionar vaga
                 </button>
-                <button type="button" onclick="abrirModalGrafico()" class="btn btn-primary" id="mostrarGrafico"
-                    data-toggle="modal" data-target="#modalGrafico">
+                <button type="button" onclick="abrirModalGrafico()" class="btn btn-primary" id="mostrarGrafico" data-toggle="modal" data-target="#modalGrafico">
                     Gráfico
                 </button>
                 <button type="button" class="btn btn-secondary" id="toggleView" onclick="toggleView()">Lista</button>
@@ -44,7 +38,7 @@
                 </div>
             </div>
         </div>
-
+ 
         <!--MODAL GRÁFICO-->
         <div class="modal" id="modalGrafico" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -87,8 +81,7 @@
                                 <label for="Empresa">Empresa</label>
                                 <input type="text" class="form-control" id="Empresa" placeholder="Sua Empresa"><br>
                                 <label for="Descrição de vaga">Descrição de vaga</label>
-                                <textarea class="form-control" id="Descricao" rows="12"
-                                    placeholder="Sua Descrição"></textarea><br>
+                                <textarea class="form-control" id="Descricao" rows="12" placeholder="Sua Descrição"></textarea><br>
                                 <label for="Localidade">Localidade</label>
                                 <input type="text" class="form-control" id="Localidade"
                                     placeholder="Sua localidade"><br>
@@ -111,7 +104,7 @@
                 </div>
             </div>
         </div>
-
+ 
         <section>
             <div class="boards">
                 <div class="board">
@@ -145,9 +138,7 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script type="text/javascript" src="suas-candidaturas.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="text/javascript" src="../grafico/grafico.js"></script>
