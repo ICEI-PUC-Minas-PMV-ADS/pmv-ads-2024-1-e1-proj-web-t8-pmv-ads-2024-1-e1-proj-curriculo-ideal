@@ -287,6 +287,10 @@ function mostraCurriculo(dados, novoId) {
                 <div class="conteudo">
                 <div class="principal">
                 <div class="nome">${curriculo.nomeUsuario}</div>
+                <div id=compilado>
+                <div class="linha1">${curriculo.emailUsuario} | ${curriculo.telUsuario} | ${curriculo.cidadeUsuario}, ${curriculo.estadoUsuario}, ${curriculo.paisUsuario}</div>
+                <div class="linha2">${curriculo.linkedinUsuario} | ${curriculo.githubUsuario} | ${curriculo.websiteUsuario}</div>
+                </div>
                 <div class="resumo">${curriculo.resumoUsuario}</div>
                 <div class="habilidades">${curriculo.habilidadesUsuario}</div>
                 </div>
@@ -300,29 +304,32 @@ function mostraCurriculo(dados, novoId) {
                 </div>
                 </div>
                 <div>
-                <h4 id=exp>Experiências</h4>
+                <h4 id=exp><strong>Experiências</strong></h4>
                 ${curriculo.experiencias.map(exp => `
-                    <div>
-                        <p><strong>Cargo:</strong> ${exp.cargo}</p>
-                        <p><strong>Empresa:</strong> ${exp.empresa}</p>
-                        <p><strong>Local:</strong> ${exp.local}</p>
-                        <p><strong>Data de Início:</strong> ${exp.dataInicioEmpresa}</p>
-                        <p><strong>Data de Término:</strong> ${exp.dataFimEmpresa}</p>
-                        <p><strong>Trabalho Atual:</strong> ${exp.trabalhoAtual ? 'Sim' : 'Não'}</p>
+                    <div id=exp-conteudo>  
+                        <p><strong>${exp.cargo}, </strong>${exp.empresa} -- ${exp.local}.</p>
+                        <p id=data>De ${exp.dataInicioEmpresa} até ${exp.dataFimEmpresa}</p>
                         <p><strong>Atividades:</strong> ${exp.atividadesTrabalho}</p>
+                    </div>
+                    <div id=exp-conteudo-2>  
+                        <p id=titulo><strong>${exp.cargo},</strong> ${exp.empresa}, ${exp.local}.</p>
+                        <p id=data>De ${exp.dataInicioEmpresa} até ${exp.dataFimEmpresa}</p>
+                        <p id=atividade><strong>Atividades:</strong> ${exp.atividadesTrabalho}</p>
                     </div>
                 `).join('')}
             </div>
             <div>
-                <h4 id=formação>Formações</h4>
+                <h4 id=formação><strong>Formações</strong></h4>
                 ${curriculo.formacoes.map(form => `
-                    <div>
-                        <p><strong>Instituição:</strong> ${form.instituicao}</p>
-                        <p><strong>Curso:</strong> ${form.curso}</p>
-                        <p><strong>Grau de Instrução:</strong> ${form.grauInstrucao}</p>
-                        <p><strong>Data de Início:</strong> ${form.dataInicioCurso}</p>
-                        <p><strong>Data de Término:</strong> ${form.dataFimCurso}</p>
+                    <div id=forma-conteudo>
+                        <p><strong>${form.instituicao}, </strong>${form.curso} -- ${form.grauInstrucao}</p>
+                        <p id=data>De ${form.dataInicioCurso} até ${form.dataFimCurso}</p>
                         <p><strong>Atividades:</strong> ${form.atividadesEscolares}</p>
+                    </div>
+                    <div id=forma-conteudo-2>
+                        <p id=titulo>${form.instituicao}, ${form.curso} -- ${form.grauInstrucao}</p>
+                        <p id=data>De ${form.dataInicioCurso} até ${form.dataFimCurso}</p>
+                        <p id=atividade><strong>Atividades:</strong> ${form.atividadesEscolares}</p>
                     </div>
                 `).join('')}
             </div>
@@ -341,7 +348,7 @@ function mostraCurriculo(dados, novoId) {
         // Convert HTML to PDF in JavaScript
         doc.html(pdfjs, {
             callback: function(doc) {
-                doc.save("output.pdf");
+                doc.save("Currículo Ideal.pdf");
             },
             x: 100,
             y: 100

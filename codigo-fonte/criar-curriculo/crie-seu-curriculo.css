@@ -110,10 +110,6 @@ label {
 }
 
 
-.template-1 {
-    background-color: yellow;
-}	
-
 .template-2 .conteudo {
     display: grid;
     grid-template-columns: 65% 35%;
@@ -138,10 +134,17 @@ label {
     
 }
 
+.template-2 .sidebar {
+    padding-right: 3cm;
+}
+
+.template-2 #compilado {
+    display: none;
+}
+
 .template-2 .localizacao {
     font-size: 18px;
-    padding-top: 5mm;
-    padding-right: 2cm;
+    padding-top: 17mm;
     text-align: right;
     grid-column-start: 2;
 }
@@ -149,7 +152,6 @@ label {
 .template-2 .email {
     padding-top: 1mm;
     font-size: 18px;
-    padding-right: 2cm;
     text-align: right;
     grid-column-start: 2;
 }
@@ -157,7 +159,6 @@ label {
 .template-2 .tel {
     padding-top: 1mm;
     font-size: 18px;
-    padding-right: 2cm;
     text-align: right;
     grid-column-start: 2;
 }
@@ -165,7 +166,6 @@ label {
 .template-2 .linkedin {
     padding-top: 1mm;
     font-size: 18px;
-    padding-right: 2cm;
     text-align: right;
     grid-column-start: 2;
 }
@@ -173,7 +173,6 @@ label {
 .template-2 .github {
     padding-top: 1mm;
     font-size: 18px;
-    padding-right: 2cm;
     text-align: right;
     grid-column-start: 2;
 }
@@ -181,13 +180,151 @@ label {
 .template-2 .website {
     padding-top: 1mm;
     font-size: 18px;
-    padding-right: 2cm;
     text-align: right;
     grid-column-start: 2;
 }
 
 .template-2 #exp {
-    padding-top: 12mm;
-    font-size: 30px;
+    padding-top: 8mm;
+    font-size: 22px;
+    font-weight: 500;
     color: #235784;
+}
+
+.template-2 #exp-conteudo {
+    padding-top: 5mm;
+    font-size: 16px;
+    font-weight: 400;
+    padding-right: 100px;
+}
+
+.template-2 #exp-conteudo-2 {
+    display: none;
+}
+
+.template-2 #data {
+    font-size: 16px;
+
+}
+
+.template-2 #formação {
+    padding-top: 8mm;
+    font-size: 22px;
+    font-weight: 500;
+    color: #235784;
+}
+
+.template-2 #forma-conteudo {
+    padding-top: 3mm;
+    font-size: 16px;
+    font-weight: 400;
+    padding-right: 100px;
+}
+
+.template-2 #forma-conteudo-2 {
+    display: none;
+}
+
+
+
+
+---------------------------
+
+
+
+.template-1 .conteudo {
+    display: grid;
+}
+
+.template-1 .nome {
+    font-size: 45px;
+    font-weight: 500;
+    text-align: center;
+    padding-bottom: 4mm;
+    padding-right: 2cm;
+}
+ 
+.template-1 .resumo {
+    font-size: 16px;
+    padding-top: 4mm;
+    padding-right: 2cm;
+}
+
+.template-1 .habilidades {
+    font-size: 16px;
+    padding-top: 3mm;
+    padding-right: 2cm;
+    
+}
+
+.template-1 .sidebar {
+    display: none;
+}
+
+.template-1 .linha1 {
+    font-size: 16px;
+    padding-right: 2cm;
+    text-align: center;
+}
+
+.template-1 .linha2 {
+    font-size: 16px;
+    padding-right: 2cm;
+    text-align: center;
+}
+
+.template-1 #exp {
+    padding-top: 8mm;
+    font-size: 22px;
+    font-weight: 500;
+    color: #e29026;
+    text-align: center;
+    padding-right: 2cm;
+}
+
+.template-1 #exp-conteudo {
+    display: none;
+}
+
+.template-1 #forma-conteudo {
+    display: none;
+}
+
+.template-1 #titulo {
+    font-size: 17px;
+    text-align: center;
+    padding-right: 2cm;
+}
+
+.template-1 #cargo {
+    font-size: 17px;
+    text-align: center;
+    padding-right: 2cm;
+}
+
+.template-1 #data {
+    font-size: 14px;
+    text-align: center;
+    padding-right: 2cm;
+}
+.template-1 #atividade {
+    font-size: 16px;
+    padding-right: 2cm;
+    padding-bottom: 4mm;
+}
+
+.template-1 #formação {
+    padding-top: 4mm;
+    font-size: 22px;
+    font-weight: 500;
+    color: #e29026;
+    text-align: center;
+    padding-right: 2cm;
+}
+
+.template-1 #forma-conteudo {
+    padding-top: 5mm;
+    font-size: 16px;
+    font-weight: 400;
+    padding-right: 2cm;
 }
