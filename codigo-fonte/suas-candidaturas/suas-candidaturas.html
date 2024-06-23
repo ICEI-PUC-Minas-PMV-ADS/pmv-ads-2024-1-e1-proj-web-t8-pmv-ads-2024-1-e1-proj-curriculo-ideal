@@ -28,23 +28,27 @@
     </header>
     <!-- Botões e modal foram feitos por Enrique Alves e a página foi feita por Alexsander Custodio -->
     <main>
-        <div id="cabecalho">
-            <h1>SUAS CANDIDATURAS</h1>
-            <div id="interacoes">
-                <button type="button" onclick="abrirModal()" class="btn btn-primary" id="adicionarvaga"
-                    data-toggle="modal" data-target="#modalCandidatura">
-                    Adicionar vaga
-                </button>
-                <button type="button" onclick="abrirModalGrafico()" class="btn btn-primary" id="mostrarGrafico"
-                    data-toggle="modal" data-target="#modalGrafico">
-                    Gráfico
-                </button>
-                <button type="button" class="btn btn-secondary" id="toggleView">Lista</button>
-                <div id="filtro">
-                    <input type="text" id="busca" placeholder="Buscar por cargo ou empresa..." class="form-control">
+        <div class="background">
+            <div id="cabecalho">
+                <h1>SUAS CANDIDATURAS</h1>
+                <div id="interacoes">
+                    <button type="button" onclick="abrirModal()" class="btn btn-primary" id="adicionarvaga"
+                        data-toggle="modal" data-target="#modalCandidatura">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <button type="button" onclick="abrirModalGrafico()" class="btn btn-primary" id="mostrarGrafico"
+                        data-toggle="modal" data-target="#modalGrafico">
+                        <i class="fa-solid fa-chart-simple"></i>
+                    </button>
+                    <button type="button" class="btn btn-secondary" id="toggleView">
+                        Lista
+                    </button>
+                    <div id="filtro">
+                        <input type="text" id="busca" placeholder="Buscar por cargo ou empresa..." class="form-control">
+                    </div>
                 </div>
             </div>
-        </div>
+        
 
         <!--MODAL GRÁFICO-->
         <div class="modal" id="modalGrafico" tabindex="-1" role="dialog">
@@ -114,6 +118,7 @@
         </div>
 
         <section>
+            <div id="geral">
             <div class="boards">
                 <div class="board">
                     <h3 id="aplicada">Aplicadas</h3>
@@ -132,7 +137,9 @@
                     <div class="dropzone" id="rejeitado"></div>
                 </div>
             </div>
+        </div>
         </section>
+    </div>
     </main>
     <footer>
         <div class="logo">
