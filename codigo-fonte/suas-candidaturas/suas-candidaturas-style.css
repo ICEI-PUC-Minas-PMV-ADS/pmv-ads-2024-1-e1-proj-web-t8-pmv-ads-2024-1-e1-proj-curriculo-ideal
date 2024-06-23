@@ -36,7 +36,7 @@ body {
   font-size: 20pt;
   padding: 20px;
   text-transform: uppercase;
-} 
+}
 
 #geral {
   background-color: white;
@@ -63,11 +63,13 @@ body {
 
 #adicionarvaga {
   background-color: #235784;
+  border-radius: 10px;
 }
 
 #mostrarGrafico {
   margin: 8px;
   background-color: #235784;
+  border-radius: 10px;
 }
 
 #grafico {
@@ -94,6 +96,7 @@ body {
 #busca {
   border-color: #235784;
   color: #235784;
+  border-radius: 10px;
 }
 
 input#busca::placeholder {

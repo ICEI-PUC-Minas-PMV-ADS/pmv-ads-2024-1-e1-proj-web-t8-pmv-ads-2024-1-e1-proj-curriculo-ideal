@@ -1,10 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     verificarLogin();
     inicializarEventos();
     carregarVagas();
 });
 
 let usuarioLogado = null;
+let isEditing = false;
+let currentEditingId = null;
 
 function verificarLogin() {
     usuarioLogado = JSON.parse(localStorage.getItem('usuarioCorrente'));
@@ -17,24 +19,22 @@ function verificarLogin() {
 
 function inicializarEventos() {
     const modal = document.getElementById('modalCandidatura');
-    let isEditing = false;
-    let currentEditingId = null;
 
-    document.getElementById('adicionarvaga').addEventListener('click', function() {
+    document.getElementById('adicionarvaga').addEventListener('click', function () {
         isEditing = false;
         resetForm();
         abrirModal(modal);
     });
 
-    document.getElementById('avancar').addEventListener('click', function() {
+    document.getElementById('avancar').addEventListener('click', function () {
         salvarVaga(isEditing, currentEditingId);
     });
 
-    document.getElementById('busca').addEventListener('input', function() {
+    document.getElementById('busca').addEventListener('input', function () {
         buscarVagas(this.value.toLowerCase());
     });
 
-    document.getElementById('toggleView').addEventListener('click', function() {
+    document.getElementById('toggleView').addEventListener('click', function () {
         toggleView(this);
     });
 }
@@ -65,7 +65,7 @@ function salvarVaga(isEditing, currentEditingId) {
     }
 
     const db = JSON.parse(localStorage.getItem('db_vaga')) || [];
-    
+
     if (isEditing) {
         const index = db.findIndex(vaga => vaga.id === currentEditingId);
         db[index] = { id: currentEditingId, Cargo: cargo, Empresa: empresa, Descricao: descricao, Localidade: localidade, Status: status, usuarioId: usuarioLogado.id };
@@ -99,7 +99,7 @@ function exibeVagas(db) {
 
     Object.values(sections).forEach(section => section.innerHTML = '');
 
-    db.forEach(function(infoVaga) {
+    db.forEach(function (infoVaga) {
         const card = criarCard(infoVaga);
         const sectionId = mapearStatusParaSecao(infoVaga.Status);
         sections[sectionId].appendChild(card);
@@ -142,7 +142,7 @@ function mapearStatusParaSecao(status) {
 
 function adicionarEventosDeEdicao() {
     document.querySelectorAll('.edit-button').forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const card = this.closest('.card');
             const id = parseInt(card.dataset.id);
             const db = JSON.parse(localStorage.getItem('db_vaga'));
@@ -167,7 +167,7 @@ function preencherFormEdicao(vaga) {
 
 function adicionarEventosDeletar() {
     document.querySelectorAll('.delete-button').forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             if (confirm('Tem certeza que deseja deletar esta vaga?')) {
                 const card = this.closest('.card');
                 const id = parseInt(card.dataset.id);
@@ -225,10 +225,12 @@ function adicionarDragAndDrop() {
 
     function drop() {
         this.classList.remove('over');
-        atualizarStatus(this.id);
+        const sectionId = this.id;
+        const card = document.querySelector('.is-dragging');
+        atualizarStatus(card, sectionId);
     }
 
-    function atualizarStatus(sectionId) {
+    function atualizarStatus(card, sectionId) {
         const statusMap = {
             'aplicadas': 'Aplicado',
             'emProcesso': 'Em processo',
@@ -236,7 +238,6 @@ function adicionarDragAndDrop() {
             'rejeitado': 'Rejeitado'
         };
 
-        const card = document.querySelector('.is-dragging');
         const db = JSON.parse(localStorage.getItem('db_vaga'));
         const cardId = parseInt(card.dataset.id);
         const vaga = db.find(vaga => vaga.id === cardId);
@@ -245,7 +246,6 @@ function adicionarDragAndDrop() {
             vaga.Status = statusMap[sectionId];
             localStorage.setItem('db_vaga', JSON.stringify(db));
             carregarVagas();
-            window.location.reload();
         }
     }
 }
@@ -262,4 +262,3 @@ function toggleView(button) {
     main.classList.toggle('list-view');
     button.textContent = main.classList.contains('list-view') ? 'Quadro' : 'Lista';
 }
-
