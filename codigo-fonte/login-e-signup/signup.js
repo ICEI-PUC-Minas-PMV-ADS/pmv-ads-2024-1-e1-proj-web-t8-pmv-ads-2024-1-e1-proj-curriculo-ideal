@@ -33,7 +33,7 @@ function inserirCadastro() {
 
         alert('Cadastro realizado com sucesso!');
 
-        window.location.href = "../home/index.html";
+        window.location.href = "../login-e-signup/login.html";
     }
 }
 

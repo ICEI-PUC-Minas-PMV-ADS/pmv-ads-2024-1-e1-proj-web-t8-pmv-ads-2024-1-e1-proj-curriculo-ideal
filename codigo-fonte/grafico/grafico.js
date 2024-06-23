@@ -43,6 +43,11 @@ document.addEventListener('DOMContentLoaded', function () {
                             font: {
                                 family: 'Encode Sans', 
                                 size: 10,
+                            },
+                            callback: function(value) {
+                                if (Number.isInteger(value)) {
+                                    return value;
+                                }
                             }
                         }
                     },
@@ -61,6 +66,16 @@ document.addEventListener('DOMContentLoaded', function () {
                             font: {
                                 family: 'Encode Sans', 
                                 size: 16, 
+                            },
+                            generateLabels: function(chart) {
+                                const data = chart.data;
+                                return [{
+                                    text: 'Currículos',
+                                    fillStyle: 'rgba(0, 0, 0, 0)', // Faz o quadrado invisível
+                                    strokeStyle: 'rgba(0, 0, 0, 0)', // Faz a borda do quadrado invisível
+                                    hidden: false,
+                                    index: 0
+                                }];
                             }
                         }
                     }
