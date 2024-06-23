@@ -84,7 +84,9 @@ function contarVagasPorStatus(vagas) {
         'Rejeitado': 0
     };
     vagas.forEach(vaga => {
+     if (vaga.usuarioId === usuarioLogado.id) {
         somaStatus[vaga.Status]++;
+     }
     });
     return somaStatus;
 }
