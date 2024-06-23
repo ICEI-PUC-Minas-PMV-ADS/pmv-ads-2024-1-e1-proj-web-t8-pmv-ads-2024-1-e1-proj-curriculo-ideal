@@ -236,6 +236,7 @@ function adicionarDragAndDrop() {
             'emProcesso': 'Em processo',
             'aprovado': 'Aprovado',
             'rejeitado': 'Rejeitado'
+            
         };
 
         const db = JSON.parse(localStorage.getItem('db_vaga'));
@@ -246,6 +247,7 @@ function adicionarDragAndDrop() {
             vaga.Status = statusMap[sectionId];
             localStorage.setItem('db_vaga', JSON.stringify(db));
             carregarVagas();
+            window.location.reload();
         }
     }
 }
