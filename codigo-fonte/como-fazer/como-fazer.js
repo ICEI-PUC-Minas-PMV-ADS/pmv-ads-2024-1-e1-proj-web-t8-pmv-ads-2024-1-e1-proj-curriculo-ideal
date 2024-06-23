@@ -5,11 +5,12 @@ if (divInicial) {
     divInicial.classList.add('highlight');
 }
 
+const windowMiddle = window.innerHeight / 2;
 let posicaoAtualId = '';
 window.addEventListener('scroll', () => {
     posicao.forEach(posicao => {
         const rect = posicao.getBoundingClientRect();
-        if (rect.top >= 0 && rect.bottom < window.innerHeight) {
+        if (rect.top >= 0 && rect.bottom <= windowMiddle) {
             posicaoAtualId = posicao.id;
         }
     })

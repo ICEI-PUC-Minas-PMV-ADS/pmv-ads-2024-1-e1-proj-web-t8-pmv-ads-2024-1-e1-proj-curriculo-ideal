@@ -83,10 +83,20 @@ dt {
     text-align: center;
 }
 
+.tutorial ul {
+    margin-bottom: 5cm;
+
+}
+
+.tutorial ul li {
+    margin-bottom: 6mm;
+
+}
+
 .tutorial p {
-    margin: 4% 9% 5%;
+    margin: 5% 9% 5%;
     font-size: 1rem;
-    text-align: justify;
+    text-align: center;
     color: #235784;
 
 }
