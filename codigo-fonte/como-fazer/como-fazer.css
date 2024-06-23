@@ -72,6 +72,7 @@ dt {
     border-radius: 50px;
     width: 69%;
     background-position-x: right;
+    padding-bottom: 3%;
 }
 
 
@@ -84,6 +85,14 @@ dt {
 
 .tutorial p {
     margin: 4% 9% 5%;
+    font-size: 1.2rem;
+    text-align: justify;
+    color: #235784;
+
+}
+
+.tutorial ol, .tutorial li {
+    margin: 1% 9%;
     font-size: 1.2rem;
     text-align: justify;
     color: #235784;

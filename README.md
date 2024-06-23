@@ -35,7 +35,7 @@ Um site gerador de currículos é uma ferramenta online que ajuda a criar currí
 
 # Hospedagem
 
-* Insira o endereço eletrônico público de acesso ao conteúdo publicado. 
+https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t8-pmv-ads-2024-1-e1-proj-curriculo-ideal/codigo-fonte/home/index.html
 
 # Código-Fonte
 
