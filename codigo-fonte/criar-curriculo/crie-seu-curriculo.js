@@ -340,11 +340,12 @@ function mostraCurriculo(dados, novoId) {
     }
 
     function gerarCurriculo() {
+    if (window.jspdf) {
         const { jsPDF } = window.jspdf;
         var doc = new jsPDF('l', 'mm', [1200, 1210]);
 
         var pdfjs = document.querySelector('#curriculo');
-    
+
         // Convert HTML to PDF in JavaScript
         doc.html(pdfjs, {
             callback: function(doc) {
@@ -353,4 +354,7 @@ function mostraCurriculo(dados, novoId) {
             x: 100,
             y: 100
         });
+    } else {
+        console.error('jsPDF library is not loaded.');
     }
+}
