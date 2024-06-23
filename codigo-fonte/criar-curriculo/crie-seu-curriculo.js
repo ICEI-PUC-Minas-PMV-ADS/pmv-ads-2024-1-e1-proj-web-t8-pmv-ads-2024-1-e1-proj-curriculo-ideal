@@ -32,6 +32,10 @@ function camposObrigatoriosPreenchidos() {
     var camposObrigatorios = secaoAtual.querySelectorAll('input[required], select[required], textarea[required]');
     let preenchidos = true;
 
+    if (indiceAtual === 2 || indiceAtual === 3) {
+        return true;
+    }
+
     camposObrigatorios.forEach(function(campo) {
         if (!campo.value.trim()) {
             preenchidos = false;
@@ -96,10 +100,14 @@ function retrocederBarraDeProgresso() {
 
 }
 
-
 // Função para adicionar experiência profissional
 
 document.getElementById("adicionar-experiencia").addEventListener("click", function() {
+    if (!camposObrigatoriosPreenchidosExperiencia()) {
+        alert('Preencha todos os campos obrigatórios para adicionar uma experiência.');
+        return;
+    }    
+    
     const experiencia = {
         cargo: document.getElementById("cargo").value,
         empresa: document.getElementById("empresa").value,
@@ -133,6 +141,19 @@ function exibirExperiencias() {
             </div>
         </div>
     `).join('');
+}
+
+function camposObrigatoriosPreenchidosExperiencia() {
+    var camposObrigatorios = document.querySelectorAll('#experiencia-form input[required], #experiencia-form select[required], #experiencia-form textarea[required]');
+    let preenchidos = true;
+
+    camposObrigatorios.forEach(function(campo) {
+        if (!campo.value.trim()) {
+            preenchidos = false;
+        }
+    });
+
+    return preenchidos;
 }
 
 // Função para adicionar formação acadêmica
@@ -170,6 +191,19 @@ function exibirFormacoes() {
         `).join('');
 };
 
+function camposObrigatoriosPreenchidosFormacao() {
+    var camposObrigatorios = document.querySelectorAll('#formacao-form input[required], #formacao-form select[required], #formacao-form textarea[required]');
+    let preenchidos = true;
+
+    camposObrigatorios.forEach(function(campo) {
+        if (!campo.value.trim()) {
+            preenchidos = false;
+        }
+    });
+
+    return preenchidos;
+}
+
 function limparCampos(ids) {
     ids.forEach(id => document.getElementById(id).value = '');
 }
@@ -184,18 +218,22 @@ document.getElementById("trabalho-atual").addEventListener("change", function() 
     }
 });
 
+cadastraCurriculo("template-1");
+
 document.getElementById("template-1").addEventListener("change", function() {
+    console.log("cliquei template 1", this.checked);
     if (this.checked) {
         cadastraCurriculo("template-1"); // Passando o ID do template selecionado
     }
 });
 
 document.getElementById("template-2").addEventListener("change", function() {
+    console.log("cliquei template 2", this.checked);
     if (this.checked) {
+
         cadastraCurriculo("template-2"); // Passando o ID do template selecionado
     }
 });
-
 
 
 function cadastraCurriculo(templateSelecionado) {
@@ -236,48 +274,62 @@ function mostraCurriculo(dados, novoId) {
             const div = document.getElementById("curriculo");
             div.innerHTML = '';
 
+
             if (curriculo.template === "template-1") {
+                div.className = 'curriculo';
                 div.classList.add("template-1");
             } else if (curriculo.template === "template-2") {
+                div.className = 'curriculo';
                 div.classList.add("template-2");
             }
 
             div.innerHTML += ` 
-                <div>${curriculo.nomeUsuario}</div>
-                <div>${curriculo.telUsuario}</div>
-                <div>${curriculo.emailUsuario}</div>
-                <div>${curriculo.cidadeUsuario}</div>
-                <div>${curriculo.estadoUsuario}</div>
-                <div>${curriculo.paisUsuario}</div>
-                <div>${curriculo.linkedinUsuario}</div>
-                <div>${curriculo.githubUsuario}</div>
-                <div>${curriculo.websiteUsuario}</div>
-                <div>${curriculo.resumoUsuario}</div>
-                <div>${curriculo.habilidadesUsuario}</div>
+                <div class="conteudo">
+                <div class="principal">
+                <div class="nome">${curriculo.nomeUsuario}</div>
+                <div id=compilado>
+                <div class="linha1">${curriculo.emailUsuario} | ${curriculo.telUsuario} | ${curriculo.cidadeUsuario}, ${curriculo.estadoUsuario}, ${curriculo.paisUsuario}</div>
+                <div class="linha2">${curriculo.linkedinUsuario} | ${curriculo.githubUsuario} | ${curriculo.websiteUsuario}</div>
+                </div>
+                <div class="resumo">${curriculo.resumoUsuario}</div>
+                <div class="habilidades">${curriculo.habilidadesUsuario}</div>
+                </div>
+                <div class="sidebar">
+                <div class="localizacao">${curriculo.cidadeUsuario}, ${curriculo.estadoUsuario}, ${curriculo.paisUsuario}</div>
+                <div class="email">${curriculo.emailUsuario}</div>
+                <div class="tel">${curriculo.telUsuario}</div>
+                <div class="linkedin">${curriculo.linkedinUsuario}</div>
+                <div class="github">${curriculo.githubUsuario}</div>
+                <div class="website">${curriculo.websiteUsuario}</div>
+                </div>
+                </div>
                 <div>
-                <h4>Experiências</h4>
+                <h4 id=exp><strong>Experiências</strong></h4>
                 ${curriculo.experiencias.map(exp => `
-                    <div>
-                        <p><strong>Cargo:</strong> ${exp.cargo}</p>
-                        <p><strong>Empresa:</strong> ${exp.empresa}</p>
-                        <p><strong>Local:</strong> ${exp.local}</p>
-                        <p><strong>Data de Início:</strong> ${exp.dataInicioEmpresa}</p>
-                        <p><strong>Data de Término:</strong> ${exp.dataFimEmpresa}</p>
-                        <p><strong>Trabalho Atual:</strong> ${exp.trabalhoAtual ? 'Sim' : 'Não'}</p>
+                    <div id=exp-conteudo>  
+                        <p><strong>${exp.cargo}, </strong>${exp.empresa} -- ${exp.local}.</p>
+                        <p id=data>De ${exp.dataInicioEmpresa} até ${exp.dataFimEmpresa}</p>
                         <p><strong>Atividades:</strong> ${exp.atividadesTrabalho}</p>
+                    </div>
+                    <div id=exp-conteudo-2>  
+                        <p id=titulo><strong>${exp.cargo},</strong> ${exp.empresa}, ${exp.local}.</p>
+                        <p id=data>De ${exp.dataInicioEmpresa} até ${exp.dataFimEmpresa}</p>
+                        <p id=atividade><strong>Atividades:</strong> ${exp.atividadesTrabalho}</p>
                     </div>
                 `).join('')}
             </div>
             <div>
-                <h4>Formações</h4>
+                <h4 id=formação><strong>Formações</strong></h4>
                 ${curriculo.formacoes.map(form => `
-                    <div>
-                        <p><strong>Instituição:</strong> ${form.instituicao}</p>
-                        <p><strong>Curso:</strong> ${form.curso}</p>
-                        <p><strong>Grau de Instrução:</strong> ${form.grauInstrucao}</p>
-                        <p><strong>Data de Início:</strong> ${form.dataInicioCurso}</p>
-                        <p><strong>Data de Término:</strong> ${form.dataFimCurso}</p>
+                    <div id=forma-conteudo>
+                        <p><strong>${form.instituicao}, </strong>${form.curso} -- ${form.grauInstrucao}</p>
+                        <p id=data>De ${form.dataInicioCurso} até ${form.dataFimCurso}</p>
                         <p><strong>Atividades:</strong> ${form.atividadesEscolares}</p>
+                    </div>
+                    <div id=forma-conteudo-2>
+                        <p id=titulo>${form.instituicao}, ${form.curso} -- ${form.grauInstrucao}</p>
+                        <p id=data>De ${form.dataInicioCurso} até ${form.dataFimCurso}</p>
+                        <p id=atividade><strong>Atividades:</strong> ${form.atividadesEscolares}</p>
                     </div>
                 `).join('')}
             </div>
@@ -287,63 +339,18 @@ function mostraCurriculo(dados, novoId) {
         }
     }
 
-function gerarCurriculo() {
-    const dados = JSON.parse(localStorage.getItem("dadosCurriculo")) || [];
-    const curriculoData = dados.find(item => item.id === novoId);
+    function gerarCurriculo() {
+        const { jsPDF } = window.jspdf;
+        var doc = new jsPDF('l', 'mm', [1200, 1210]);
 
-    props.business.name = curriculoData.nomeUsuario;
-    props.business.phone = curriculoData.telUsuario;
-    props.business.email = curriculoData.emailUsuario;
-    props.business.address = `${curriculoData.paisUsuario}, ${curriculoData.estadoUsuario}, ${curriculoData.cidadeUsuario}`;
-    props.business.website = curriculoData.websiteUsuario;
-    props.business.email_1 = curriculoData.githubUsuario;
-
-
-    var pdfObject = jsPDFInvoiceTemplate.default(props);
-    console.log(pdfObject);
-
-}
-
-var props = {
-    outputType: jsPDFInvoiceTemplate.OutputType.Save,
-    //onJsPDFDocCreation?: (jsPDFDoc: jsPDF) => void, //Allows for additional configuration prior to writing among others, adds support for different languages and symbols
-    returnJsPDFDocObject: true,
-    fileName: "Currículo Ideal",
-    orientationLandscape: false,
-    compress: true,
-    stamp: {
-        inAllPages: false, //by default = false, just in the last page
-        src: "https://raw.githubusercontent.com/edisonneza/jspdf-invoice-template/demo/images/qr_code.jpg",
-        type: 'JPG', //optional, when src= data:uri (nodejs case)
-        width: 20, //aspect ratio = width/height
-        height: 20,
-        margin: {
-            top: 0, //negative or positive num, from the current position
-            left: 0 //negative or positive num, from the current position
-        }
-    },
-    business: {
-        name: 'nome',
-        address: "Albania, Tirane ish-Dogana, Durres 2001",
-        phone: "(+355) 069 11 11 111",
-        email: "email@example.com",
-        email_1: "https://github.com/seu-github",
-        website: "info@example.al",
-        
-    },
-    contact: {
-        //label: "Invoice issued for:",
-        name: "Auxiliar Administrativo",
-        empresa: "Empresa de Administração",
-        telefone: "(85) 9 9999-9999",
-        email: "empresa@administraçao.com",
-        site: "www.website.al",
-      
-  
-    },
-    footer: {
-        text: "O currículo apresentado nesse PDF ainda está em fase de desenvolvimento",
-    },
-    pageEnable: true,
-    pageLabel: "Page ",
-};
+        var pdfjs = document.querySelector('#curriculo');
+    
+        // Convert HTML to PDF in JavaScript
+        doc.html(pdfjs, {
+            callback: function(doc) {
+                doc.save("Currículo Ideal.pdf");
+            },
+            x: 100,
+            y: 100
+        });
+    }
