@@ -8,6 +8,10 @@
     --fonte-principal-texto: 500;
 }
 
+main {
+    height: 615pt;
+
+}
 
 .background {
     background-color: var(--cor-de-fundo);
