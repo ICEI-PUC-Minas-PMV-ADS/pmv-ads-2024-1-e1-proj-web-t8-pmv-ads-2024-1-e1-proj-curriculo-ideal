@@ -78,14 +78,14 @@ dt {
 
 .tutorial h1 {
     margin: 5% 5% 2%;
-    font-size: 4rem;
+    font-size: 2.5rem;
     color: #374375;
     text-align: center;
 }
 
 .tutorial p {
     margin: 4% 9% 5%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: justify;
     color: #235784;
 
@@ -93,7 +93,7 @@ dt {
 
 .tutorial ol, .tutorial li {
     margin: 1% 9%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: justify;
     color: #235784;
 
