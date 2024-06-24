@@ -140,12 +140,11 @@ O programa atende 3 perfis de usuários, que falamos mais abaixo:
 |RF-08 |O sistema deve permitir ao usuário alterar o status da sua candidatura                                      | Média        |
 |RF-09 |O sistema deve apresentar mensagens de erro, caso o usuário não consiga usar alguma função                  | Baixa        | 
 |RF-10 |O sistema deve ter um botão na parte de templates para aplicação das informações do usúario, caso ele queira| Baixa        |
-|RF-11 |Palavras erradas devem ser grifadas em vermelho para sugestão de correção em português                      | Baixa        | 
+|RF-11 |O usuario deve ser capaz de ver grafico com os dados das vagas cadastradas                                  | Baixa        | 
 |RF-12 |O usuario deve ser capaz de arrastar as vagas entre os status de candidatura                                | Baixa        |
 |RF-13 |O usuario deve ser capaz de pesquisar as candidaturas por vaga ou empresa                                   | Baixa        |
 |RF-14 |O usuario deve ser capaz de alterar a visualização da pagina entre lista e grade                            | Baixa        |
 |RF-15 |O usuario deve ser capaz de excluir a vaga                                                                  | Baixa        |
-|RF-16 |O usuario deve ser capaz de ver grafico com os dados das vagas cadastradas                                  | Baixa        |
 
 ### Requisitos não Funcionais
 
